@@ -1,4 +1,6 @@
 import { useState } from "react";
+import chrisImage from '../../public/chris.png';
+import rujutaImage from '../../public/rujuta.jpg';
 import { Play } from "lucide-react";
 
 export default function Variant7() {
@@ -412,7 +414,7 @@ export default function Variant7() {
             {[
               {
                 initial: "C",
-                image: "/chris.png",
+                image: chrisImage,
                 name: "Chris",
                 org: "Collective Intelligence",
                 desc: "Expert in individual productivity and AI-human synthesis for senior leadership. Chris works directly with board members and CXOs to integrate AI into their personal decision-making workflows. He makes the complex feel instinctive.",
@@ -420,7 +422,7 @@ export default function Variant7() {
               },
               {
                 initial: "R",
-                image: "/rujuta.jpg",
+                image: rujutaImage,
                 imageClass: "object-top",
                 name: "Rujuta Singh",
                 org: "Solved Together",
