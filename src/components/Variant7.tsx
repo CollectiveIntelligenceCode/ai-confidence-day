@@ -1,6 +1,6 @@
 import { useState } from "react";
-import chrisImage from '../../public/chris.png';
-import rujutaImage from '../../public/rujuta.jpg';
+import chrisImage from '../assets/chris.png';
+import rujutaImage from '../assets/rujuta.jpg';
 import { Play } from "lucide-react";
 
 export default function Variant7() {
