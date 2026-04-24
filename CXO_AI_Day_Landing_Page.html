@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CXO AI Day — One Day. Total Clarity.</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --red: #C0392B;
+  --red-light: #E8D5D2;
+  --dark: #1A1A1A;
+  --mid: #4A4A4A;
+  --soft: #7A7A7A;
+  --bg: #FAFAF8;
+  --white: #FFFFFF;
+  --border: #E5E5E3;
+  --cream: #F5F3EF;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body { font-family:'DM Sans', sans-serif; color:var(--dark); background:var(--bg); line-height:1.7; font-size:17px; font-weight:300; }
+
+.serif { font-family:'Instrument Serif', serif; }
+
+/* RED TOP BAR */
+.topbar { height:4px; background:var(--red); position:fixed; top:0; left:0; right:0; z-index:100; }
+
+/* NAV */
+nav { position:fixed; top:4px; left:0; right:0; z-index:99; background:rgba(250,250,248,0.95); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); padding:16px 0; }
+nav .inner { max-width:1100px; margin:0 auto; padding:0 32px; display:flex; justify-content:space-between; align-items:center; }
+nav .logo { font-family:'DM Sans', sans-serif; font-weight:600; font-size:14px; letter-spacing:2px; text-transform:uppercase; color:var(--dark); }
+nav .cta-nav { background:var(--red); color:white; padding:10px 24px; font-size:14px; font-weight:500; border:none; cursor:pointer; letter-spacing:0.5px; text-decoration:none; }
+nav .cta-nav:hover { background:#A93226; }
+
+/* SECTIONS */
+section { padding:100px 32px; }
+.container { max-width:900px; margin:0 auto; }
+.container-wide { max-width:1100px; margin:0 auto; }
+
+/* HERO */
+.hero { padding:180px 32px 100px; text-align:center; background:var(--white); border-bottom:1px solid var(--border); }
+.hero .topline { font-size:13px; font-weight:500; letter-spacing:2px; text-transform:uppercase; color:var(--red); margin-bottom:48px; }
+.hero h1 { font-family:'Instrument Serif', serif; font-size:clamp(36px,5.5vw,64px); line-height:1.15; color:var(--dark); max-width:800px; margin:0 auto 24px; font-weight:400; }
+.hero h1 em { font-style:italic; color:var(--red); }
+.hero .subhead { font-size:19px; color:var(--mid); max-width:620px; margin:0 auto 16px; line-height:1.65; }
+.hero .tagline { font-family:'Instrument Serif', serif; font-size:28px; color:var(--dark); margin:40px 0; }
+.hero .cta-main { display:inline-block; background:var(--red); color:white; padding:16px 40px; font-size:16px; font-weight:500; text-decoration:none; letter-spacing:0.5px; margin-top:8px; transition: background 0.2s; }
+.hero .cta-main:hover { background:#A93226; }
+.hero .date-strip { margin-top:32px; font-size:14px; color:var(--soft); letter-spacing:1px; }
+
+/* INFO BAR */
+.info-bar { background:var(--white); border-bottom:1px solid var(--border); padding:40px 32px; }
+.info-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--border); max-width:800px; margin:0 auto; }
+.info-item { background:var(--white); padding:24px 20px; text-align:center; }
+.info-item .label { font-size:11px; text-transform:uppercase; letter-spacing:2px; color:var(--soft); margin-bottom:6px; font-weight:500; }
+.info-item .value { font-family:'Instrument Serif', serif; font-size:20px; color:var(--dark); }
+
+/* CHATHAM NOTICE */
+.chatham-notice { text-align:center; padding:20px 32px; background:var(--cream); border-bottom:1px solid var(--border); font-size:13px; letter-spacing:1.5px; text-transform:uppercase; color:var(--soft); font-weight:500; }
+
+/* REALITY SECTION */
+.reality { background:var(--white); }
+.reality h2 { font-family:'Instrument Serif', serif; font-size:36px; margin-bottom:20px; }
+.reality .intro-text { font-size:18px; color:var(--mid); max-width:700px; margin-bottom:48px; line-height:1.75; }
+.stat-row { display:grid; grid-template-columns:repeat(3,1fr); gap:32px; margin-top:48px; padding-top:48px; border-top:1px solid var(--border); }
+.stat-item { text-align:center; }
+.stat-number { font-family:'Instrument Serif', serif; font-size:48px; color:var(--red); }
+.stat-text { font-size:14px; color:var(--mid); margin-top:8px; line-height:1.5; }
+.stat-source { font-size:11px; color:var(--soft); margin-top:4px; text-transform:uppercase; letter-spacing:1px; }
+
+/* SOUND LIKE YOU */
+.soundlike { background:var(--cream); }
+.soundlike h2 { font-family:'Instrument Serif', serif; font-size:36px; margin-bottom:48px; text-align:center; }
+.thought-card { background:var(--white); border-left:3px solid var(--red); padding:24px 32px; margin-bottom:16px; font-size:17px; color:var(--mid); font-style:italic; line-height:1.7; }
+.soundlike .bridge { text-align:center; margin-top:48px; font-size:20px; color:var(--dark); font-family:'Instrument Serif', serif; }
+
+/* BEFORE AFTER */
+.beforeafter { background:var(--white); }
+.beforeafter h2 { font-family:'Instrument Serif', serif; font-size:36px; margin-bottom:48px; text-align:center; }
+.ba-grid { display:grid; grid-template-columns:1fr 1fr; gap:60px; }
+.ba-col h3 { font-size:13px; text-transform:uppercase; letter-spacing:2px; font-weight:600; margin-bottom:24px; padding-bottom:12px; border-bottom:2px solid var(--border); }
+.ba-col.before h3 { color:var(--soft); border-color:var(--soft); }
+.ba-col.after h3 { color:var(--red); border-color:var(--red); }
+.ba-item { padding:14px 0; border-bottom:1px solid var(--border); font-size:16px; line-height:1.6; color:var(--mid); }
+.ba-col.before .ba-item::before { content:'\u2014 '; color:var(--soft); }
+.ba-col.after .ba-item::before { content:'\u2713 '; color:var(--red); font-weight:600; }
+
+/* WHAT THIS DAY IS */
+.whatday { background:var(--cream); }
+.whatday h2 { font-family:'Instrument Serif', serif; font-size:36px; margin-bottom:48px; }
+.whatday-grid { display:grid; grid-template-columns:1fr 1fr; gap:40px; }
+.whatday-item { padding:24px 0; }
+.whatday-item h4 { font-size:13px; text-transform:uppercase; letter-spacing:2px; color:var(--red); font-weight:600; margin-bottom:10px; }
+.whatday-item p { color:var(--mid); font-size:16px; line-height:1.7; }
+.not-list { margin-top:48px; padding-top:32px; border-top:1px solid var(--border); display:flex; gap:24px; flex-wrap:wrap; }
+.not-item { font-size:14px; color:var(--soft); padding:8px 20px; border:1px solid var(--border); background:var(--white); }
+
+/* SESSIONS */
+.sessions { background:var(--white); }
+.sessions h2 { font-family:'Instrument Serif', serif; font-size:36px; margin-bottom:12px; text-align:center; }
+.sessions .subtitle { text-align:center; font-size:18px; color:var(--mid); margin-bottom:60px; }
+.session-card { display:grid; grid-template-columns:80px 1fr; gap:32px; padding:48px 0; border-top:1px solid var(--border); }
+.session-label { font-family:'Instrument Serif', serif; font-size:14px; color:var(--soft); text-align:right; padding-top:4px; }
+.session-label .time { display:block; font-family:'DM Sans', sans-serif; font-size:11px; text-transform:uppercase; letter-spacing:1.5px; color:var(--soft); margin-top:4px; }
+.session-body h3 { font-family:'Instrument Serif', serif; font-size:28px; margin-bottom:4px; }
+.session-body .facilitator { font-size:14px; color:var(--red); font-weight:500; margin-bottom:16px; }
+.session-body p { color:var(--mid); font-size:16px; line-height:1.75; margin-bottom:20px; }
+.session-outcomes { list-style:none; }
+.session-outcomes li { padding:8px 0; font-size:15px; color:var(--mid); border-bottom:1px solid var(--border); }
+.session-outcomes li::before { content:'\u2192 '; color:var(--red); }
+
+/* OUTCOMES */
+.outcomes { background:var(--cream); }
+.outcomes h2 { font-family:'Instrument Serif', serif; font-size:36px; margin-bottom:8px; text-align:center; }
+.outcomes .subtitle { text-align:center; color:var(--mid); font-size:18px; margin-bottom:48px; }
+.outcome-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+.outcome-item { background:var(--white); padding:28px 32px; border-left:3px solid var(--red); }
+.outcome-num { font-family:'Instrument Serif', serif; font-size:32px; color:var(--red); opacity:0.4; margin-bottom:8px; }
+.outcome-text { font-size:16px; color:var(--mid); line-height:1.6; }
+
+/* FOR YOU / NOT FOR YOU */
+.foryou { background:var(--white); }
+.foryou h2 { font-family:'Instrument Serif', serif; font-size:36px; margin-bottom:48px; text-align:center; }
+.foryou-grid { display:grid; grid-template-columns:1fr 1fr; gap:60px; }
+.foryou-col h3 { font-size:14px; text-transform:uppercase; letter-spacing:2px; font-weight:600; margin-bottom:24px; padding-bottom:12px; }
+.foryou-col.yes h3 { color:var(--red); border-bottom:2px solid var(--red); }
+.foryou-col.no h3 { color:var(--soft); border-bottom:2px solid var(--border); }
+.foryou-item { padding:12px 0; font-size:16px; color:var(--mid); line-height:1.6; border-bottom:1px solid var(--border); display:flex; gap:12px; }
+.foryou-col.yes .foryou-item::before { content:'+'; color:var(--red); font-weight:600; font-size:18px; flex-shrink:0; }
+.foryou-col.no .foryou-item::before { content:'\u2014'; color:var(--soft); flex-shrink:0; }
+
+/* INCLUDED */
+.included { background:var(--cream); }
+.included h2 { font-family:'Instrument Serif', serif; font-size:36px; margin-bottom:48px; text-align:center; }
+.included-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+.included-item { background:var(--white); padding:28px 24px; text-align:center; }
+.included-item h4 { font-size:15px; font-weight:600; color:var(--dark); margin-bottom:8px; }
+.included-item p { font-size:14px; color:var(--soft); line-height:1.6; }
+
+/* TESTIMONIALS */
+.testimonials { background:var(--white); }
+.testimonials h2 { font-family:'Instrument Serif', serif; font-size:36px; margin-bottom:48px; text-align:center; }
+.testimonial-card { padding:40px 0; border-top:1px solid var(--border); }
+.testimonial-card blockquote { font-family:'Instrument Serif', serif; font-size:22px; line-height:1.6; color:var(--dark); margin-bottom:16px; font-weight:400; }
+.testimonial-card .attribution { font-size:14px; color:var(--soft); font-weight:500; }
+
+/* FACILITATORS */
+.facilitators { background:var(--cream); }
+.facilitators h2 { font-family:'Instrument Serif', serif; font-size:36px; margin-bottom:48px; text-align:center; }
+.facilitator-grid { display:grid; grid-template-columns:1fr 1fr; gap:48px; }
+.facilitator-card { background:var(--white); padding:40px 32px; }
+.facilitator-card .photo-placeholder { width:80px; height:80px; background:var(--border); border-radius:50%; margin-bottom:20px; display:flex; align-items:center; justify-content:center; font-size:28px; color:var(--soft); font-family:'Instrument Serif', serif; }
+.facilitator-card h4 { font-size:20px; font-weight:600; margin-bottom:4px; }
+.facilitator-card .org { font-size:14px; color:var(--red); font-weight:500; margin-bottom:12px; }
+.facilitator-card p { font-size:15px; color:var(--mid); line-height:1.7; }
+.facilitator-card .session-tag { margin-top:16px; font-size:12px; text-transform:uppercase; letter-spacing:1.5px; color:var(--soft); }
+
+/* PRICING */
+.pricing { background:var(--white); text-align:center; }
+.pricing h2 { font-family:'Instrument Serif', serif; font-size:36px; margin-bottom:12px; }
+.pricing .subtitle { color:var(--mid); font-size:18px; margin-bottom:48px; }
+.price-card { background:var(--cream); max-width:480px; margin:0 auto; padding:48px 40px; }
+.price-card .earlybird { font-size:12px; text-transform:uppercase; letter-spacing:2px; color:var(--red); font-weight:600; margin-bottom:8px; }
+.price-card .price { font-family:'Instrument Serif', serif; font-size:56px; color:var(--dark); }
+.price-card .price-note { font-size:14px; color:var(--soft); margin-top:4px; margin-bottom:24px; }
+.price-card .details-list { text-align:left; margin:24px 0; }
+.price-card .details-list div { padding:8px 0; font-size:14px; color:var(--mid); border-bottom:1px solid var(--border); }
+.price-card .cta-main { display:inline-block; background:var(--red); color:white; padding:16px 48px; font-size:16px; font-weight:500; text-decoration:none; margin-top:24px; border:none; cursor:pointer; letter-spacing:0.5px; }
+.price-card .cta-main:hover { background:#A93226; }
+.price-card .guarantee { margin-top:20px; font-size:13px; color:var(--soft); font-style:italic; }
+
+/* FAQ */
+.faq { background:var(--cream); }
+.faq h2 { font-family:'Instrument Serif', serif; font-size:36px; margin-bottom:48px; text-align:center; }
+.faq-item { border-bottom:1px solid var(--border); }
+.faq-q { padding:20px 0; font-size:17px; font-weight:500; color:var(--dark); cursor:pointer; display:flex; justify-content:space-between; align-items:center; }
+.faq-q::after { content:'+'; font-size:24px; color:var(--soft); font-weight:300; }
+.faq-q.open::after { content:'\u2013'; }
+.faq-a { padding:0 0 24px 0; font-size:16px; color:var(--mid); line-height:1.75; display:none; }
+.faq-a.open { display:block; }
+
+/* CLOSING */
+.closing { background:var(--white); text-align:center; padding:120px 32px; }
+.closing h2 { font-family:'Instrument Serif', serif; font-size:clamp(28px,4vw,44px); max-width:700px; margin:0 auto 24px; line-height:1.3; }
+.closing p { font-size:18px; color:var(--mid); margin-bottom:8px; }
+.closing .cta-main { display:inline-block; background:var(--red); color:white; padding:16px 48px; font-size:16px; font-weight:500; text-decoration:none; margin-top:32px; }
+.closing .cta-main:hover { background:#A93226; }
+.closing .chatham-final { margin-top:32px; font-size:13px; color:var(--soft); letter-spacing:1px; }
+
+/* FOOTER */
+footer { padding:40px 32px; text-align:center; border-top:1px solid var(--border); font-size:13px; color:var(--soft); }
+
+/* RESPONSIVE */
+@media(max-width:768px) {
+  .info-grid { grid-template-columns:1fr 1fr; }
+  .ba-grid, .whatday-grid, .foryou-grid, .facilitator-grid { grid-template-columns:1fr; }
+  .outcome-grid { grid-template-columns:1fr; }
+  .included-grid { grid-template-columns:1fr; }
+  .stat-row { grid-template-columns:1fr; gap:32px; }
+  .session-card { grid-template-columns:1fr; }
+  .not-list { flex-direction:column; }
+}
+</style>
+</head>
+<body>
+
+<div class="topbar"></div>
+
+<nav>
+  <div class="inner">
+    <div class="logo" style="font-size:12px; letter-spacing:1px;">Early bird: &pound;799 &middot; Limited seats</div>
+    <a href="#apply" class="cta-nav">Apply for a Seat</a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="topline">Not another conference. Not another lecture.</div>
+  <h1>You are the most capable person in the room. <em>Except when the topic is AI.</em></h1>
+  <p class="subhead">A private working day in London for CXOs and board members who are done nodding along on AI.</p>
+  <div class="tagline">One Day. Total Clarity.</div>
+  <a href="#apply" class="cta-main">Apply for a Seat</a>
+  <div class="date-strip">May 15, 2026 &middot; London &middot; 12 people maximum</div>
+</section>
+
+<!-- ===== INFO BAR ===== -->
+<div class="info-bar">
+  <div class="info-grid">
+    <div class="info-item">
+      <div class="label">Date</div>
+      <div class="value">May 15, 2026</div>
+    </div>
+    <div class="info-item">
+      <div class="label">Location</div>
+      <div class="value">London, UK</div>
+    </div>
+    <div class="info-item">
+      <div class="label">Format</div>
+      <div class="value">Full-Day Workshop</div>
+    </div>
+    <div class="info-item">
+      <div class="label">Audience</div>
+      <div class="value">CXOs &amp; Board Members</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CHATHAM HOUSE NOTICE ===== -->
+<div class="chatham-notice">Chatham House Rules Apply</div>
+
+<!-- ===== VIDEO PLACEHOLDER ===== -->
+<section style="background:var(--white); padding:60px 32px;">
+  <div class="container" style="text-align:center;">
+    <div style="background:var(--cream); border:1px solid var(--border); padding:80px 40px; max-width:700px; margin:0 auto;">
+      <div style="font-size:48px; margin-bottom:16px;">&#9654;</div>
+      <p style="font-size:16px; color:var(--mid); font-style:italic;">Video: Why we started these CXO sessions</p>
+      <p style="font-size:14px; color:var(--soft); margin-top:8px;">Placeholder &mdash; to be filmed</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== THE REALITY ===== -->
+<section class="reality">
+  <div class="container">
+    <h2>The reality no one says out loud.</h2>
+    <p class="intro-text">AI is in every strategy deck. Your team is running experiments. Vendors are pitching AI-first solutions. Your board is asking questions that need confident answers.</p>
+    <p class="intro-text">And privately? The signal is noisy and the clarity is nowhere. That is not a personal failing. It is almost universal at senior level &mdash; which is why almost no one is saying it out loud.</p>
+
+    <div class="stat-row">
+      <div class="stat-item">
+        <div class="stat-number">74%</div>
+        <div class="stat-text">of CEOs say gaps in AI understanding are affecting their boardroom decisions</div>
+        <div class="stat-source">Cisco, 2025</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">66%</div>
+        <div class="stat-text">of board directors report limited to no knowledge or experience with AI</div>
+        <div class="stat-source">McKinsey</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">50%</div>
+        <div class="stat-text">of CEOs believe their job stability depends on getting AI right in 2026</div>
+        <div class="stat-source">BCG / WEF, 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DOES THIS SOUND LIKE YOU ===== -->
+<section class="soundlike">
+  <div class="container">
+    <h2>Does this sound like you?</h2>
+
+    <div class="thought-card">"I nod in board meetings when AI comes up and hope nobody asks me a direct question."</div>
+    <div class="thought-card">"Every vendor tells me their solution is the one. I cannot tell the difference."</div>
+    <div class="thought-card">"My team is running AI experiments I did not authorise and do not fully understand."</div>
+    <div class="thought-card">"When my CTO talks about AI, I am not sure which questions I should even be asking."</div>
+    <div class="thought-card">"I know AI matters. I just do not know what I should actually be doing about it."</div>
+    <div class="thought-card">"I have sat through three AI presentations this quarter. I left all of them more confused than when I arrived."</div>
+    <div class="thought-card">"I use AI for emails, summaries, the odd report. I know there is more to it. I just have not had the time to figure out what."</div>
+    <div class="thought-card">"I have a feeling I am leaving 95% on the table. I just do not know what that 95% looks like."</div>
+
+    <p class="bridge">If any of this sounds familiar, this day was designed for you.</p>
+  </div>
+</section>
+
+<!-- ===== BEFORE & AFTER ===== -->
+<section class="beforeafter">
+  <div class="container">
+    <h2>Before this day. After this day.</h2>
+
+    <div class="ba-grid">
+      <div class="ba-col before">
+        <h3>Where you are now</h3>
+        <div class="ba-item">I use AI for emails and summaries and think I am keeping up. I am using about 5% of what is possible.</div>
+        <div class="ba-item">I manage AI conversations by staying vague and deferring to my technical team.</div>
+        <div class="ba-item">I cannot tell the difference between genuine capability and vendor marketing.</div>
+        <div class="ba-item">Every department is running independent AI experiments with no shared framework.</div>
+        <div class="ba-item">The board is asking questions about AI that I am not confident answering.</div>
+        <div class="ba-item">I feel the pressure to lead on AI but have nowhere safe to admit what I do not know.</div>
+        <div class="ba-item">I am making decisions about AI investment based on what my peers seem to be doing, not what I understand.</div>
+      </div>
+
+      <div class="ba-col after">
+        <h3>Where you will be</h3>
+        <div class="ba-item">I have a framework to evaluate any AI decision at board level &mdash; regardless of which tools emerge next.</div>
+        <div class="ba-item">I can spot vendor nonsense within five minutes of a pitch.</div>
+        <div class="ba-item">I have alignment language to direct my technical teams without needing to be a technician.</div>
+        <div class="ba-item">I can lead any board conversation about AI with genuine confidence, not performed confidence.</div>
+        <div class="ba-item">I have a personal AI workflow I built myself and can use from the next morning.</div>
+        <div class="ba-item">I know exactly which questions to ask my CTO, my vendors, and my board &mdash; and I understand the answers.</div>
+        <div class="ba-item">I have a small, trusted group of peers I can go back to &mdash; independent, neutral, no company politics &mdash; whenever I need a sounding board.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHAT THIS DAY IS ===== -->
+<section class="whatday">
+  <div class="container">
+    <h2>What this day is.</h2>
+
+    <div class="whatday-grid">
+      <div class="whatday-item">
+        <h4>Private &amp; Exclusive</h4>
+        <p>Ten to twelve senior leaders. No audience. No observers. Just the room. Everyone is here for the same reason you are.</p>
+      </div>
+      <div class="whatday-item">
+        <h4>Hands-On, Not Theoretical</h4>
+        <p>Two working sessions. You build things. You leave with frameworks and a workflow you made yourself &mdash; not slides you may never look at again.</p>
+      </div>
+      <div class="whatday-item">
+        <h4>Facilitated, Not Lectured</h4>
+        <p>Rujuta and Chris have run these rooms before. They know how to create the conditions for real thinking. Past attendees ask when the next one is.</p>
+      </div>
+      <div class="whatday-item">
+        <h4>Chatham House Rules</h4>
+        <p>Nothing shared in this room is attributed outside it. This is what makes genuine conversation possible &mdash; and it is why people come back.</p>
+      </div>
+    </div>
+
+    <div class="not-list">
+      <div class="not-item">Not a conference</div>
+      <div class="not-item">Not a panel discussion</div>
+      <div class="not-item">Not a software demo</div>
+      <div class="not-item">Not a vendor showcase</div>
+      <div class="not-item">Not a lecture</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== THE DAY ===== -->
+<section class="sessions">
+  <div class="container">
+    <h2>The Day</h2>
+    <p class="subtitle">AI for you. AI for your company.</p>
+
+    <div class="session-card">
+      <div class="session-label">
+        01
+        <span class="time">Morning</span>
+      </div>
+      <div class="session-body">
+        <h3>Your AI Workflow</h3>
+        <div class="facilitator">With Chris &middot; Collective Intelligence</div>
+        <p>How do CXOs and board members actually change their day-to-day using AI? This session is hands-on. You will use AI as a clone, as a board of advisors, as a personal strategist. Not a demo. A working session you walk out of with a workflow that is yours.</p>
+        <ul class="session-outcomes">
+          <li>A personal AI workflow built around your specific role</li>
+          <li>Confidence to use AI tools without a team supporting you</li>
+          <li>Practical techniques you can deploy the next morning</li>
+          <li>AI on the move &mdash; real-time, mobile-first approaches</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="session-card">
+      <div class="session-label">
+        02
+        <span class="time">Afternoon</span>
+      </div>
+      <div class="session-body">
+        <h3>AI Across Your Organisation</h3>
+        <div class="facilitator">With Rujuta &middot; Solved Together</div>
+        <p>This is not "everyone should use ChatGPT." This session is about the harder question: how do you lead an organisation through genuine AI transformation? Cross-functional thinking, systems, processes. The frameworks that let a leadership team act on AI instead of reacting to it.</p>
+        <ul class="session-outcomes">
+          <li>A framework to evaluate AI decisions at board level</li>
+          <li>Language to align your leadership team on AI priorities</li>
+          <li>How to evaluate vendor claims and answer board questions with confidence</li>
+          <li>Clarity on what transformation actually looks like in practice</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OUTCOMES ===== -->
+<section class="outcomes">
+  <div class="container">
+    <h2>What you leave with.</h2>
+    <p class="subtitle">Outcomes, not handouts.</p>
+
+    <div class="outcome-grid">
+      <div class="outcome-item">
+        <div class="outcome-num">01</div>
+        <div class="outcome-text">Clarity on what AI can actually do for your business &mdash; no hype, no jargon</div>
+      </div>
+      <div class="outcome-item">
+        <div class="outcome-num">02</div>
+        <div class="outcome-text">A framework to evaluate AI decisions with confidence &mdash; one that outlasts any specific tool</div>
+      </div>
+      <div class="outcome-item">
+        <div class="outcome-num">03</div>
+        <div class="outcome-text">The confidence to lead any board conversation about AI</div>
+      </div>
+      <div class="outcome-item">
+        <div class="outcome-num">04</div>
+        <div class="outcome-text">A personal AI workflow you built yourself and can use from the following morning</div>
+      </div>
+      <div class="outcome-item">
+        <div class="outcome-num">05</div>
+        <div class="outcome-text">Alignment language you can take back to your leadership team</div>
+      </div>
+      <div class="outcome-item">
+        <div class="outcome-num">06</div>
+        <div class="outcome-text">A safe, close-knit group of peers you can go back to &mdash; independent from your company, free from politics, there when you need a sounding board</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOR YOU / NOT FOR YOU ===== -->
+<section class="foryou">
+  <div class="container">
+    <h2>Is this day for you?</h2>
+
+    <div class="foryou-grid">
+      <div class="foryou-col yes">
+        <h3>This day is for you if&hellip;</h3>
+        <div class="foryou-item">You are a non-technical CXO &mdash; CEO, CFO, CMO, CHRO, COO, CISO &mdash; who leads the business, not builds the technology</div>
+        <div class="foryou-item">You are a board member &mdash; executive or non-executive &mdash; steering a company through AI uncertainty</div>
+        <div class="foryou-item">You run a company or organisation with a team &mdash; ideally 50+ people, though this applies from small non-profits to enterprise</div>
+        <div class="foryou-item">You either do not have an AI strategy, or your company has one but you want to be able to confidently navigate it yourself</div>
+        <div class="foryou-item">You are done with just reading, listening, and talking about AI &mdash; you want to take the reins yourself</div>
+        <div class="foryou-item">You want to learn by doing, not by sitting in another audience</div>
+      </div>
+
+      <div class="foryou-col no">
+        <h3>This day is not for you if&hellip;</h3>
+        <div class="foryou-item">You are a solopreneur or consultant &mdash; we are planning a separate session for you</div>
+        <div class="foryou-item">You have a developer, engineering, or technical background and want a deep-dive into machine learning or AI architecture</div>
+        <div class="foryou-item">You prefer being talked at &mdash; panels, keynotes, slide decks</div>
+        <div class="foryou-item">You want theory without practice</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHAT'S INCLUDED ===== -->
+<section class="included">
+  <div class="container">
+    <h2>Everything included.</h2>
+
+    <div class="included-grid">
+      <div class="included-item">
+        <h4>All Materials</h4>
+        <p>Every framework, template, and resource from the day &mdash; sent to you afterwards</p>
+      </div>
+      <div class="included-item">
+        <h4>Full Catering</h4>
+        <p>Breakfast, lunch, and refreshments throughout the day</p>
+      </div>
+      <div class="included-item">
+        <h4>Peer Community</h4>
+        <p>A private group of leaders at your level &mdash; independent, neutral, no company politics. A safe sounding board long after the day ends.</p>
+      </div>
+      <div class="included-item">
+        <h4>Certificate</h4>
+        <p>Personalised Certificate of Mastery with your name</p>
+      </div>
+      <div class="included-item">
+        <h4>Follow-Up Resources</h4>
+        <p>Continued access to frameworks and tools as AI evolves</p>
+      </div>
+      <div class="included-item">
+        <h4>Satisfaction Guarantee</h4>
+        <p>100% money-back guarantee. If you are not satisfied, full refund. No questions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="testimonials">
+  <div class="container">
+    <h2>From past workshops.</h2>
+
+    <div class="testimonial-card">
+      <blockquote>"I have been in leadership for twenty years and I have never sat in a room where I felt that safe to say I genuinely did not know something. That alone was worth the day."</blockquote>
+      <div class="attribution">Chief Executive &mdash; Professional Services</div>
+    </div>
+
+    <div class="testimonial-card">
+      <blockquote>"Rujuta has a rare ability to translate complexity into something actionable. I left with a framework I actually used in a board meeting the following week."</blockquote>
+      <div class="attribution">Non-Executive Director &mdash; FTSE 250</div>
+    </div>
+
+    <div class="testimonial-card">
+      <blockquote>"I expected theory. I got a working session that changed how I approach every conversation about AI in my business."</blockquote>
+      <div class="attribution">Founder &amp; CEO &mdash; Scale-up</div>
+    </div>
+
+    <div style="padding:32px; background:var(--cream); text-align:center; margin-top:32px; font-size:14px; color:var(--soft); font-style:italic;">
+      Additional testimonials and LinkedIn screenshots to be added here.
+    </div>
+  </div>
+</section>
+
+<!-- ===== WORKSHOP PHOTOS ===== -->
+<section style="background:var(--cream); padding:60px 32px;">
+  <div class="container" style="text-align:center;">
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px;">
+      <div style="background:var(--border); padding:60px 20px; font-size:13px; color:var(--soft);">Workshop photo 1</div>
+      <div style="background:var(--border); padding:60px 20px; font-size:13px; color:var(--soft);">Workshop photo 2</div>
+      <div style="background:var(--border); padding:60px 20px; font-size:13px; color:var(--soft);">Venue photo</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FACILITATORS ===== -->
+<section class="facilitators">
+  <div class="container">
+    <h2>Your facilitators.</h2>
+
+    <div class="facilitator-grid">
+      <div class="facilitator-card">
+        <div class="photo-placeholder">C</div>
+        <h4>Chris</h4>
+        <div class="org">Collective Intelligence</div>
+        <p>Expert in individual productivity and AI-human synthesis for senior leadership. Chris works directly with board members and CXOs to integrate AI into their personal decision-making workflows. He makes the complex feel instinctive.</p>
+        <div class="session-tag">Morning &middot; AI for You</div>
+      </div>
+      <div class="facilitator-card">
+        <div class="photo-placeholder">R</div>
+        <h4>Rujuta Singh</h4>
+        <div class="org">Solved Together</div>
+        <p>22 years in enterprise transformation. Specialist in high-trust executive workshops and organisational change. Rujuta bridges the gap between AI potential and operational reality &mdash; and has a rare ability to make leaders feel safe enough to say what they really think.</p>
+        <div class="session-tag">Afternoon &middot; AI for Your Company</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRICING ===== -->
+<section class="pricing" id="apply">
+  <div class="container">
+    <h2>Secure your place.</h2>
+    <p class="subtitle">Seats are allocated by application. We keep the room small deliberately.</p>
+
+    <div class="price-card" style="display:flex; gap:0; max-width:640px; padding:0;">
+      <div style="flex:1; padding:40px 32px; background:var(--white); border:2px solid var(--red);">
+        <div class="earlybird">Early Bird</div>
+        <div class="price">&pound;799</div>
+        <div class="price-note">+ VAT</div>
+        <p style="font-size:14px; color:var(--mid); margin:16px 0 24px;">Until early bird deadline</p>
+        <a href="#" class="cta-main" style="width:100%; text-align:center;">Apply for a Seat</a>
+      </div>
+      <div style="flex:1; padding:40px 32px; background:var(--cream);">
+        <div style="font-size:12px; text-transform:uppercase; letter-spacing:2px; color:var(--soft); font-weight:600; margin-bottom:8px;">Standard</div>
+        <div class="price" style="color:var(--soft);">&pound;999</div>
+        <div class="price-note">+ VAT</div>
+        <p style="font-size:14px; color:var(--soft); margin:16px 0 24px;">After early bird expires</p>
+        <a href="#" class="cta-main" style="width:100%; text-align:center; background:var(--mid);">Apply for a Seat</a>
+      </div>
+    </div>
+    <p class="guarantee" style="margin-top:24px; font-size:13px; color:var(--soft); font-style:italic;">100% satisfaction guarantee. Full refund if you are not satisfied.</p>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq">
+  <div class="container">
+    <h2>Frequently asked questions.</h2>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">Are there early bird discounts?</div>
+      <div class="faq-a">Yes. Register before the early bird deadline for the reduced rate. After that, the standard price applies.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">Will there be recordings?</div>
+      <div class="faq-a">No. This is an in-person session with no recordings. All materials taught during the day are sent to participants afterwards. Chatham House Rules mean the conversations in this room stay in this room.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">Why is the group limited to 12?</div>
+      <div class="faq-a">Deliberately. We want a safe space where senior leaders can say "I do not know," ask real questions, and express concerns without judgement. A small group makes that possible. It also means every participant gets hands-on attention and genuine peer connection.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">Why is this in person?</div>
+      <div class="faq-a">We have seen a significant difference in impact and depth between virtual and in-person sessions, especially at leadership level. Much of the learning happens through the people in the room &mdash; not just the facilitators. The connections formed in person are often more valuable than the content itself. Speed of learning, retention, quality of conversation &mdash; everything is better face to face.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">What if I cannot attend the full day?</div>
+      <div class="faq-a">The day is designed to flow from one session to the next. We strongly encourage full-day attendance. Arriving late or leaving early means missing context that builds throughout the day.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">Are virtual sessions planned?</div>
+      <div class="faq-a">Not for the public programme. We do run private CXO AI days tailored to individual companies and PE houses for their portfolio companies, and we travel to different locations for those. This public session is specifically designed as an in-person experience in London.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">Do I need technical knowledge?</div>
+      <div class="faq-a">No. This is specifically designed for non-technical leaders &mdash; CEOs, CFOs, CHROs, CMOs, COOs, board members. You do not need to code or understand machine learning. Just bring curiosity and willingness to learn by doing.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">What if I am not satisfied?</div>
+      <div class="faq-a">100% satisfaction guarantee. Full refund if you are not satisfied. No questions asked.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">Is this for CXOs only, or board members too?</div>
+      <div class="faq-a">Both. C-suite executives and board members (executive and non-executive) of mid-sized companies, family businesses, enterprise organisations, and non-profits. Anyone in a leadership role with a team who wants to understand AI's impact on their business. We are planning a separate session for solopreneurs and consultants.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CLOSING ===== -->
+<section class="closing">
+  <h2>You do not have to figure this out alone.</h2>
+  <p style="max-width:600px; margin:0 auto;">There is a room where the question "what do I actually do about AI?" is not only allowed &mdash; it is the point.</p>
+  <a href="#apply" class="cta-main">Apply for a Seat</a>
+</section>
+
+<footer>
+  &copy; 2026 Solved Together &amp; Collective Intelligence &middot; contact@solvedtogether.co.uk
+</footer>
+
+</body>
+</html>
