@@ -421,7 +421,7 @@ export default function Variant7() {
               {
                 initial: "R",
                 image: "/rujuta.jpg",
-                imageClass: "object-[center_15%]", // Move it slightly lower to show more of top
+                imageClass: "object-top",
                 name: "Rujuta Singh",
                 org: "Solved Together",
                 desc: "22 years in enterprise transformation. Specialist in high-trust executive workshops and organisational change. Rujuta bridges the gap between AI potential and operational reality — and has a rare ability to make leaders feel safe enough to say what they really think.",
