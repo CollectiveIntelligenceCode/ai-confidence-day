@@ -341,7 +341,6 @@ export default function ConsultantVariant7() {
               <h3 className="text-sm uppercase tracking-[2px] font-semibold mb-6 pb-3 border-b-2 border-brand-border text-brand-text/50">This day is not for you if&hellip;</h3>
               <div className="space-y-0 text-brand-text/80 text-base leading-relaxed">
                 {[
-                  "You are a solopreneur or independent consultant — we are planning a separate session for you",
                   "You have a developer, engineering, or technical background and want a deep-dive into machine learning or AI architecture",
                   "You prefer being talked at — panels, keynotes, slide decks",
                   "You want theory without practice",
@@ -492,7 +491,7 @@ export default function ConsultantVariant7() {
               { q: "Are virtual sessions planned?", a: "Not for the public programme. We do run private AI days tailored to individual firms and PE houses for their portfolio companies, and we travel to different locations for those. This public session is specifically designed as an in-person experience in London." },
               { q: "Do I need technical knowledge?", a: "No. This is specifically designed for non-technical leaders — Partners, Managing Directors, practice leads, and principals. You do not need to code or understand machine learning. Just bring curiosity and willingness to learn by doing." },
               { q: "What if I am not satisfied?", a: "100% satisfaction guarantee. Full refund if you are not satisfied. No questions asked." },
-              { q: "Is this for Partners only, or practice leads too?", a: "Both. This day is for Partners, Managing Directors, and practice leads at consulting, advisory, and professional services firms — strategy, management, financial, transformation, or specialist advisory. If you advise clients on organisational decisions and want to do so with genuine AI confidence, this is for you. We are planning a separate session for solopreneurs and independent consultants." },
+              { q: "Is this for Partners only, or practice leads too?", a: "Both. This day is for Partners, Managing Directors, practice leads, and independent consultants in consulting, advisory, and professional services — strategy, management, financial, transformation, or specialist advisory. If you advise clients on organisational decisions and want to do so with genuine AI confidence, this is for you." },
             ].map((faq, idx) => (
               <div key={idx} className="border-b border-brand-border">
                 <button
