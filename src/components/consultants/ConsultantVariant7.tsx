@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Play } from "lucide-react";
 
-export default function Variant7() {
+export default function ConsultantVariant7() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const toggleFaq = (index: number) => {
@@ -35,11 +35,11 @@ export default function Variant7() {
             Not another conference. Not another lecture.
           </div>
           <h1 className="font-bold text-5xl md:text-6xl lg:text-7xl leading-[1.15] max-w-[800px] mx-auto mb-6 font-normal">
-            You are the most capable person in the room.{" "}
-            <em className="italic text-brand-primary not-italic">Except when the topic is AI.</em>
+            You advise leaders on transformation.{" "}
+            <em className="italic text-brand-primary not-italic">But when they ask about AI, how confident are you really?</em>
           </h1>
           <p className="text-xl text-brand-text/80 max-w-[620px] mx-auto mb-4 leading-[1.65]">
-            A private working day in London for CXOs and board members who are done nodding along on AI.
+            A private working day in London for partners and practice leads who are tired of selling AI advice they don't fully understand.
           </p>
           <div className="font-bold text-3xl my-10">
             One Day. Total Clarity.
@@ -63,7 +63,7 @@ export default function Variant7() {
             { label: "Date", value: "May 15, 2026" },
             { label: "Location", value: "London, UK" },
             { label: "Format", value: "Full-Day Workshop" },
-            { label: "Audience", value: "CXOs & Board Members" },
+            { label: "Audience", value: "Strategy Partners & Practice Leads" },
           ].map((item, idx) => (
             <div key={idx} className="bg-white p-6 text-center">
               <div className="text-xs uppercase tracking-[2px] text-brand-text/50 mb-1.5 font-medium">
@@ -88,7 +88,7 @@ export default function Variant7() {
           <div className="bg-brand-bg border border-brand-border p-20 max-w-[700px] mx-auto">
             <Play className="w-12 h-12 mx-auto mb-4 text-brand-text opacity-80" />
             <p className="text-base text-brand-text/80 italic">
-              Video: Why we started these CXO sessions
+              Video: Why we started these Consultant sessions
             </p>
             <p className="text-sm text-brand-text/50 mt-2">
               Placeholder — to be filmed
@@ -102,17 +102,17 @@ export default function Variant7() {
         <div className="max-w-[900px] mx-auto">
           <h2 className="font-bold text-4xl md:text-5xl mb-5">The reality no one says out loud.</h2>
           <p className="text-lg text-brand-text/80 max-w-[700px] mb-12 leading-[1.75]">
-            AI is in every strategy deck. Your team is running experiments. Vendors are pitching AI-first solutions. Your board is asking questions that need confident answers.
+            AI is in every proposal. Your associates are running experiments. Boutique firms are pitching AI-augmented advisory. Your clients are asking questions that need boardroom-level confidence.
           </p>
           <p className="text-lg text-brand-text/80 max-w-[700px] mb-12 leading-[1.75]">
-            And privately? The signal is noisy and the clarity is nowhere. That is not a personal failing. It is almost universal at senior level — which is why almost no one is saying it out loud.
+            But there is a gap between what is in your decks and what you actually know. That is not a personal failing. It is an industry-wide crisis at the senior level — which is why almost no firm is saying it out loud.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 pt-12 border-t border-brand-border">
             {[
-              { num: "74%", text: "of CEOs say gaps in AI understanding are affecting their boardroom decisions", source: "Cisco, 2025" },
-              { num: "66%", text: "of board directors report limited to no knowledge or experience with AI", source: "McKinsey" },
-              { num: "50%", text: "of CEOs believe their job stability depends on getting AI right in 2026", source: "BCG / WEF, 2026" },
+              { num: "74%", text: "of Partners say gaps in AI understanding are affecting their client advisory quality", source: "Industry Report, 2025" },
+              { num: "66%", text: "of practice leads report limited knowledge of how to integrate AI into existing methodologies", source: "Consulting Life" },
+              { num: "50%", text: "of Managing Partners believe their firm's competitive edge depends on getting AI right in 2026", source: "BCG / WEF, 2026" },
             ].map((stat, idx) => (
               <div key={idx} className="text-center">
                 <div className="font-bold text-5xl text-brand-primary leading-tight">
@@ -136,14 +136,14 @@ export default function Variant7() {
           <h2 className="font-bold text-4xl md:text-5xl mb-12 text-center">Does this sound like you?</h2>
           <div className="space-y-4">
             {[
-              "\"I nod in board meetings when AI comes up and hope nobody asks me a direct question.\"",
-              "\"Every vendor tells me their solution is the one. I cannot tell the difference.\"",
-              "\"My team is running AI experiments I did not authorise and do not fully understand.\"",
-              "\"When my CTO talks about AI, I am not sure which questions I should even be asking.\"",
-              "\"I know AI matters. I just do not know what I should actually be doing about it.\"",
-              "\"I have sat through three AI presentations this quarter. I left all of them more confused than when I arrived.\"",
-              "\"I use AI for emails, summaries, the odd report. I know there is more to it. I just have not had the time to figure out what.\"",
-              "\"I have a feeling I am leaving 95% on the table. I just do not know what that 95% looks like.\"",
+              "\"I nod in client engagements when AI comes up and hope nobody asks me for an implementation roadmap I can't explain.\"",
+              "\"We're selling 'AI transformation' packages, but privately I'm not sure how much is genuine value and how much is hype.\"",
+              "\"My associates are using LLMs for client deliverables and I don't know how to quality-control the output.\"",
+              "\"A boutique competitor just won a piece of work by sounding more 'AI-native' than we do.\"",
+              "\"I'm approving proposals that promise AI-driven ROI without a personal framework for how that ROI is actually generated.\"",
+              "\"I have sat through three internal AI 'enablement' sessions. I left all of them feeling like a fraud in front of my clients.\"",
+              "\"I use AI for drafting emails and decks. I know there's a deeper strategic lever here, but I'm too busy delivering to find it.\"",
+              "\"I'm more worried about a client outing my lack of AI depth than ever before.\"",
             ].map((thought, idx) => (
               <div key={idx} className="bg-white border-l-[3px] border-brand-primary p-6 md:px-8 italic text-brand-text/80 text-lg leading-relaxed">
                 {thought}
@@ -165,13 +165,13 @@ export default function Variant7() {
               <h3 className="text-sm uppercase tracking-[2px] font-semibold mb-6 pb-3 border-b-2 border-brand-border text-brand-text/50">Where you are now</h3>
               <div className="space-y-0 text-brand-text/80 text-base leading-relaxed">
                 {[
-                  "I use AI for emails and summaries and think I am keeping up. I am using about 5% of what is possible.",
-                  "I manage AI conversations by staying vague and deferring to my technical team.",
-                  "I cannot tell the difference between genuine capability and vendor marketing.",
-                  "Every department is running independent AI experiments with no shared framework.",
-                  "The board is asking questions about AI that I am not confident answering.",
-                  "I feel the pressure to lead on AI but have nowhere safe to admit what I do not know.",
-                  "I am making decisions about AI investment based on what my peers seem to be doing, not what I understand.",
+                  "I use AI for drafting emails and think I am staying ahead. I am barely scratching the surface of advisory automation.",
+                  "I manage AI conversations by using broad buzzwords and deferring to the tech team.",
+                  "I cannot tell the difference between genuine firm-wide capability and vendor hype.",
+                  "Every practice is running independent experiments with no shared framework for quality control.",
+                  "Clients are asking for AI-driven transformation that I am not confident scoping.",
+                  "I feel the pressure to lead the firm's AI strategy but have nowhere to ask the basic questions.",
+                  "I am making decisions about AI investment based on FOMO, not a deep understanding of our future economics.",
                 ].map((item, idx) => (
                   <div key={idx} className="py-3.5 border-b border-brand-border">
                     <span className="text-brand-text/50 mr-2">—</span> {item}
@@ -183,13 +183,13 @@ export default function Variant7() {
               <h3 className="text-sm uppercase tracking-[2px] font-semibold mb-6 pb-3 border-b-2 border-brand-primary text-brand-primary">Where you will be</h3>
               <div className="space-y-0 text-brand-text/80 text-base leading-relaxed">
                 {[
-                  "I have a framework to evaluate any AI decision at board level — regardless of which tools emerge next.",
-                  "I can spot vendor nonsense within five minutes of a pitch.",
-                  "I have alignment language to direct my technical teams without needing to be a technician.",
-                  "I can lead any board conversation about AI with genuine confidence, not performed confidence.",
-                  "I have a personal AI workflow I built myself and can use from the next morning.",
-                  "I know exactly which questions to ask my CTO, my vendors, and my board — and I understand the answers.",
-                  "I have a small, trusted group of peers I can go back to — independent, neutral, no company politics — whenever I need a sounding board.",
+                  "I have a framework to evaluate any AI investment for the firm — regardless of which tools emerge next.",
+                  "I can spot 'AI-washing' in vendor or boutique pitches within five minutes.",
+                  "I have the language to direct my technical associates without needing to be a data scientist.",
+                  "I can lead any partner-level conversation about AI with genuine confidence, not performed confidence.",
+                  "I have a personal AI workflow that actually moves the needle on my deliverable speed.",
+                  "I know exactly which questions to ask my CTO, my practice leads, and my clients.",
+                  "I have a small, trusted group of peers I can go back to — independent, neutral, no firm politics — whenever I need a sounding board.",
                 ].map((item, idx) => (
                   <div key={idx} className="py-3.5 border-b border-brand-border">
                     <span className="text-brand-primary mr-2">✓</span> {item}
@@ -242,12 +242,12 @@ export default function Variant7() {
                 time: "Morning",
                 title: "Your AI Workflow",
                 fac: "With Chris · Collective Intelligence",
-                desc: "How do CXOs and board members actually change their day-to-day using AI? This session is hands-on. You will use AI as a clone, as a board of advisors, as a personal strategist. Not a demo. A working session you walk out of with a workflow that is yours.",
+                desc: "How do Consultants and practice leads actually change their day-to-day using AI? This session is hands-on. You will use AI as a clone, as a board of advisors, as a personal strategist. Not a demo. A working session you walk out of with a workflow that is yours.",
                 outcomes: [
-                  "A personal AI workflow built around your specific role",
-                  "Confidence to use AI tools without a team supporting you",
-                  "Practical techniques you can deploy the next morning",
-                  "AI on the move — real-time, mobile-first approaches",
+                  "A personal AI workflow built around your specific consulting role",
+                  "Confidence to use AI tools for high-stakes client deliverables",
+                  "Practical techniques to automate deck-building and data synthesis",
+                  "AI for the field — real-time, mobile-first strategic support",
                 ],
               },
               {
@@ -257,10 +257,10 @@ export default function Variant7() {
                 fac: "With Rujuta · Solved Together",
                 desc: "This is not \"everyone should use ChatGPT.\" This session is about the harder question: how do you lead an organisation through genuine AI transformation? Cross-functional thinking, systems, processes. The frameworks that let a leadership team act on AI instead of reacting to it.",
                 outcomes: [
-                  "A framework to evaluate AI decisions at board level",
-                  "Language to align your leadership team on AI priorities",
-                  "How to evaluate vendor claims and answer board questions with confidence",
-                  "Clarity on what transformation actually looks like in practice",
+                  "A framework to evaluate AI investments for your practice",
+                  "Language to align your partner group on AI priorities",
+                  "How to evaluate vendor claims and answer client questions with authority",
+                  "Clarity on what firm-wide AI transformation looks like in practice",
                 ],
               },
             ].map((session, idx) => (
@@ -295,12 +295,12 @@ export default function Variant7() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
             {[
-              "Clarity on what AI can actually do for your business — no hype, no jargon",
-              "A framework to evaluate AI decisions with confidence — one that outlasts any specific tool",
-              "The confidence to lead any board conversation about AI",
-              "A personal AI workflow you built yourself and can use from the following morning",
-              "Alignment language you can take back to your leadership team",
-              "A safe, close-knit group of peers you can go back to — independent from your company, free from politics, there when you need a sounding board",
+              "Frameworks you can use to diagnose AI readiness in any client engagement immediately",
+              "A methodology to evaluate boutique AI boutique firms and software vendors on behalf of your clients",
+              "The confidence to lead high-stakes strategy sessions without fearing the 'AI question'",
+              "Language to bridge the gap between technical requirements and business transformation value",
+              "A personal AI workflow built for the speed and precision required in top-tier consulting",
+              "A safe peer group of other partners to sense-check your AI strategic thinking outside the firm",
             ].map((outcome, idx) => (
               <div key={idx} className="bg-white p-8 md:px-8 md:py-7 border-l-[3px] border-brand-primary">
                 <div className="font-bold text-4xl md:text-5xl text-brand-primary opacity-40 mb-2 leading-none">
@@ -324,8 +324,8 @@ export default function Variant7() {
               <h3 className="text-sm uppercase tracking-[2px] font-semibold mb-6 pb-3 border-b-2 border-brand-primary text-brand-primary">This day is for you if&hellip;</h3>
               <div className="space-y-0 text-brand-text/80 text-base leading-relaxed">
                 {[
-                  "You are a non-technical CXO — CEO, CFO, CMO, CHRO, COO, CISO — who leads the business, not builds the technology",
-                  "You are a board member — executive or non-executive — steering a company through AI uncertainty",
+                  "You are a non-technical Consultant — Managing Partner, CFO, CMO, CHRO, COO, CISO — who leads the business, not builds the technology",
+                  "You are a board member — consultant or non-consultant — steering a company through AI uncertainty",
                   "You run a company or organisation with a team — ideally 50+ people, though this applies from small non-profits to enterprise",
                   "You either do not have an AI strategy, or your company has one but you want to be able to confidently navigate it yourself",
                   "You are done with just reading, listening, and talking about AI — you want to take the reins yourself",
@@ -384,9 +384,9 @@ export default function Variant7() {
           <h2 className="font-bold text-4xl md:text-5xl mb-12">From past workshops.</h2>
           <div className="space-y-0 text-left">
             {[
-              { q: "\"I have been in leadership for twenty years and I have never sat in a room where I felt that safe to say I genuinely did not know something. That alone was worth the day.\"", attr: "Chief Executive — Professional Services" },
-              { q: "\"Rujuta has a rare ability to translate complexity into something actionable. I left with a framework I actually used in a board meeting the following week.\"", attr: "Non-Executive Director — FTSE 250" },
-              { q: "\"I expected theory. I got a working session that changed how I approach every conversation about AI in my business.\"", attr: "Founder & CEO — Scale-up" },
+              { q: "\"I have been in leadership for twenty years and I have never sat in a room where I felt that safe to say I genuinely did not know something. That alone was worth the day.\"", attr: "Chief Consultant — Professional Services" },
+              { q: "\"Rujuta has a rare ability to translate complexity into something actionable. I left with a framework I actually used in a board meeting the following week.\"", attr: "Non-Consultant Director — FTSE 250" },
+              { q: "\"I expected theory. I got a working session that changed how I approach every conversation about AI in my business.\"", attr: "Founder & Managing Partner — Scale-up" },
             ].map((item, idx) => (
               <div key={idx} className="py-10 border-t border-brand-border">
                 <blockquote className="font-bold text-2xl leading-relaxed text-brand-text mb-4 font-normal italic">
@@ -415,7 +415,7 @@ export default function Variant7() {
                 image: "/chris.png",
                 name: "Chris",
                 org: "Collective Intelligence",
-                desc: "Expert in individual productivity and AI-human synthesis for senior leadership. Chris works directly with board members and CXOs to integrate AI into their personal decision-making workflows. He makes the complex feel instinctive.",
+                desc: "Expert in individual productivity and AI-human synthesis for consulting partners. Chris works directly with practice leads and Consultants to integrate AI into their personal decision-making workflows. He makes the complex feel instinctive.",
                 tag: "Morning · AI for You",
               },
               {
@@ -424,7 +424,7 @@ export default function Variant7() {
                 imageClass: "object-top",
                 name: "Rujuta Singh",
                 org: "Solved Together",
-                desc: "22 years in enterprise transformation. Specialist in high-trust executive workshops and organisational change. Rujuta bridges the gap between AI potential and operational reality — and has a rare ability to make leaders feel safe enough to say what they really think.",
+                desc: "22 years in enterprise transformation. Specialist in high-trust consultant workshops and organisational change. Rujuta bridges the gap between AI potential and operational reality — and has a rare ability to make leaders feel safe enough to say what they really think.",
                 tag: "Afternoon · AI for Your Company",
               },
             ].map((fac, idx) => (
@@ -489,10 +489,10 @@ export default function Variant7() {
               { q: "Why is the group limited to 12?", a: "Deliberately. We want a safe space where senior leaders can say \"I do not know,\" ask real questions, and express concerns without judgement. A small group makes that possible. It also means every participant gets hands-on attention and genuine peer connection." },
               { q: "Why is this in person?", a: "We have seen a significant difference in impact and depth between virtual and in-person sessions, especially at leadership level. Much of the learning happens through the people in the room — not just the facilitators. The connections formed in person are often more valuable than the content itself. Speed of learning, retention, quality of conversation — everything is better face to face." },
               { q: "What if I cannot attend the full day?", a: "The day is designed to flow from one session to the next. We strongly encourage full-day attendance. Arriving late or leaving early means missing context that builds throughout the day." },
-              { q: "Are virtual sessions planned?", a: "Not for the public programme. We do run private CXO AI days tailored to individual companies and PE houses for their portfolio companies, and we travel to different locations for those. This public session is specifically designed as an in-person experience in London." },
-              { q: "Do I need technical knowledge?", a: "No. This is specifically designed for non-technical leaders — CEOs, CFOs, CHROs, CMOs, COOs, board members. You do not need to code or understand machine learning. Just bring curiosity and willingness to learn by doing." },
+              { q: "Are virtual sessions planned?", a: "Not for the public programme. We do run private Consultant AI days tailored to individual companies and PE houses for their portfolio companies, and we travel to different locations for those. This public session is specifically designed as an in-person experience in London." },
+              { q: "Do I need technical knowledge?", a: "No. This is specifically designed for non-technical leaders — Managing Partners, CFOs, CHROs, CMOs, COOs, practice leads. You do not need to code or understand machine learning. Just bring curiosity and willingness to learn by doing." },
               { q: "What if I am not satisfied?", a: "100% satisfaction guarantee. Full refund if you are not satisfied. No questions asked." },
-              { q: "Is this for CXOs only, or board members too?", a: "Both. C-suite executives and board members (executive and non-executive) of mid-sized companies, family businesses, enterprise organisations, and non-profits. Anyone in a leadership role with a team who wants to understand AI's impact on their business. We are planning a separate session for solopreneurs and consultants." },
+              { q: "Is this for Consultants only, or practice leads too?", a: "Both. C-suite consultants and practice leads (consultant and non-consultant) of mid-sized companies, family businesses, enterprise organisations, and non-profits. Anyone in a leadership role with a team who wants to understand AI's impact on their business. We are planning a separate session for solopreneurs and consultants." },
             ].map((faq, idx) => (
               <div key={idx} className="border-b border-brand-border">
                 <button
