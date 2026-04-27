@@ -59,7 +59,7 @@ export default function ConsultantVariant5() {
                   { label: "Date", value: "May 15, 2026" },
                   { label: "Location", value: "London, UK" },
                   { label: "Format", value: "Full-Day Workshop" },
-                  { label: "Audience", value: "Consultants & Practice Leaders" }
+                  { label: "Audience", value: "Partners & Practice Leaders" }
                 ].map((item, i) => (
                   <div key={i} className="border-l-2 border-white/10 pl-4">
                     <span className="block text-xs uppercase tracking-widest text-gray-500 mb-1">{item.label}</span>

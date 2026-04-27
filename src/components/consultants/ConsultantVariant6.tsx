@@ -62,7 +62,7 @@ export default function ConsultantVariant6() {
                   { label: "Venue", value: "London, UK", placeholder: true },
                   { label: "Format", value: "Full-Day Workshop" },
                   { label: "Investment", value: "£799 + VAT" },
-                  { label: "For", value: "Consultants & Practice Leaders" }
+                  { label: "For", value: "Partners & Practice Leaders" }
                 ].map((item, i) => (
                   <div key={i} className="p-4 border-r border-black/10 last:border-r-0 flex flex-col gap-1">
                     <span className="font-roboto text-[10px] font-bold uppercase tracking-widest text-gray-400">{item.label}</span>
