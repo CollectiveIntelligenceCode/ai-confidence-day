@@ -121,7 +121,7 @@ export default function ConsultantVariant5() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-3 border border-black/15">
             {[
-              { num: "75%", label: "of enterprises will operationalize AI by 2025", source: "Gartner" },
+              { num: "88%", label: "of organisations now report regular AI use — your clients expect you to lead it", source: "McKinsey, 2025" },
               { num: "50%", label: "higher ROI from strategic AI adoption", source: "McKinsey" },
               { num: "15%", label: "profit margin boost for AI-integrated businesses", source: "Deloitte" }
             ].map((item, i) => (
@@ -216,7 +216,7 @@ export default function ConsultantVariant5() {
           <div className="grid md:grid-cols-2 gap-px bg-white/10">
             {[
               { name: "Rujuta", role: "Founder, Solved Together", bio: "Specialist in high-trust consultant sessions and organizational transformation. She bridges the gap between AI potential and operational reality.", session: "Morning: AI for You" },
-              { name: "Chris Bradshaw", role: "Consultant Partner", bio: "Expert in individual productivity and AI-human synthesis. Chris works directly with Managing Partners to integrate AI into their personal decision-making workflows.", session: "Afternoon: AI for Your Company" }
+              { name: "Chris Bradshaw", role: "Partner, Collective Intelligence", bio: "Expert in individual productivity and AI-human synthesis. Chris works directly with Managing Partners to integrate AI into their personal decision-making workflows.", session: "Afternoon: AI for Your Company" }
             ].map((item, i) => (
               <div key={i} className="bg-[#0C0C0C] p-12 flex gap-8 hover:bg-white/5 transition-colors group">
                 <div className="w-20 h-20 bg-white/5 border border-white/10 flex items-center justify-center font-roboto text-3xl font-bold text-brand-primary shrink-0">
@@ -304,7 +304,7 @@ export default function ConsultantVariant5() {
         <div className="max-w-3xl mx-auto relative z-10">
           <div className="font-roboto font-bold text-sm uppercase tracking-widest text-brand-primary mb-8">One Day. Total Clarity.</div>
           <h2 className="font-roboto font-bold text-6xl md:text-8xl text-white leading-tight mb-10 tracking-tighter">
-            Your leadership team<br />deserves alignment.
+            Your clients deserve an advisor<br />who leads this.
           </h2>
           <CTAButton className="px-16 py-6 text-xl">Apply for a Seat →</CTAButton>
           

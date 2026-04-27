@@ -37,7 +37,7 @@ export default function ConsultantVariant2() {
         
         {/* Early Bird Badge */}
         <div className="absolute top-10 right-10 rotate-12 bg-brand-primary text-white px-4 py-2 font-bold text-xs uppercase tracking-widest hidden lg:block rounded-md shadow-lg">
-          Early Bird: $799 (Ends April 20)
+          Early Bird: £799 · Limited Seats
         </div>
       </section>
 
@@ -127,8 +127,8 @@ export default function ConsultantVariant2() {
           <h2 className="text-5xl font-bold mb-10 uppercase tracking-tighter text-brand-text">Limited to 12 Seats.</h2>
           <div className="bg-brand-surface p-10 border border-brand-border mb-12 rounded-2xl">
             <div className="text-brand-primary text-sm font-bold uppercase tracking-[0.4em] mb-4">Investment</div>
-            <div className="text-6xl font-bold mb-2 text-brand-text">$799</div>
-            <div className="text-gray-500 text-sm">Early bird price available until April 20th</div>
+            <div className="text-6xl font-bold mb-2 text-brand-text">£799</div>
+            <div className="text-gray-500 text-sm">Early bird pricing · limited seats remaining</div>
           </div>
           <CTAButton className="w-full sm:w-auto px-16 py-6 text-xl">Apply for your seat</CTAButton>
         </div>

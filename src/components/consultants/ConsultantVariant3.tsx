@@ -54,11 +54,11 @@ export default function ConsultantVariant3() {
             <ShieldAlert className="w-12 h-12 text-brand-primary/50" />
           </div>
           <p className="text-3xl md:text-4xl text-center leading-relaxed font-light italic text-gray-700">
-            "You advise leaders on transformation. But when they ask about AI, how confident are you really? You're selling AI advice in every engagement now—the billable risk of being outing as a novice is your quietest, sharpest pain."
+            "You advise leaders on transformation. But when they ask about AI, how confident are you really? You're selling AI advice in every engagement now — the billable risk of being outed as a novice is your quietest, sharpest pain."
           </p>
           <div className="mt-12 text-center">
             <div className="h-px w-24 bg-brand-primary mx-auto mb-8" />
-            <p className="text-xl text-brand-primary font-bold uppercase tracking-widest">This is your playground.</p>
+            <p className="text-xl text-brand-primary font-bold uppercase tracking-widest">This is your room.</p>
           </div>
         </div>
       </section>
@@ -118,7 +118,7 @@ export default function ConsultantVariant3() {
               </div>
               <div>
                 <div className="text-brand-primary text-xs font-bold uppercase tracking-widest mb-2">Investment</div>
-                <p className="text-xl text-brand-text">$799 per person</p>
+                <p className="text-xl text-brand-text">£799 per person</p>
                 <p className="text-sm text-gray-500 mt-1">Includes all materials & catering</p>
               </div>
               <div>

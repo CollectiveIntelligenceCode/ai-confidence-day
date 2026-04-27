@@ -168,8 +168,8 @@ export default function ConsultantVariant4() {
           </h2>
           <div className="bg-white/5 border border-white/10 p-12 rounded-3xl mb-12">
             <div className="text-brand-primary text-sm font-bold uppercase tracking-[0.4em] mb-6">Investment</div>
-            <div className="text-7xl md:text-8xl font-bold font-roboto mb-4">$799</div>
-            <p className="text-gray-400 text-lg mb-8">Early bird price available until April 20th</p>
+            <div className="text-7xl md:text-8xl font-bold font-roboto mb-4">£799</div>
+            <p className="text-gray-400 text-lg mb-8">Early bird pricing · limited seats remaining</p>
             <div className="h-px w-full bg-white/10 mb-8" />
             <p className="text-sm uppercase tracking-widest text-gray-500 font-bold">Includes Private London Venue • Full Catering • All Materials</p>
           </div>

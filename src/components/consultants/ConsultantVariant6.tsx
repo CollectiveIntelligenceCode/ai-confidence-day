@@ -121,7 +121,7 @@ export default function ConsultantVariant6() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-3 border border-black/12">
             {[
-              { num: "75%", label: "of enterprises will operationalize AI by 2025", source: "Gartner" },
+              { num: "88%", label: "of organisations now report regular AI use — your clients expect you to lead it", source: "McKinsey, 2025" },
               { num: "50%", label: "higher ROI from strategic AI adoption", source: "McKinsey" },
               { num: "15%", label: "profit margin boost for AI-integrated businesses", source: "Deloitte" }
             ].map((item, i) => (
@@ -230,7 +230,7 @@ export default function ConsultantVariant6() {
           <div className="grid md:grid-cols-2 gap-0.5">
             {[
               { name: "Rujuta", role: "Founder, Solved Together", bio: "Specialist in high-trust consultant sessions and organizational transformation. She bridges the gap between AI potential and operational reality.", session: "Morning: AI for You" },
-              { name: "Chris Bradshaw", role: "Consultant Partner", bio: "Expert in individual productivity and AI-human synthesis. Chris works directly with Managing Partners to integrate AI into their personal decision-making workflows.", session: "Afternoon: AI for Your Company" }
+              { name: "Chris Bradshaw", role: "Partner, Collective Intelligence", bio: "Expert in individual productivity and AI-human synthesis. Chris works directly with Managing Partners to integrate AI into their personal decision-making workflows.", session: "Afternoon: AI for Your Company" }
             ].map((item, i) => (
               <div key={i} className="bg-[#eeeeee] p-12 flex gap-8 hover:bg-[#1f1f1f] hover:text-white transition-all group">
                 <div className="w-20 h-20 border border-black/15 bg-gray-50 flex items-center justify-center font-roboto text-3xl font-bold text-brand-primary shrink-0 group-hover:bg-gray-800">
@@ -334,7 +334,7 @@ export default function ConsultantVariant6() {
               <div className="bg-white border border-black/15 p-6 shadow-sm">
                 <div className="flex justify-between items-center mb-4">
                   <span className="font-roboto text-[11px] uppercase tracking-widest text-gray-500">Seats remaining</span>
-                  <span className="font-roboto text-[11px] font-bold text-brand-primary italic">[X] of [Total] left</span>
+                  <span className="font-roboto text-[11px] font-bold text-brand-primary italic">Limited cohort · 12 seats</span>
                 </div>
                 <div className="h-0.5 bg-black/10 relative">
                   <motion.div 
@@ -359,7 +359,7 @@ export default function ConsultantVariant6() {
         <div className="max-w-4xl mx-auto relative z-10">
           <div className="font-roboto font-bold text-sm uppercase tracking-widest text-brand-primary mb-8">May 15, 2026 · Consultant AI Day</div>
           <h2 className="font-roboto font-bold text-6xl md:text-8xl lg:text-9xl text-black leading-[0.95] tracking-tighter mb-12">
-            Your leadership<br />team deserves<br /><span className="italic text-brand-primary">alignment.</span>
+            Your clients deserve<br />an advisor who<br /><span className="italic text-brand-primary">leads this.</span>
           </h2>
           <p className="text-xl text-gray-500 max-w-lg mx-auto mb-12 leading-relaxed">While others spend months building AI consensus, technology moves forward and competitors make decisions. This is the shortcut.</p>
           <CTAButton className="px-16 py-6 text-xs tracking-[0.15em]">Secure Your Place →</CTAButton>

@@ -153,7 +153,7 @@ export default function ConsultantVariant1() {
           </p>
           <CTAButton className="w-full sm:w-auto">Apply for your seat</CTAButton>
           <p className="mt-6 text-sm text-gray-400 uppercase tracking-widest">
-            Early bird pricing ends April 20th
+            Early bird pricing · limited seats remaining
           </p>
         </div>
       </section>
