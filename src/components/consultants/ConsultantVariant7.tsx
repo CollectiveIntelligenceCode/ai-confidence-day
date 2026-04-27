@@ -412,7 +412,7 @@ export default function ConsultantVariant7() {
             {[
               {
                 initial: "C",
-                image: "/chris.png",
+                image: "/Chris Bradshaw Headshot.jpg",
                 name: "Chris",
                 org: "Collective Intelligence",
                 desc: "Expert in individual productivity and AI-human synthesis for consulting partners. Chris works directly with practice leads and Consultants to integrate AI into their personal decision-making workflows. He makes the complex feel instinctive.",
@@ -420,7 +420,7 @@ export default function ConsultantVariant7() {
               },
               {
                 initial: "R",
-                image: "/rujuta.jpg",
+                image: "/Rujuta Singh.jpg",
                 imageClass: "object-top",
                 name: "Rujuta Singh",
                 org: "Solved Together",
