@@ -110,9 +110,9 @@ export default function ConsultantVariant7() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 pt-12 border-t border-brand-border">
             {[
-              { num: "74%", text: "of Partners say gaps in AI understanding are affecting their client advisory quality", source: "Industry Report, 2025" },
-              { num: "66%", text: "of practice leads report limited knowledge of how to integrate AI into existing methodologies", source: "Consulting Life" },
-              { num: "50%", text: "of Managing Partners believe their firm's competitive edge depends on getting AI right in 2026", source: "BCG / WEF, 2026" },
+              { num: "74%", text: "of CEOs say AI knowledge gaps are affecting their boardroom decisions — these are your clients, waiting for their advisors to close that gap", source: "Cisco, 2025" },
+              { num: "40%", text: "of potential AI productivity gains are being missed by organisations due to leadership skills gaps — the implementations your clients are paying for are underdelivering", source: "EY, 2025" },
+              { num: "2 in 3", text: "organisations are still in AI pilot mode, not scaling. The advisory opportunity is enormous — for those who can genuinely lead it", source: "McKinsey, 2025" },
             ].map((stat, idx) => (
               <div key={idx} className="text-center">
                 <div className="font-bold text-5xl text-brand-primary leading-tight">
@@ -242,7 +242,7 @@ export default function ConsultantVariant7() {
                 time: "Morning",
                 title: "Your AI Workflow",
                 fac: "With Chris · Collective Intelligence",
-                desc: "How do Consultants and practice leads actually change their day-to-day using AI? This session is hands-on. You will use AI as a clone, as a board of advisors, as a personal strategist. Not a demo. A working session you walk out of with a workflow that is yours.",
+                desc: "How do partners and practice leads actually change their day-to-day using AI? This session is hands-on. You will use AI as a clone, as a board of advisors, as a personal strategist. Not a demo. A working session you walk out of with a workflow that is yours.",
                 outcomes: [
                   "A personal AI workflow built around your specific consulting role",
                   "Confidence to use AI tools for high-stakes client deliverables",
@@ -296,7 +296,7 @@ export default function ConsultantVariant7() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
             {[
               "Frameworks you can use to diagnose AI readiness in any client engagement immediately",
-              "A methodology to evaluate boutique AI boutique firms and software vendors on behalf of your clients",
+              "A methodology to evaluate boutique AI firms and software vendors on behalf of your clients",
               "The confidence to lead high-stakes strategy sessions without fearing the 'AI question'",
               "Language to bridge the gap between technical requirements and business transformation value",
               "A personal AI workflow built for the speed and precision required in top-tier consulting",
@@ -324,10 +324,10 @@ export default function ConsultantVariant7() {
               <h3 className="text-sm uppercase tracking-[2px] font-semibold mb-6 pb-3 border-b-2 border-brand-primary text-brand-primary">This day is for you if&hellip;</h3>
               <div className="space-y-0 text-brand-text/80 text-base leading-relaxed">
                 {[
-                  "You are a non-technical Consultant — Managing Partner, CFO, CMO, CHRO, COO, CISO — who leads the business, not builds the technology",
-                  "You are a board member — consultant or non-consultant — steering a company through AI uncertainty",
-                  "You run a company or organisation with a team — ideally 50+ people, though this applies from small non-profits to enterprise",
-                  "You either do not have an AI strategy, or your company has one but you want to be able to confidently navigate it yourself",
+                  "You are a Partner, Managing Director, or practice lead at a strategy, management, financial advisory, or professional services firm",
+                  "You advise clients on transformation — but AI has become a topic you navigate carefully rather than lead confidently",
+                  "Your firm is building AI-enabled propositions and you want to genuinely understand what you are committing to deliver",
+                  "You want to be the partner clients call when the AI question comes up — not the one who defers to the tech team",
                   "You are done with just reading, listening, and talking about AI — you want to take the reins yourself",
                   "You want to learn by doing, not by sitting in another audience",
                 ].map((item, idx) => (
@@ -489,10 +489,10 @@ export default function ConsultantVariant7() {
               { q: "Why is the group limited to 12?", a: "Deliberately. We want a safe space where senior leaders can say \"I do not know,\" ask real questions, and express concerns without judgement. A small group makes that possible. It also means every participant gets hands-on attention and genuine peer connection." },
               { q: "Why is this in person?", a: "We have seen a significant difference in impact and depth between virtual and in-person sessions, especially at leadership level. Much of the learning happens through the people in the room — not just the facilitators. The connections formed in person are often more valuable than the content itself. Speed of learning, retention, quality of conversation — everything is better face to face." },
               { q: "What if I cannot attend the full day?", a: "The day is designed to flow from one session to the next. We strongly encourage full-day attendance. Arriving late or leaving early means missing context that builds throughout the day." },
-              { q: "Are virtual sessions planned?", a: "Not for the public programme. We do run private Consultant AI days tailored to individual companies and PE houses for their portfolio companies, and we travel to different locations for those. This public session is specifically designed as an in-person experience in London." },
-              { q: "Do I need technical knowledge?", a: "No. This is specifically designed for non-technical leaders — Managing Partners, CFOs, CHROs, CMOs, COOs, practice leads. You do not need to code or understand machine learning. Just bring curiosity and willingness to learn by doing." },
+              { q: "Are virtual sessions planned?", a: "Not for the public programme. We do run private AI days tailored to individual firms and PE houses for their portfolio companies, and we travel to different locations for those. This public session is specifically designed as an in-person experience in London." },
+              { q: "Do I need technical knowledge?", a: "No. This is specifically designed for non-technical leaders — Partners, Managing Directors, practice leads, and principals. You do not need to code or understand machine learning. Just bring curiosity and willingness to learn by doing." },
               { q: "What if I am not satisfied?", a: "100% satisfaction guarantee. Full refund if you are not satisfied. No questions asked." },
-              { q: "Is this for Consultants only, or practice leads too?", a: "Both. C-suite consultants and practice leads (consultant and non-consultant) of mid-sized companies, family businesses, enterprise organisations, and non-profits. Anyone in a leadership role with a team who wants to understand AI's impact on their business. We are planning a separate session for solopreneurs and consultants." },
+              { q: "Is this for Partners only, or practice leads too?", a: "Both. This day is for Partners, Managing Directors, and practice leads at consulting, advisory, and professional services firms — strategy, management, financial, transformation, or specialist advisory. If you advise clients on organisational decisions and want to do so with genuine AI confidence, this is for you. We are planning a separate session for solopreneurs and independent consultants." },
             ].map((faq, idx) => (
               <div key={idx} className="border-b border-brand-border">
                 <button
