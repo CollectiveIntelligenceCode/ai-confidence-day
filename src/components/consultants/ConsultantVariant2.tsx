@@ -16,12 +16,12 @@ export default function ConsultantVariant2() {
             <div className="flex justify-center mb-8">
               <ChathamHouseRules />
             </div>
-            <h1 className="text-6xl md:text-8xl font-bold text-brand-primary uppercase tracking-tighter mb-6">
+            <h1 className="text-3xl md:text-5xl font-bold text-brand-primary uppercase tracking-tighter mb-6">
               Your clients are hiring AI consultants. <br />
               <span className="text-brand-text">Are you one of them?</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto mb-12 leading-relaxed">
-              May 15, 2026 | London. A hands-on working session for Partners who are tired of selling AI advice they don't fully understand.
+            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto mb-12 leading-relaxed">
+              A hands-on working session for Partners who are tired of selling AI advice they don't fully understand.
             </p>
             
             <div className="flex flex-col items-center gap-6">

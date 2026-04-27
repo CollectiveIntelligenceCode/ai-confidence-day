@@ -23,12 +23,12 @@ export default function ConsultantVariant3() {
               </div>
             </div>
             
-            <h1 className="text-6xl md:text-9xl font-bold mb-8 leading-tight tracking-tighter text-brand-text">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight tracking-tighter text-brand-text">
               Advice is your product. <br />
               <span className="text-brand-primary italic">How deep does yours go?</span>
             </h1>
-            
-            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto mb-12 leading-relaxed font-light">
+
+            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-12 leading-relaxed font-light">
               Finally, a place to ask the "basic" AI questions you're expected to already know. A private working day in London for partners tired of selling a future they haven't mastered yet.
             </p>
             
@@ -53,7 +53,7 @@ export default function ConsultantVariant3() {
           <div className="flex justify-center mb-12">
             <ShieldAlert className="w-12 h-12 text-brand-primary/50" />
           </div>
-          <p className="text-3xl md:text-4xl text-center leading-relaxed font-light italic text-gray-700">
+          <p className="text-xl md:text-2xl text-center leading-relaxed font-light italic text-gray-700">
             "You advise leaders on transformation. But when they ask about AI, how confident are you really? You're selling AI advice in every engagement now — the billable risk of being outed as a novice is your quietest, sharpest pain."
           </p>
           <div className="mt-12 text-center">
