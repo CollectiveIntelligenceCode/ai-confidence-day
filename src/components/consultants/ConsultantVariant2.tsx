@@ -56,7 +56,7 @@ export default function ConsultantVariant2() {
                 {[
                   "Clients asking deep AI questions in every engagement that you can't confidently answer.",
                   "A growing gap between the bold AI promises in your proposals and your firm's actual depth.",
-                  "Boutique AI firms winning piece-of-work by sounding more 'native' than your practice.",
+                  "Boutique AI firms winning individual engagements by sounding more 'native' than your practice.",
                   "The inability to personally diagnose AI readiness or spot vendor hype on behalf of your clients."
                 ].map((item, i) => (
                   <li key={i} className="flex gap-4 text-gray-600 leading-relaxed">
@@ -95,15 +95,15 @@ export default function ConsultantVariant2() {
         <div className="max-w-6xl mx-auto">
           <SectionHeader title="The Facilitators" subtitle="Expert guidance from the intersection of technology and leadership." />
           <div className="grid md:grid-cols-2 gap-12">
-            <FacilitatorCard 
-              name="Rujuta" 
-              role="The Systems Architect" 
-              bio="Founder of Solved Together. Specialist in high-trust consultant workshops and organizational transformation. She bridges the gap between AI potential and operational reality."
+            <FacilitatorCard
+              name="Rujuta Singh"
+              role="Founder, Solved Together"
+              bio="22 years in enterprise transformation. Specialist in high-trust consultant workshops and organisational change — and has a rare ability to make leaders feel safe enough to say what they really think."
             />
-            <FacilitatorCard 
-              name="Chris" 
-              role="The Consulting Partner" 
-              bio="Expert in individual productivity and AI-human synthesis for consulting partners. Chris focuses on the 'hands-on' mastery required for Partners to lead by example."
+            <FacilitatorCard
+              name="Chris Bradshaw"
+              role="Partner, Collective Intelligence"
+              bio="Expert in individual productivity and AI-human synthesis for consulting partners. He makes the complex feel instinctive."
             />
           </div>
         </div>

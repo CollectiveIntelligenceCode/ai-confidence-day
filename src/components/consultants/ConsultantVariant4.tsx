@@ -146,15 +146,15 @@ export default function ConsultantVariant4() {
         <div className="max-w-6xl mx-auto">
           <SectionHeader title="Your Guides" subtitle="Expertise from the intersection of high-level leadership and cutting-edge execution." />
           <div className="grid md:grid-cols-2 gap-12">
-            <FacilitatorCard 
-              name="Rujuta" 
-              role="The Systems Architect" 
-              bio="Founder of Solved Together. Specialist in organizational transformation. She bridges the gap between AI potential and operational reality for global firms."
+            <FacilitatorCard
+              name="Rujuta Singh"
+              role="Founder, Solved Together"
+              bio="22 years in enterprise transformation. Specialist in high-trust consultant workshops and organisational change — and has a rare ability to make leaders feel safe enough to say what they really think."
             />
-            <FacilitatorCard 
-              name="Chris" 
-              role="The Consultant Partner" 
-              bio="Expert in individual productivity and AI-human synthesis. Chris focuses on the 'hands-on' mastery required for Partners to lead by example."
+            <FacilitatorCard
+              name="Chris Bradshaw"
+              role="Partner, Collective Intelligence"
+              bio="Expert in individual productivity and AI-human synthesis for consulting partners. He makes the complex feel instinctive."
             />
           </div>
         </div>

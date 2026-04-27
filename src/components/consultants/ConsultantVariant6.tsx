@@ -160,9 +160,9 @@ export default function ConsultantVariant6() {
               { 
                 period: "PM", 
                 badge: "Afternoon Session", 
-                title: "AI for Your Company", 
+                title: "AI for Your Firm",
                 sub: "Organisational Strategy & Transformation",
-                body: "The strategic layer. How to think about AI at the business level, build alignment across leadership, evaluate real ROI, and create a roadmap your teams can actually execute — in months, not years.",
+                body: "The strategic layer. How to think about AI at the firm level, build alignment across your leadership, evaluate real ROI, and create a roadmap your teams can actually execute — in months, not years.",
                 list: ["What AI can actually do for your business", "Identifying your highest-value opportunities", "Evaluating vendor claims and answering clients", "Building execution roadmaps without planning paralysis", "Aligning your entire leadership team"]
               }
             ].map((item, i) => (
@@ -229,7 +229,7 @@ export default function ConsultantVariant6() {
 
           <div className="grid md:grid-cols-2 gap-0.5">
             {[
-              { name: "Rujuta", role: "Founder, Solved Together", bio: "Specialist in high-trust consultant sessions and organizational transformation. She bridges the gap between AI potential and operational reality.", session: "Morning: AI for You" },
+              { name: "Rujuta Singh", role: "Founder, Solved Together", bio: "22 years in enterprise transformation. Specialist in high-trust consultant workshops and organisational change — and has a rare ability to make leaders feel safe enough to say what they really think.", session: "Morning: AI for You" },
               { name: "Chris Bradshaw", role: "Partner, Collective Intelligence", bio: "Expert in individual productivity and AI-human synthesis. Chris works directly with Managing Partners to integrate AI into their personal decision-making workflows.", session: "Afternoon: AI for Your Company" }
             ].map((item, i) => (
               <div key={i} className="bg-[#eeeeee] p-12 flex gap-8 hover:bg-[#1f1f1f] hover:text-white transition-all group">

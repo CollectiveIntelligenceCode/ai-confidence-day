@@ -130,15 +130,15 @@ export default function ConsultantVariant1() {
         <div className="max-w-6xl mx-auto">
           <SectionHeader title="Your Facilitators" />
           <div className="grid md:grid-cols-2 gap-8">
-            <FacilitatorCard 
-              name="Rujuta" 
-              role="The Systems Architect" 
-              bio="Founder of Solved Together. Specialist in high-trust consultant sessions and firm-wide transformation. Rujuta has a track record of helping consulting partners navigate complex shifts with clarity and confidence."
+            <FacilitatorCard
+              name="Rujuta Singh"
+              role="Founder, Solved Together"
+              bio="22 years in enterprise transformation. Specialist in high-trust consultant workshops and organisational change — and has a rare ability to make leaders feel safe enough to say what they really think."
             />
-            <FacilitatorCard 
-              name="Chris" 
-              role="The Consultant Partner" 
-              bio="Expert in individual productivity and AI-human synthesis for consulting partners. Chris works directly with Managing Partners to integrate AI into their high-stakes decision-making workflows."
+            <FacilitatorCard
+              name="Chris Bradshaw"
+              role="Partner, Collective Intelligence"
+              bio="Expert in individual productivity and AI-human synthesis for consulting partners. He makes the complex feel instinctive."
             />
           </div>
         </div>

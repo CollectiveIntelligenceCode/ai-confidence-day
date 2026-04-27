@@ -341,7 +341,7 @@ export default function ConsultantVariant7() {
               <h3 className="text-sm uppercase tracking-[2px] font-semibold mb-6 pb-3 border-b-2 border-brand-border text-brand-text/50">This day is not for you if&hellip;</h3>
               <div className="space-y-0 text-brand-text/80 text-base leading-relaxed">
                 {[
-                  "You are a solopreneur or consultant — we are planning a separate session for you",
+                  "You are a solopreneur or independent consultant — we are planning a separate session for you",
                   "You have a developer, engineering, or technical background and want a deep-dive into machine learning or AI architecture",
                   "You prefer being talked at — panels, keynotes, slide decks",
                   "You want theory without practice",
@@ -385,7 +385,7 @@ export default function ConsultantVariant7() {
           <div className="space-y-0 text-left">
             {[
               { q: "\"I have been in leadership for twenty years and I have never sat in a room where I felt that safe to say I genuinely did not know something. That alone was worth the day.\"", attr: "Chief Consultant — Professional Services" },
-              { q: "\"Rujuta has a rare ability to translate complexity into something actionable. I left with a framework I actually used in a board meeting the following week.\"", attr: "Non-Consultant Director — FTSE 250" },
+              { q: "\"Rujuta has a rare ability to translate complexity into something actionable. I left with a framework I actually used in a board meeting the following week.\"", attr: "Corporate Director — FTSE 250" },
               { q: "\"I expected theory. I got a working session that changed how I approach every conversation about AI in my business.\"", attr: "Founder & Managing Partner — Scale-up" },
             ].map((item, idx) => (
               <div key={idx} className="py-10 border-t border-brand-border">
@@ -415,7 +415,7 @@ export default function ConsultantVariant7() {
                 image: "/Chris Bradshaw Headshot.jpg",
                 name: "Chris",
                 org: "Collective Intelligence",
-                desc: "Expert in individual productivity and AI-human synthesis for consulting partners. Chris works directly with practice leads and Consultants to integrate AI into their personal decision-making workflows. He makes the complex feel instinctive.",
+                desc: "Expert in individual productivity and AI-human synthesis for consulting partners. Chris works directly with practice leads and consultants to integrate AI into their personal decision-making workflows. He makes the complex feel instinctive.",
                 tag: "Morning · AI for You",
               },
               {

@@ -49,7 +49,7 @@ export default function ConsultantVariant5() {
                 <div className="flex flex-wrap items-center gap-8">
                   <CTAButton className="px-10 py-4">Apply for a Seat</CTAButton>
                   <span className="text-2xl text-gray-600 font-light">
-                    Limited to <strong className="text-[#F2EDE4] font-medium">12 consultants</strong>
+                    Limited to <strong className="text-[#F2EDE4] font-medium">12 partners</strong>
                   </span>
                 </div>
               </div>
@@ -181,7 +181,7 @@ export default function ConsultantVariant5() {
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-primary/10 border border-brand-primary/20 mb-6">
                 <span className="font-roboto font-bold text-xs uppercase tracking-widest text-brand-primary">Afternoon Session</span>
               </div>
-              <h3 className="font-roboto font-bold text-4xl text-white mb-2">AI for Your Company</h3>
+              <h3 className="font-roboto font-bold text-4xl text-white mb-2">AI for Your Firm</h3>
               <p className="font-roboto text-sm uppercase tracking-widest text-brand-primary mb-6">Organisational Strategy & Transformation</p>
               <p className="text-lg text-gray-400 leading-relaxed mb-8 relative z-10">
                 The strategic layer. How to think about AI at the business level, build alignment across your leadership team, evaluate real ROI, and create a roadmap your teams can actually execute.
@@ -215,7 +215,7 @@ export default function ConsultantVariant5() {
 
           <div className="grid md:grid-cols-2 gap-px bg-white/10">
             {[
-              { name: "Rujuta", role: "Founder, Solved Together", bio: "Specialist in high-trust consultant sessions and organizational transformation. She bridges the gap between AI potential and operational reality.", session: "Morning: AI for You" },
+              { name: "Rujuta Singh", role: "Founder, Solved Together", bio: "22 years in enterprise transformation. Specialist in high-trust consultant workshops and organisational change — and has a rare ability to make leaders feel safe enough to say what they really think.", session: "Morning: AI for You" },
               { name: "Chris Bradshaw", role: "Partner, Collective Intelligence", bio: "Expert in individual productivity and AI-human synthesis. Chris works directly with Managing Partners to integrate AI into their personal decision-making workflows.", session: "Afternoon: AI for Your Company" }
             ].map((item, i) => (
               <div key={i} className="bg-[#0C0C0C] p-12 flex gap-8 hover:bg-white/5 transition-colors group">
@@ -277,7 +277,7 @@ export default function ConsultantVariant5() {
               <div className="bg-[#0C0C0C] border border-white/5 p-6 rounded-xl">
                 <div className="flex justify-between items-center mb-4">
                   <span className="font-roboto text-[10px] uppercase tracking-widest text-gray-500">Seats remaining</span>
-                  <strong className="text-brand-primary font-roboto text-xs">4 of 12 left</strong>
+                  <strong className="text-brand-primary font-roboto text-xs">Limited to 12</strong>
                 </div>
                 <div className="h-1 bg-white/5 relative">
                   <motion.div 

@@ -100,6 +100,39 @@ export default function ConsultantVariant3() {
 
       <TestimonialSection />
 
+      {/* Facilitators */}
+      <section className="py-24 px-6">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl font-bold mb-12 text-brand-text text-center">Your Facilitators</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              {
+                initial: "C",
+                name: "Chris Bradshaw",
+                role: "Partner, Collective Intelligence",
+                bio: "Expert in individual productivity and AI-human synthesis for consulting partners. He makes the complex feel instinctive.",
+                tag: "Morning · AI for You"
+              },
+              {
+                initial: "R",
+                name: "Rujuta Singh",
+                role: "Founder, Solved Together",
+                bio: "22 years in enterprise transformation. Specialist in high-trust consultant workshops and organisational change — and has a rare ability to make leaders feel safe enough to say what they really think.",
+                tag: "Afternoon · AI for Your Firm"
+              }
+            ].map((fac, idx) => (
+              <div key={idx} className="bg-white border border-brand-border p-10 rounded-2xl">
+                <div className="w-14 h-14 bg-brand-primary/10 rounded-full flex items-center justify-center font-bold text-2xl text-brand-primary mb-5">{fac.initial}</div>
+                <h4 className="text-xl font-bold text-brand-text mb-1">{fac.name}</h4>
+                <div className="text-sm text-brand-primary font-medium mb-3">{fac.role}</div>
+                <p className="text-gray-600 leading-relaxed mb-4">{fac.bio}</p>
+                <div className="text-xs uppercase tracking-widest text-gray-400">{fac.tag}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Logistics Card */}
       <section className="py-32 px-6 bg-brand-surface">
         <div className="max-w-4xl mx-auto">
@@ -142,7 +175,7 @@ export default function ConsultantVariant3() {
       <footer className="py-24 px-6 text-center border-t border-brand-border">
         <p className="text-gray-400 text-sm uppercase tracking-[0.5em] mb-8">Solved Together • May 15 • London</p>
         <h2 className="text-3xl font-bold mb-4 text-brand-text">Don't figure it out alone.</h2>
-        <p className="text-gray-500 mb-0">Join us on May 15 for a day that changes the signal.</p>
+        <p className="text-gray-500 mb-0">Join 11 other partners on May 15 for a day that changes how you lead AI conversations.</p>
       </footer>
     </div>
   );
