@@ -366,7 +366,6 @@ export default function ConsultantVariant7() {
                 name: "Chris",
                 org: "Collective Intelligence",
                 desc: "Over twenty years building companies and shaping digital and AI products. Chris specialises in individual productivity and AI-human synthesis — helping people build workflows that genuinely change their day, not just look impressive in a demo.",
-                tag: "Morning · Your AI Workflow",
                 videoSrc: "https://www.youtube-nocookie.com/embed/_QJxl9-i3Jc?si=comNnJPyTqM1kt4B&controls=0",
               },
               {
@@ -375,8 +374,7 @@ export default function ConsultantVariant7() {
                 name: "Rujuta Singh",
                 org: "Solved Together",
                 desc: "Over two decades of enterprise transformation across industries. Ex-PwC, ex-Accenture, ex-Microsoft. Rujuta helps consultants and business owners make confident AI decisions and compress the journey from \"I should probably do something about AI\" to \"I know exactly what I am doing.\"",
-                tag: "Afternoon · AI for Your Business",
-                videoSrc: "https://www.youtube-nocookie.com/embed/_QJxl9-i3Jc?si=comNnJPyTqM1kt4B&controls=0",
+                videoSrc: "https://www.youtube-nocookie.com/embed/X-GWD6l5708?si=oU8TIIfY4XhG5yyZ",
               },
             ].map((fac, idx) => (
               <div key={idx} className="bg-brand-bg p-8 md:p-10">
@@ -416,7 +414,6 @@ export default function ConsultantVariant7() {
                   )}
                 </div>
 
-                <div className="text-xs uppercase tracking-[1.5px] text-brand-text/50">{fac.tag}</div>
               </div>
             ))}
           </div>
@@ -455,11 +452,10 @@ export default function ConsultantVariant7() {
           </p>
 
           {/* WORKSHOP PHOTOS */}
-          <div className="grid grid-cols-2 gap-3 mb-16">
-            <img src="/workshop-venue-1.png" alt="Previous workshop" className="w-full h-56 object-cover rounded-sm" />
-            <img src="/workshop-venue-2.png" alt="Previous workshop" className="w-full h-56 object-cover rounded-sm" />
-            <img src="/workshop-venue-3.png" alt="Previous workshop" className="w-full h-56 object-cover rounded-sm" />
-            <img src="/workshop-venue-4.png" alt="Previous workshop" className="w-full h-56 object-cover rounded-sm" />
+          <div className="grid grid-cols-3 gap-3 mb-16">
+            <img src="/workshop-photo-1.png" alt="Previous workshop" className="w-full h-56 object-cover rounded-sm" />
+            <img src="/workshop-photo-2.png" alt="Previous workshop" className="w-full h-56 object-cover rounded-sm" />
+            <img src="/workshop-photo-3.png" alt="Previous workshop" className="w-full h-56 object-cover rounded-sm" />
           </div>
 
           {/* TESTIMONIALS WITH PHOTOS */}
@@ -564,6 +560,7 @@ export default function ConsultantVariant7() {
               { q: "Are there early bird discounts?", a: "Yes. Register before the early bird deadline for the reduced rate. After that, the standard price applies." },
               { q: "What is the difference between this and the CXO & Board Members day?", a: "Two things: the room and the content. The people in your room are consultants, founders, and small business owners — people who share your problems, your pace, and your objectives. That matters because this day is built around co-creation and solving problems together, not just listening. The content is also tailored differently. For a small business, AI can deliver ROI on day one — because you are the business. The tools, the financials, and the threshold for value are immediate and personal. The CXO day addresses a different reality: scaling AI across hundreds or thousands of people, building organisational playbooks, navigating implementation methodologies, and making the case at board level. Different problems, different room, different content." },
               { q: "Will you be running more of these?", a: "Yes. We also run a separate AI Confidence Day for CXOs and board members of larger organisations. And we plan to run intermediate-level days for those who have attended the first one. This is the beginning, not the end." },
+              { q: "Do you have other dates, later in the year?", a: <>We currently have no other dates planned for a public training for the rest of this year. We do run these privately for companies, where we have more flexibility on dates. <a href="mailto:contact@solvedtogether.co.uk" className="text-brand-primary underline underline-offset-2 hover:opacity-75 transition-opacity">Reach out</a> if that is more suitable.</> },
             ].map((faq, idx) => (
               <div key={idx} className="border-b border-brand-border">
                 <button
