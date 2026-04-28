@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import PageMeta from "./PageMeta";
 
 export default function Variant7() {
@@ -329,8 +329,11 @@ export default function Variant7() {
             <div>
               <h3 className="text-sm uppercase tracking-[2px] font-semibold mb-6 pb-3 border-b-2 border-brand-border text-brand-text/50">This day is not for you if&hellip;</h3>
               <div className="text-brand-text/80 text-base leading-relaxed">
+                <div className="py-3 border-b border-brand-border flex gap-3">
+                  <span className="text-brand-text/50 flex-shrink-0">—</span>
+                  <span>You are a solopreneur or consultant — <a href="/consultants" className="text-brand-primary underline underline-offset-2 hover:opacity-75 transition-opacity">we have a separate day built for you</a></span>
+                </div>
                 {[
-                  "You are a solopreneur or consultant — we are planning a separate session for you",
                   "You have a developer, engineering, or technical background and want a deep-dive into machine learning or AI architecture",
                   "You prefer being talked at — panels, keynotes, slide decks",
                   "You want theory without practice",
@@ -561,9 +564,9 @@ export default function Variant7() {
               { q: "Are virtual sessions planned?", a: "Not for the public programme. We do run private CXO AI days tailored to individual companies and PE houses for their portfolio companies, and we travel to different locations for those. This public session is specifically designed as an in-person experience in London." },
               { q: "Do I need technical knowledge?", a: "No. This is specifically designed for non-technical leaders — CEOs, CFOs, CHROs, CMOs, COOs, board members. You do not need to code or understand machine learning. Just bring curiosity and willingness to learn by doing." },
               { q: "What if I am not satisfied?", a: "100% satisfaction guarantee. Full refund if you are not satisfied. No questions asked." },
-              { q: "Is this for CXOs only, or board members too?", a: "Both. C-suite executives and board members (executive and non-executive) of mid-sized companies, family businesses, enterprise organisations, and non-profits. Anyone in a leadership role with a team who wants to understand AI's impact on their business. We are planning a separate session for solopreneurs and consultants." },
+              { q: "Is this for CXOs only, or board members too?", a: <>Both. C-suite executives and board members (executive and non-executive) of mid-sized companies, family businesses, enterprise organisations, and non-profits. Anyone in a leadership role with a team who wants to understand AI's impact on their business. If you are a solopreneur or consultant, <a href="/consultants" className="text-brand-primary underline underline-offset-2 hover:opacity-75 transition-opacity">we have a separate day built for you</a>.</> },
               { q: "What is the difference between this and the Consultants & Small Business day?", a: "Two things: the room and the content. The people in your room are CXOs and board members of mid-sized and enterprise organisations — people navigating the same scale of decisions you are. That matters because this day is built around co-creation and solving problems together. The content is tailored to your reality: scaling AI across hundreds or thousands of people, building organisational playbooks, navigating implementation approaches, and making confident decisions at board level. The consultants day addresses a different set of problems — individual productivity, running a business on AI, and advising clients. Different problems, different room, different content." },
-            ].map((faq, idx) => (
+            ].map((faq: { q: string; a: ReactNode }, idx) => (
               <div key={idx} className="border-b border-brand-border">
                 <button
                   onClick={() => toggleFaq(idx)}
