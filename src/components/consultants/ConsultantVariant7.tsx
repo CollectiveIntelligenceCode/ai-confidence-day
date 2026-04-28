@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Play } from "lucide-react";
 
 export default function ConsultantVariant7() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -15,7 +14,7 @@ export default function ConsultantVariant7() {
 
       {/* NAV */}
       <nav className="fixed top-[4px] left-0 right-0 z-[99] bg-brand-surface/95 backdrop-blur-md border-b border-brand-border py-4">
-        <div className="max-w-[1100px] margin-0 auto px-8 flex justify-between items-center mx-auto">
+        <div className="max-w-[1100px] px-8 flex justify-between items-center mx-auto">
           <div className="font-semibold text-sm tracking-[2px] uppercase">
             Early bird: £799 · Limited seats
           </div>
@@ -32,17 +31,17 @@ export default function ConsultantVariant7() {
       <section className="pt-[180px] pb-24 px-8 text-center bg-white border-b border-brand-border">
         <div className="max-w-[900px] mx-auto">
           <div className="text-sm font-medium tracking-[2px] uppercase text-brand-primary mb-12">
-            Not another conference. Not another lecture.
+            Not another webinar. Not another prompt engineering class.
           </div>
-          <h1 className="font-bold text-5xl md:text-6xl lg:text-7xl leading-[1.15] max-w-[800px] mx-auto mb-6 font-normal">
-            You advise leaders on transformation.{" "}
-            <em className="italic text-brand-primary not-italic">But when they ask about AI, how confident are you really?</em>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl leading-[1.15] max-w-[800px] mx-auto mb-6 font-normal">
+            Everything you do manually?{" "}
+            <em className="italic text-brand-primary">There is a version of your business where AI does most of it.</em>
           </h1>
           <p className="text-xl text-brand-text/80 max-w-[620px] mx-auto mb-4 leading-[1.65]">
-            A private working day in London for partners and practice leads who are tired of selling AI advice they don't fully understand.
+            A private, hands-on working day in London for consultants and small business owners who are done bookmarking AI guides they never go back to.
           </p>
-          <div className="font-bold text-3xl my-10">
-            One Day. Total Clarity.
+          <div className="font-semibold text-3xl my-10">
+            One Day. Built, Not Bookmarked.
           </div>
           <a
             href="#apply"
@@ -51,7 +50,7 @@ export default function ConsultantVariant7() {
             Apply for a Seat
           </a>
           <div className="mt-8 text-sm text-brand-text/50 tracking-[1px]">
-            May 15, 2026 · London · 12 people maximum
+            June 2026 · London · 12 people maximum
           </div>
         </div>
       </section>
@@ -60,16 +59,16 @@ export default function ConsultantVariant7() {
       <div className="bg-white border-b border-brand-border py-10 px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-[1px] bg-brand-border max-w-[800px] mx-auto">
           {[
-            { label: "Date", value: "May 15, 2026" },
+            { label: "Date", value: "June 2026" },
             { label: "Location", value: "London, UK" },
             { label: "Format", value: "Full-Day Workshop" },
-            { label: "Audience", value: "Strategy Partners & Practice Leads" },
+            { label: "Audience", value: "Consultants & Small Business Owners" },
           ].map((item, idx) => (
             <div key={idx} className="bg-white p-6 text-center">
               <div className="text-xs uppercase tracking-[2px] text-brand-text/50 mb-1.5 font-medium">
                 {item.label}
               </div>
-              <div className="font-bold text-xl text-brand-text">
+              <div className="font-semibold text-xl text-brand-text">
                 {item.value}
               </div>
             </div>
@@ -82,48 +81,27 @@ export default function ConsultantVariant7() {
         Chatham House Rules Apply
       </div>
 
-      {/* VIDEO PLACEHOLDER */}
-      <section className="bg-white py-12 px-8">
-        <div className="max-w-[900px] mx-auto text-center">
-          <div className="bg-brand-bg border border-brand-border p-20 max-w-[700px] mx-auto">
-            <Play className="w-12 h-12 mx-auto mb-4 text-brand-text opacity-80" />
-            <p className="text-base text-brand-text/80 italic">
-              Video: Why we started these Consultant sessions
-            </p>
-            <p className="text-sm text-brand-text/50 mt-2">
-              Placeholder — to be filmed
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* THE REALITY */}
       <section className="bg-white py-24 px-8">
         <div className="max-w-[900px] mx-auto">
-          <h2 className="font-bold text-4xl md:text-5xl mb-5">The reality no one says out loud.</h2>
-          <p className="text-lg text-brand-text/80 max-w-[700px] mb-12 leading-[1.75]">
-            AI is in every proposal. Your associates are running experiments. Boutique firms are pitching AI-augmented advisory. Your clients are asking questions that need boardroom-level confidence.
+          <h2 className="text-4xl md:text-5xl mb-5 font-normal">You already know AI gives you an unfair advantage. You just have not had the breathing space to figure out how.</h2>
+          <p className="text-lg text-brand-text/80 max-w-[700px] mb-8 leading-[1.75]">
+            You are delivering client work, marketing yourself, writing proposals, chasing invoices, doing the admin you hate. And every time you carve out an evening to finally learn AI properly, a client emergency lands and the evening disappears.
           </p>
-          <p className="text-lg text-brand-text/80 max-w-[700px] mb-12 leading-[1.75]">
-            But there is a gap between what is in your decks and what you actually know. That is not a personal failing. It is an industry-wide crisis at the senior level — which is why almost no firm is saying it out loud.
+          <p className="text-lg text-brand-text/80 max-w-[700px] leading-[1.75]">
+            So you bookmark another guide. Save another LinkedIn post. Tell yourself you will get to it next week. You know the pattern.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 pt-12 border-t border-brand-border">
             {[
-              { num: "74%", text: "of CEOs say AI knowledge gaps are affecting their boardroom decisions — these are your clients, waiting for their advisors to close that gap", source: "Cisco, 2025" },
-              { num: "40%", text: "of potential AI productivity gains are being missed by organisations due to leadership skills gaps — the implementations your clients are paying for are underdelivering", source: "EY, 2025" },
-              { num: "2 in 3", text: "organisations are still in AI pilot mode, not scaling. The advisory opportunity is enormous — for those who can genuinely lead it", source: "McKinsey, 2025" },
+              { num: "74%", text: "of independent workers now use AI — but fewer than a quarter of solopreneurs have meaningfully adopted it", source: "MBO Partners / Simply Business, 2025" },
+              { num: "9hrs", text: "saved per week by independent workers who have properly adopted AI into their workflow", source: "MBO Partners, 2025" },
+              { num: "25–60%", text: "higher rates commanded by AI-skilled freelancers and consultants vs. general practitioners", source: "Upwork, 2025–2026" },
             ].map((stat, idx) => (
               <div key={idx} className="text-center">
-                <div className="font-bold text-5xl text-brand-primary leading-tight">
-                  {stat.num}
-                </div>
-                <div className="text-sm text-brand-text/80 mt-2 leading-normal">
-                  {stat.text}
-                </div>
-                <div className="text-xs text-brand-text/50 mt-1 uppercase tracking-[1px]">
-                  {stat.source}
-                </div>
+                <div className="font-semibold text-5xl text-brand-primary leading-tight">{stat.num}</div>
+                <div className="text-sm text-brand-text/80 mt-2 leading-normal">{stat.text}</div>
+                <div className="text-xs text-brand-text/50 mt-1 uppercase tracking-[1px]">{stat.source}</div>
               </div>
             ))}
           </div>
@@ -133,24 +111,21 @@ export default function ConsultantVariant7() {
       {/* SOUND LIKE YOU */}
       <section className="bg-brand-bg py-24 px-8">
         <div className="max-w-[900px] mx-auto">
-          <h2 className="font-bold text-4xl md:text-5xl mb-12 text-center">Does this sound like you?</h2>
+          <h2 className="text-4xl md:text-5xl mb-12 text-center font-normal">Does this sound like you?</h2>
           <div className="space-y-4">
             {[
-              "\"I nod in client engagements when AI comes up and hope nobody asks me for an implementation roadmap I can't explain.\"",
-              "\"We're selling 'AI transformation' packages, but privately I'm not sure how much is genuine value and how much is hype.\"",
-              "\"My associates are using LLMs for client deliverables and I don't know how to quality-control the output.\"",
-              "\"A boutique competitor just won a piece of work by sounding more 'AI-native' than we do.\"",
-              "\"I'm approving proposals that promise AI-driven ROI without a personal framework for how that ROI is actually generated.\"",
-              "\"I have sat through three internal AI 'enablement' sessions. I left all of them feeling like a fraud in front of my clients.\"",
-              "\"I use AI for drafting emails and decks. I know there's a deeper strategic lever here, but I'm too busy delivering to find it.\"",
-              "\"I'm more worried about a client outing my lack of AI depth than ever before.\"",
+              "\"I am delivering, marketing, selling, and doing admin. I physically cannot take on one more thing — but I know AI could change everything if I just had the time.\"",
+              "\"A competitor sent a client a proposal five minutes after the call ended. Mine took three days.\"",
+              "\"I have saved about forty AI guides, bookmarked twelve tools, and actually implemented none of them.\"",
+              "\"I know there is a version of my business where I operate like a team of five. I just cannot see how to get there from here.\"",
+              "\"I have a feeling I am leaving 95% on the table. I just do not know what that 95% looks like.\"",
             ].map((thought, idx) => (
               <div key={idx} className="bg-white border-l-[3px] border-brand-primary p-6 md:px-8 italic text-brand-text/80 text-lg leading-relaxed">
                 {thought}
               </div>
             ))}
           </div>
-          <p className="text-center mt-12 text-xl text-brand-text font-bold">
+          <p className="text-center mt-12 text-xl text-brand-text font-semibold">
             If any of this sounds familiar, this day was designed for you.
           </p>
         </div>
@@ -159,40 +134,36 @@ export default function ConsultantVariant7() {
       {/* BEFORE & AFTER */}
       <section className="bg-white py-24 px-8">
         <div className="max-w-[900px] mx-auto">
-          <h2 className="font-bold text-4xl md:text-5xl mb-12 text-center">Before this day. After this day.</h2>
+          <h2 className="text-4xl md:text-5xl mb-12 text-center font-normal">Before this day. After this day.</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
-            <div className="">
+            <div>
               <h3 className="text-sm uppercase tracking-[2px] font-semibold mb-6 pb-3 border-b-2 border-brand-border text-brand-text/50">Where you are now</h3>
-              <div className="space-y-0 text-brand-text/80 text-base leading-relaxed">
+              <div className="text-brand-text/80 text-base leading-relaxed">
                 {[
-                  "I use AI for drafting emails and think I am staying ahead. I am barely scratching the surface of advisory automation.",
-                  "I manage AI conversations by using broad buzzwords and deferring to the tech team.",
-                  "I cannot tell the difference between genuine firm-wide capability and vendor hype.",
-                  "Every practice is running independent experiments with no shared framework for quality control.",
-                  "Clients are asking for AI-driven transformation that I am not confident scoping.",
-                  "I feel the pressure to lead the firm's AI strategy but have nowhere to ask the basic questions.",
-                  "I am making decisions about AI investment based on FOMO, not a deep understanding of our future economics.",
+                  "I use AI for emails and summaries and think I am keeping up. I am using about 5% of what is possible.",
+                  "I spend days on proposals, content, and client prep that could take hours.",
+                  "When a client asks about AI, I change the subject or give a vague answer.",
+                  "I keep seeing other consultants positioning themselves as \"AI-native\" and I do not know how they got there.",
+                  "I am not sure what is worth paying for and what is noise.",
                 ].map((item, idx) => (
                   <div key={idx} className="py-3.5 border-b border-brand-border">
-                    <span className="text-brand-text/50 mr-2">—</span> {item}
+                    <span className="text-brand-text/50 mr-2">—</span>{item}
                   </div>
                 ))}
               </div>
             </div>
-            <div className="">
+            <div>
               <h3 className="text-sm uppercase tracking-[2px] font-semibold mb-6 pb-3 border-b-2 border-brand-primary text-brand-primary">Where you will be</h3>
-              <div className="space-y-0 text-brand-text/80 text-base leading-relaxed">
+              <div className="text-brand-text/80 text-base leading-relaxed">
                 {[
-                  "I have a framework to evaluate any AI investment for the firm — regardless of which tools emerge next.",
-                  "I can spot 'AI-washing' in vendor or boutique pitches within five minutes.",
-                  "I have the language to direct my technical associates without needing to be a data scientist.",
-                  "I can lead any partner-level conversation about AI with genuine confidence, not performed confidence.",
-                  "I have a personal AI workflow that actually moves the needle on my deliverable speed.",
-                  "I know exactly which questions to ask my CTO, my practice leads, and my clients.",
-                  "I have a small, trusted group of peers I can go back to — independent, neutral, no firm politics — whenever I need a sounding board.",
+                  "I have a personal AI workflow that turns proposals, content, and research into a fraction of the time they used to take.",
+                  "I can advise clients on what AI can do for their business, what it costs, and what is realistic — and they see me as the expert.",
+                  "I know exactly which tools are worth my money and which I can ignore.",
+                  "My pricing and delivery have an edge that larger competitors cannot match.",
+                  "I have a way of thinking about AI that does not expire every time a new tool launches.",
                 ].map((item, idx) => (
                   <div key={idx} className="py-3.5 border-b border-brand-border">
-                    <span className="text-brand-primary mr-2">✓</span> {item}
+                    <span className="text-brand-primary mr-2">✓</span>{item}
                   </div>
                 ))}
               </div>
@@ -204,13 +175,13 @@ export default function ConsultantVariant7() {
       {/* WHAT THIS DAY IS */}
       <section className="bg-brand-bg py-24 px-8">
         <div className="max-w-[900px] mx-auto">
-          <h2 className="font-bold text-4xl md:text-5xl mb-12">What this day is.</h2>
+          <h2 className="text-4xl md:text-5xl mb-12 font-normal">What this day is.</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {[
-              { title: "Private & Exclusive", desc: "Ten to twelve senior leaders. No audience. No observers. Just the room. Everyone is here for the same reason you are." },
-              { title: "Hands-On, Not Theoretical", desc: "Two working sessions. You build things. You leave with frameworks and a workflow you made yourself — not slides you may never look at again." },
-              { title: "Facilitated, Not Lectured", desc: "Rujuta and Chris have run these rooms before. They know how to create the conditions for real thinking. Past attendees ask when the next one is." },
-              { title: "Chatham House Rules", desc: "Nothing shared in this room is attributed outside it. This is what makes genuine conversation possible — and it is why people come back." },
+              { title: "Private & Small", desc: "Twelve people. Consultants, founders, and small business owners. No audience, no observers. Everyone in the room has the same sense of urgency about AI that you do." },
+              { title: "Hands-On, Not Theoretical", desc: "You will build your own AI workflow during the day. Not watch someone demo theirs. You leave with something you made — and can use the next morning." },
+              { title: "Facilitated, Not Lectured", desc: "Rujuta and Chris have run these rooms before. They know how to create the conditions for real learning. Past attendees ask when the next one is." },
+              { title: "Chatham House Rules", desc: "Nothing shared in this room is attributed outside it. You can be honest about where you are — and that is where the best learning happens." },
             ].map((item, idx) => (
               <div key={idx} className="py-6">
                 <h4 className="text-sm uppercase tracking-[2px] text-brand-primary font-semibold mb-2.5">{item.title}</h4>
@@ -218,9 +189,8 @@ export default function ConsultantVariant7() {
               </div>
             ))}
           </div>
-
-          <div className="mt-12 pt-8 border-t border-brand-border flex flex-col md:flex-row gap-6 flex-wrap">
-            {["Not a conference", "Not a panel discussion", "Not a software demo", "Not a vendor showcase", "Not a lecture"].map((item, idx) => (
+          <div className="mt-12 pt-8 border-t border-brand-border flex flex-col md:flex-row gap-4 flex-wrap">
+            {["Not a webinar", "Not a prompt engineering class", "Not a tools roundup", "Not a vendor showcase", "Not a lecture"].map((item, idx) => (
               <div key={idx} className="text-sm text-brand-text/50 px-5 py-2 border border-brand-border bg-white">
                 {item}
               </div>
@@ -232,51 +202,59 @@ export default function ConsultantVariant7() {
       {/* THE DAY */}
       <section className="bg-white py-24 px-8">
         <div className="max-w-[900px] mx-auto">
-          <h2 className="font-bold text-4xl md:text-5xl mb-3 text-center">The Day</h2>
-          <p className="text-center text-lg text-brand-text/80 mb-16">AI for you. AI for your company.</p>
+          <h2 className="text-4xl md:text-5xl mb-3 text-center font-normal">The Day</h2>
+          <p className="text-center text-lg text-brand-text/80 mb-16">AI for you. AI for your business.</p>
 
-          <div className="space-y-0">
+          <div>
             {[
               {
-                num: "01",
-                time: "Morning",
-                title: "Your AI Workflow",
+                num: "01", time: "Morning", title: "Your AI Workflow",
                 fac: "With Chris · Collective Intelligence",
-                desc: "How do partners and practice leads actually change their day-to-day using AI? This session is hands-on. You will use AI as a clone, as a board of advisors, as a personal strategist. Not a demo. A working session you walk out of with a workflow that is yours.",
+                desc: "You wear every hat. AI can wear most of them with you. This session is hands-on: you will build a personal workflow that changes how you write proposals, prepare for client calls, create content, and handle the operational load that eats your evenings and weekends.",
                 outcomes: [
-                  "A personal AI workflow built around your specific consulting role",
-                  "Confidence to use AI tools for high-stakes client deliverables",
-                  "Practical techniques to automate deck-building and data synthesis",
-                  "AI for the field — real-time, mobile-first strategic support",
+                  "A personal AI workflow built around your actual day — not someone else's",
+                  "How to go from client call to polished proposal in hours, not days",
+                  "AI for content, marketing, and client communications — in your voice, not a generic one",
+                  "Practical techniques you can deploy the next morning",
                 ],
               },
               {
-                num: "02",
-                time: "Afternoon",
-                title: "AI Across Your Organisation",
+                num: "02", time: "Afternoon", title: "AI for Your Business",
                 fac: "With Rujuta · Solved Together",
-                desc: "This is not \"everyone should use ChatGPT.\" This session is about the harder question: how do you lead an organisation through genuine AI transformation? Cross-functional thinking, systems, processes. The frameworks that let a leadership team act on AI instead of reacting to it.",
+                desc: "This is not \"use ChatGPT more.\" This is about rethinking how your business operates. How you price. How you deliver. How you compete. How you advise your clients. The frameworks that turn AI from a tool you occasionally use into an operating advantage that changes your economics.",
                 outcomes: [
-                  "A framework to evaluate AI investments for your practice",
-                  "Language to align your partner group on AI priorities",
-                  "How to evaluate vendor claims and answer client questions with authority",
-                  "Clarity on what firm-wide AI transformation looks like in practice",
+                  "How to advise clients on AI with genuine confidence — scope, cost, what is realistic",
+                  "A framework for evaluating which AI tools are worth your money and which are noise",
+                  "How to position yourself as AI-native in your market — and actually back it up",
+                  "Pricing, packaging, and delivery models that leverage AI as a competitive edge",
+                ],
+              },
+              {
+                num: "03", time: "Late Afternoon", title: "Your AI Worries",
+                fac: "With Rujuta · Solved Together",
+                desc: "Every conversation about AI comes with a shadow conversation: what about data? What about privacy? What about my clients' data? These are not irrational fears. They are the questions that most AI training deliberately avoids. This session tackles them head-on — practically, not theoretically.",
+                outcomes: [
+                  "Why AI risk needs a different playbook from other technology — and what that playbook looks like",
+                  "Data, privacy, and security — what you need to know for yourself and what your clients will ask you",
+                  "How to use AI to manage risk — compliance, monitoring, and guardrails in practice",
+                  "What tools are available right now, what they cost, and the trade-offs of each",
+                  "An honest assessment of what deserves genuine caution and what is overblown",
                 ],
               },
             ].map((session, idx) => (
               <div key={idx} className="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-8 py-12 border-t border-brand-border">
-                <div className="font-bold text-sm text-brand-text/50 md:text-right pt-1">
+                <div className="text-sm text-brand-text/50 md:text-right pt-1">
                   {session.num}
-                  <span className="block font-quicksand text-xs uppercase tracking-[1.5px] mt-1">{session.time}</span>
+                  <span className="block text-xs uppercase tracking-[1.5px] mt-1">{session.time}</span>
                 </div>
-                <div className="flex-1">
-                  <h3 className="font-bold text-3xl mb-1">{session.title}</h3>
+                <div>
+                  <h3 className="text-3xl mb-1 font-normal">{session.title}</h3>
                   <div className="text-sm text-brand-primary font-medium mb-4">{session.fac}</div>
                   <p className="text-brand-text/80 text-base leading-relaxed mb-5">{session.desc}</p>
-                  <ul className="space-y-0">
+                  <ul>
                     {session.outcomes.map((outcome, oIdx) => (
                       <li key={oIdx} className="py-2 text-base text-brand-text/80 border-b border-brand-border">
-                        <span className="text-brand-primary mr-2">→</span> {outcome}
+                        <span className="text-brand-primary mr-2">→</span>{outcome}
                       </li>
                     ))}
                   </ul>
@@ -290,25 +268,20 @@ export default function ConsultantVariant7() {
       {/* OUTCOMES */}
       <section className="bg-brand-bg py-24 px-8">
         <div className="max-w-[900px] mx-auto text-center">
-          <h2 className="font-bold text-4xl md:text-5xl mb-2">What you leave with.</h2>
-          <p className="text-lg text-brand-text/80 mb-12">Outcomes, not handouts.</p>
-
+          <h2 className="text-4xl md:text-5xl mb-2 font-normal">What you leave with.</h2>
+          <p className="text-lg text-brand-text/80 mb-12">Things you build during the day and use on Monday.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
             {[
-              "Frameworks you can use to diagnose AI readiness in any client engagement immediately",
-              "A methodology to evaluate boutique AI firms and software vendors on behalf of your clients",
-              "The confidence to lead high-stakes strategy sessions without fearing the 'AI question'",
-              "Language to bridge the gap between technical requirements and business transformation value",
-              "A personal AI workflow built for the speed and precision required in top-tier consulting",
-              "A safe peer group of other partners to sense-check your AI strategic thinking outside the firm",
+              "A working AI system for your business — proposals, content, research, client prep — built by you, during the day",
+              "The confidence to talk to clients about AI — scope it, cost it, and know what is realistic for their business",
+              "A practical understanding of AI data, privacy, and security — for yourself and for advising clients",
+              "A safe, close-knit group of peers — no competition, no politics — to go back to whenever you need a sounding board",
             ].map((outcome, idx) => (
-              <div key={idx} className="bg-white p-8 md:px-8 md:py-7 border-l-[3px] border-brand-primary">
-                <div className="font-bold text-4xl md:text-5xl text-brand-primary opacity-40 mb-2 leading-none">
-                  {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
+              <div key={idx} className="bg-white p-8 border-l-[3px] border-brand-primary">
+                <div className="text-4xl md:text-5xl text-brand-primary opacity-40 mb-2 leading-none font-normal">
+                  {String(idx + 1).padStart(2, "0")}
                 </div>
-                <div className="text-base text-brand-text/80 leading-relaxed">
-                  {outcome}
-                </div>
+                <div className="text-base text-brand-text/80 leading-relaxed">{outcome}</div>
               </div>
             ))}
           </div>
@@ -318,35 +291,33 @@ export default function ConsultantVariant7() {
       {/* FOR YOU / NOT FOR YOU */}
       <section className="bg-white py-24 px-8">
         <div className="max-w-[900px] mx-auto">
-          <h2 className="font-bold text-4xl md:text-5xl mb-12 text-center">Is this day for you?</h2>
+          <h2 className="text-4xl md:text-5xl mb-12 text-center font-normal">Is this day for you?</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
             <div>
               <h3 className="text-sm uppercase tracking-[2px] font-semibold mb-6 pb-3 border-b-2 border-brand-primary text-brand-primary">This day is for you if&hellip;</h3>
-              <div className="space-y-0 text-brand-text/80 text-base leading-relaxed">
+              <div className="text-brand-text/80 text-base leading-relaxed">
                 {[
-                  "You are a Partner, Managing Director, or practice lead at a strategy, management, financial advisory, or professional services firm",
-                  "You advise clients on transformation — but AI has become a topic you navigate carefully rather than lead confidently",
-                  "Your firm is building AI-enabled propositions and you want to genuinely understand what you are committing to deliver",
-                  "You want to be the partner clients call when the AI question comes up — not the one who defers to the tech team",
-                  "You are done with just reading, listening, and talking about AI — you want to take the reins yourself",
-                  "You want to learn by doing, not by sitting in another audience",
+                  "You are a consultant, fractional executive, freelance professional, or small business owner",
+                  "You already use AI but you know you are barely scratching the surface",
+                  "You want to learn by building, not by watching another webinar",
+                  "You want to be the person clients call when the AI question comes up",
                 ].map((item, idx) => (
                   <div key={idx} className="py-3 border-b border-brand-border flex gap-3">
-                    <span className="text-brand-primary font-semibold text-lg flex-shrink-0">+</span> {item}
+                    <span className="text-brand-primary font-semibold text-lg flex-shrink-0">+</span>{item}
                   </div>
                 ))}
               </div>
             </div>
             <div>
               <h3 className="text-sm uppercase tracking-[2px] font-semibold mb-6 pb-3 border-b-2 border-brand-border text-brand-text/50">This day is not for you if&hellip;</h3>
-              <div className="space-y-0 text-brand-text/80 text-base leading-relaxed">
+              <div className="text-brand-text/80 text-base leading-relaxed">
                 {[
-                  "You have a developer, engineering, or technical background and want a deep-dive into machine learning or AI architecture",
-                  "You prefer being talked at — panels, keynotes, slide decks",
-                  "You want theory without practice",
+                  "You have a technical or engineering background and want a deep-dive into machine learning or AI architecture",
+                  "You prefer a passive learning experience — talks, slides, someone presenting at you",
+                  "You are already running your business on AI and feel confident in your setup",
                 ].map((item, idx) => (
                   <div key={idx} className="py-3 border-b border-brand-border flex gap-3">
-                    <span className="text-brand-text/50 flex-shrink-0">—</span> {item}
+                    <span className="text-brand-text/50 flex-shrink-0">—</span>{item}
                   </div>
                 ))}
               </div>
@@ -355,15 +326,15 @@ export default function ConsultantVariant7() {
         </div>
       </section>
 
-      {/* INCLUDED */}
+      {/* EVERYTHING INCLUDED */}
       <section className="bg-brand-bg py-24 px-8">
         <div className="max-w-[900px] mx-auto text-center">
-          <h2 className="font-bold text-4xl md:text-5xl mb-12">Everything included.</h2>
+          <h2 className="text-4xl md:text-5xl mb-12 font-normal">Everything included.</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               { title: "All Materials", desc: "Every framework, template, and resource from the day — sent to you afterwards" },
               { title: "Full Catering", desc: "Breakfast, lunch, and refreshments throughout the day" },
-              { title: "Peer Community", desc: "A private group of leaders at your level — independent, neutral, no company politics. A safe sounding board long after the day ends." },
+              { title: "Peer Community", desc: "A private group of independents at your level — no competition, no agenda. A safe sounding board long after the day ends." },
               { title: "Certificate", desc: "Personalised Certificate of Mastery with your name" },
               { title: "Follow-Up Resources", desc: "Continued access to frameworks and tools as AI evolves" },
               { title: "Satisfaction Guarantee", desc: "100% money-back guarantee. If you are not satisfied, full refund. No questions." },
@@ -377,98 +348,170 @@ export default function ConsultantVariant7() {
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
+      {/* FACILITATORS */}
       <section className="bg-white py-24 px-8">
-        <div className="max-w-[900px] mx-auto text-center">
-          <h2 className="font-bold text-4xl md:text-5xl mb-12">From past workshops.</h2>
-          <div className="space-y-0 text-left">
+        <div className="max-w-[900px] mx-auto">
+          <h2 className="text-4xl md:text-5xl mb-12 text-center font-normal">Your facilitators.</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {[
-              { q: "\"I have been in leadership for twenty years and I have never sat in a room where I felt that safe to say I genuinely did not know something. That alone was worth the day.\"", attr: "Chief Consultant — Professional Services" },
-              { q: "\"Rujuta has a rare ability to translate complexity into something actionable. I left with a framework I actually used in a board meeting the following week.\"", attr: "Corporate Director — FTSE 250" },
-              { q: "\"I expected theory. I got a working session that changed how I approach every conversation about AI in my business.\"", attr: "Founder & Managing Partner — Scale-up" },
+              {
+                image: "/Chris Bradshaw Headshot.jpg",
+                name: "Chris",
+                org: "Collective Intelligence",
+                desc: "Over twenty years building companies and shaping digital and AI products. Chris specialises in individual productivity and AI-human synthesis — helping people build workflows that genuinely change their day, not just look impressive in a demo.",
+                tag: "Morning · Your AI Workflow",
+              },
+              {
+                image: "/Rujuta Singh.jpg",
+                imageClass: "object-top",
+                name: "Rujuta Singh",
+                org: "Solved Together",
+                desc: "Over two decades of enterprise transformation across industries. Ex-PwC, ex-Accenture, ex-Microsoft. Rujuta helps consultants and business owners make confident AI decisions and compress the journey from \"I should probably do something about AI\" to \"I know exactly what I am doing.\"",
+                tag: "Afternoon · AI for Your Business",
+              },
+            ].map((fac, idx) => (
+              <div key={idx} className="bg-brand-bg p-8 md:p-10">
+                <img
+                  src={fac.image}
+                  alt={fac.name}
+                  className={`w-20 h-20 rounded-full mb-5 object-cover border border-brand-border ${fac.imageClass || ""}`}
+                />
+                <h4 className="text-xl font-semibold mb-1">{fac.name}</h4>
+                <div className="text-sm text-brand-primary font-medium mb-3">{fac.org}</div>
+                <p className="text-base text-brand-text/80 leading-relaxed mb-6">{fac.desc}</p>
+
+                {/* VIDEO PLACEHOLDER — replace src with actual video URL */}
+                <div className="relative w-full aspect-video bg-brand-border flex items-center justify-center mb-4 overflow-hidden">
+                  <div className="text-center">
+                    <div className="w-14 h-14 rounded-full bg-brand-primary/10 border-2 border-brand-primary flex items-center justify-center mx-auto mb-3">
+                      <svg className="w-6 h-6 text-brand-primary ml-1" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </div>
+                    <p className="text-sm text-brand-text/50 italic">Video coming soon</p>
+                  </div>
+                </div>
+
+                <div className="text-xs uppercase tracking-[1.5px] text-brand-text/50">{fac.tag}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* THE VENUE */}
+      <section className="bg-brand-bg py-24 px-8">
+        <div className="max-w-[900px] mx-auto">
+          <h2 className="text-4xl md:text-5xl mb-4 text-center font-normal">The venue.</h2>
+          <p className="text-center text-lg text-brand-text/80 mb-12 max-w-[600px] mx-auto">
+            A carefully chosen space in London — designed for the kind of focused, honest conversation that doesn't happen in a hotel conference room.
+          </p>
+
+          <div className="grid grid-cols-2 gap-3 mb-4">
+            {[
+              { src: "/03-SmithsofSmithfield (1) (1).jpg", alt: "Smiths of Smithfield venue" },
+              { src: "/20240531115125_IMG_4439.jpg", alt: "Smiths of Smithfield venue" },
+            ].map((photo, idx) => (
+              <div key={idx} className="aspect-video overflow-hidden bg-brand-border">
+                <img src={photo.src} alt={photo.alt} className="w-full h-full object-cover" />
+              </div>
+            ))}
+          </div>
+
+          <p className="text-center text-sm text-brand-text/40 tracking-[1px] mt-4">London · Exact address shared on registration</p>
+        </div>
+      </section>
+
+      {/* FROM PAST WORKSHOPS */}
+      <section className="bg-white py-24 px-8">
+        <div className="max-w-[900px] mx-auto">
+          <h2 className="text-4xl md:text-5xl mb-4 text-center font-normal">From past workshops.</h2>
+          <p className="text-center text-lg text-brand-text/80 mb-12 max-w-[600px] mx-auto">
+            Real rooms. Real people. Real outcomes.
+          </p>
+
+          {/* TESTIMONIALS WITH PHOTOS */}
+          <div>
+            {[
+              {
+                photo: "/attendee-samantha.jpeg",
+                name: "Samantha Graham",
+                role: "Founder and CEO, State of Mind",
+                q: "\"It was great — excellent process and some clear next steps for me to follow up on. That kind of well-held facilitation is totally what busy leaders need.\"",
+              },
+              {
+                photo: "/attendee-samrat.jpeg",
+                name: "Samrat Ghosh",
+                role: "Cross Asset Sales and Execution, Aurel BGC",
+                q: "\"This should be a starting point for any AI implementation. Surprised by how this process breaks down information barriers regarding siloed AI approaches.\"",
+              },
+              {
+                photo: "/attendee-dan.jpeg",
+                name: "Dan Brown",
+                role: "International Sales Director, Dailymotion",
+                q: "\"What surprised me was the extent we can apply AI to everyday tasks and simplify mundane activities. Recommend for anyone wanting structured, strategic implementation.\"",
+              },
+              {
+                photo: "/attendee-mark.jpeg",
+                name: "Mark Gomez",
+                role: "Global Sales Director, Wooshii",
+                q: "\"An introduction to how AI enables business in every aspect. I realised I am not as far on the AI journey as I thought — especially for sales and lead generation.\"",
+              },
             ].map((item, idx) => (
-              <div key={idx} className="py-10 border-t border-brand-border">
-                <blockquote className="font-bold text-2xl leading-relaxed text-brand-text mb-4 font-normal italic">
-                  {item.q}
-                </blockquote>
-                <div className="text-sm text-brand-text/50 font-medium uppercase tracking-[0.5px]">
-                  {item.attr}
+              <div key={idx} className="py-10 border-t border-brand-border flex gap-6 items-start">
+                <img
+                  src={item.photo}
+                  alt={item.name}
+                  className="w-14 h-14 rounded-full object-cover flex-shrink-0 border border-brand-border mt-1"
+                />
+                <div>
+                  <blockquote className="text-xl leading-relaxed text-brand-text mb-3 italic font-normal">
+                    {item.q}
+                  </blockquote>
+                  <div className="text-sm text-brand-text/50 font-medium">
+                    {item.name} <span className="text-brand-text/30 mx-1">·</span> {item.role}
+                  </div>
                 </div>
               </div>
             ))}
           </div>
-          <div className="p-8 bg-brand-bg text-center mt-8 text-sm text-brand-text/50 italic">
+
+          <div className="p-8 bg-brand-bg text-center mt-4 text-sm text-brand-text/50 italic border border-brand-border">
             Additional testimonials and LinkedIn screenshots to be added here.
           </div>
         </div>
       </section>
 
-      {/* FACILITATORS */}
-      <section className="bg-brand-bg py-24 px-8">
-        <div className="max-w-[900px] mx-auto text-center">
-          <h2 className="font-bold text-4xl md:text-5xl mb-12">Your facilitators.</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
-            {[
-              {
-                initial: "C",
-                image: "/Chris Bradshaw Headshot.jpg",
-                name: "Chris",
-                org: "Collective Intelligence",
-                desc: "Expert in individual productivity and AI-human synthesis for consulting partners. Chris works directly with practice leads and consultants to integrate AI into their personal decision-making workflows. He makes the complex feel instinctive.",
-                tag: "Morning · AI for You",
-              },
-              {
-                initial: "R",
-                image: "/Rujuta Singh.jpg",
-                imageClass: "object-top",
-                name: "Rujuta Singh",
-                org: "Solved Together",
-                desc: "22 years in enterprise transformation. Specialist in high-trust consultant workshops and organisational change. Rujuta bridges the gap between AI potential and operational reality — and has a rare ability to make leaders feel safe enough to say what they really think.",
-                tag: "Afternoon · AI for Your Company",
-              },
-            ].map((fac, idx) => (
-              <div key={idx} className="bg-white p-8 md:p-10">
-                {fac.image ? (
-                  <img src={fac.image} alt={fac.name} className={`w-20 h-20 rounded-full mb-5 object-cover border border-brand-border ${fac.imageClass || ''}`} />
-                ) : (
-                  <div className="w-20 h-20 bg-brand-border rounded-full mb-5 flex items-center justify-center text-3xl text-brand-text/50 font-bold">
-                    {fac.initial}
-                  </div>
-                )}
-                <h4 className="text-xl font-semibold mb-1">{fac.name}</h4>
-                <div className="text-sm text-brand-primary font-medium mb-3">{fac.org}</div>
-                <p className="text-base text-brand-text/80 leading-relaxed mb-4">{fac.desc}</p>
-                <div className="mt-4 text-xs uppercase tracking-[1.5px] text-brand-text/50">{fac.tag}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* PRICING */}
-      <section className="bg-white py-24 px-8 text-center" id="apply">
+      <section className="bg-brand-bg py-24 px-8 text-center" id="apply">
         <div className="max-w-[900px] mx-auto">
-          <h2 className="font-bold text-4xl md:text-5xl mb-3">Secure your place.</h2>
+          <h2 className="text-4xl md:text-5xl mb-3 font-normal">Secure your place.</h2>
           <p className="text-lg text-brand-text/80 mb-12">Seats are allocated by application. We keep the room small deliberately.</p>
 
           <div className="flex flex-col md:flex-row max-w-[640px] mx-auto">
             <div className="flex-1 p-10 bg-white border-2 border-brand-primary">
               <div className="text-xs uppercase tracking-[2px] text-brand-primary font-semibold mb-2">Early Bird</div>
-              <div className="font-bold text-6xl text-brand-text leading-none">£799</div>
-              <div className="text-sm text-brand-text/50 mt-1.5 uppercase"> + VAT </div>
+              <div className="text-6xl text-brand-text leading-none font-normal">£799</div>
+              <div className="text-sm text-brand-text/50 mt-1.5 uppercase">+ VAT</div>
               <p className="text-sm text-brand-text/80 my-6 italic">Until early bird deadline</p>
-              <button className="w-full bg-brand-primary text-white py-4 text-base font-medium tracking-[0.5px] hover:bg-brand-primary/90 transition-colors">
+              <a
+                href="#apply"
+                className="block w-full bg-brand-primary text-white py-4 text-base font-medium tracking-[0.5px] hover:bg-brand-primary/90 transition-colors no-underline"
+              >
                 Apply for a Seat
-              </button>
+              </a>
             </div>
-            <div className="flex-1 p-10 bg-brand-bg">
+            <div className="flex-1 p-10 bg-white border border-brand-border">
               <div className="text-xs uppercase tracking-[2px] text-brand-text/50 font-semibold mb-2">Standard</div>
-              <div className="font-bold text-6xl text-brand-text/50 leading-none">£999</div>
-              <div className="text-sm text-brand-text/50 mt-1.5 uppercase"> + VAT </div>
+              <div className="text-6xl text-brand-text/50 leading-none font-normal">£999</div>
+              <div className="text-sm text-brand-text/50 mt-1.5 uppercase">+ VAT</div>
               <p className="text-sm text-brand-text/50 my-6 italic">After early bird expires</p>
-              <button className="w-full bg-brand-text/80 text-white py-4 text-base font-medium tracking-[0.5px] hover:bg-brand-text/90 transition-colors">
+              <a
+                href="#apply"
+                className="block w-full bg-brand-text/20 text-brand-text/60 py-4 text-base font-medium tracking-[0.5px] no-underline"
+              >
                 Apply for a Seat
-              </button>
+              </a>
             </div>
           </div>
           <p className="mt-8 text-sm text-brand-text/50 italic">
@@ -478,28 +521,28 @@ export default function ConsultantVariant7() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-brand-bg py-24 px-8">
+      <section className="bg-white py-24 px-8">
         <div className="max-w-[900px] mx-auto">
-          <h2 className="font-bold text-4xl md:text-5xl mb-12 text-center">Frequently asked questions.</h2>
-          <div className="space-y-0 max-w-[800px] mx-auto">
+          <h2 className="text-4xl md:text-5xl mb-12 text-center font-normal">Frequently asked questions.</h2>
+          <div className="max-w-[800px] mx-auto">
             {[
+              { q: "Do I need any technical knowledge?", a: "No. This is designed for non-technical people who run businesses. You do not need to code or understand machine learning. Just bring curiosity and willingness to get your hands dirty." },
+              { q: "I already use ChatGPT. Is this still relevant?", a: "Especially so. Using ChatGPT for emails and summaries is about 5% of what is possible. This day shows you the other 95% — how to build workflows that genuinely change your capacity, your speed, and how you compete." },
+              { q: "Why is this in person?", a: "Because you have already tried the online version. You have bookmarked the guides, saved the posts, signed up for the courses. How many have you gone back to? This is deliberately in-person so you actually do the work, in a room with peers at your level, and leave having done it — not just read about it." },
+              { q: "Will there be recordings?", a: "No. All materials are sent to you afterwards. But Chatham House Rules mean the conversations stay in the room — and that is what makes people honest about where they really are." },
+              { q: "I am a solopreneur with no team. Is this for me?", a: "Especially. If you are doing everything yourself, AI is the closest thing to hiring a team without the cost. This day shows you how to operate like a team of five." },
+              { q: "What if I am not satisfied?", a: "100% satisfaction guarantee. Full refund. No questions asked." },
               { q: "Are there early bird discounts?", a: "Yes. Register before the early bird deadline for the reduced rate. After that, the standard price applies." },
-              { q: "Will there be recordings?", a: "No. This is an in-person session with no recordings. All materials taught during the day are sent to participants afterwards. Chatham House Rules mean the conversations in this room stay in this room." },
-              { q: "Why is the group limited to 12?", a: "Deliberately. We want a safe space where senior leaders can say \"I do not know,\" ask real questions, and express concerns without judgement. A small group makes that possible. It also means every participant gets hands-on attention and genuine peer connection." },
-              { q: "Why is this in person?", a: "We have seen a significant difference in impact and depth between virtual and in-person sessions, especially at leadership level. Much of the learning happens through the people in the room — not just the facilitators. The connections formed in person are often more valuable than the content itself. Speed of learning, retention, quality of conversation — everything is better face to face." },
-              { q: "What if I cannot attend the full day?", a: "The day is designed to flow from one session to the next. We strongly encourage full-day attendance. Arriving late or leaving early means missing context that builds throughout the day." },
-              { q: "Are virtual sessions planned?", a: "Not for the public programme. We do run private AI days tailored to individual firms and PE houses for their portfolio companies, and we travel to different locations for those. This public session is specifically designed as an in-person experience in London." },
-              { q: "Do I need technical knowledge?", a: "No. This is specifically designed for non-technical leaders — Partners, Managing Directors, practice leads, and principals. You do not need to code or understand machine learning. Just bring curiosity and willingness to learn by doing." },
-              { q: "What if I am not satisfied?", a: "100% satisfaction guarantee. Full refund if you are not satisfied. No questions asked." },
-              { q: "Is this for Partners only, or practice leads too?", a: "Both. This day is for Partners, Managing Directors, practice leads, and independent consultants in consulting, advisory, and professional services — strategy, management, financial, transformation, or specialist advisory. If you advise clients on organisational decisions and want to do so with genuine AI confidence, this is for you." },
+              { q: "What is the difference between this and the CXO & Board Members day?", a: "Two things: the room and the content. The people in your room are consultants, founders, and small business owners — people who share your problems, your pace, and your objectives. That matters because this day is built around co-creation and solving problems together, not just listening. The content is also tailored differently. For a small business, AI can deliver ROI on day one — because you are the business. The tools, the financials, and the threshold for value are immediate and personal. The CXO day addresses a different reality: scaling AI across hundreds or thousands of people, building organisational playbooks, navigating implementation methodologies, and making the case at board level. Different problems, different room, different content." },
+              { q: "Will you be running more of these?", a: "Yes. We also run a separate AI Confidence Day for CXOs and board members of larger organisations. And we plan to run intermediate-level days for those who have attended the first one. This is the beginning, not the end." },
             ].map((faq, idx) => (
               <div key={idx} className="border-b border-brand-border">
                 <button
                   onClick={() => toggleFaq(idx)}
                   className="w-full text-left py-5 flex justify-between items-center group"
                 >
-                  <span className="text-lg font-medium text-brand-text leading-tight">{faq.q}</span>
-                  <span className="text-2xl text-brand-text/50 font-light transition-transform group-hover:scale-110">
+                  <span className="text-lg font-medium text-brand-text leading-tight pr-4">{faq.q}</span>
+                  <span className="text-2xl text-brand-text/50 font-light flex-shrink-0 transition-transform group-hover:scale-110">
                     {openFaq === idx ? "–" : "+"}
                   </span>
                 </button>
@@ -515,13 +558,13 @@ export default function ConsultantVariant7() {
       </section>
 
       {/* CLOSING */}
-      <section className="bg-white py-32 px-8 text-center">
+      <section className="bg-brand-bg py-32 px-8 text-center">
         <div className="max-w-[900px] mx-auto">
-          <h2 className="font-bold text-3xl md:text-4xl lg:text-5xl max-w-[700px] mx-auto mb-6 leading-[1.3] font-normal italic">
-            You do not have to figure this out alone.
+          <h2 className="text-3xl md:text-4xl lg:text-5xl max-w-[700px] mx-auto mb-6 leading-[1.3] italic font-normal">
+            You have been running your business alone long enough.
           </h2>
           <p className="text-lg text-brand-text/80 max-w-[600px] mx-auto mb-2">
-            There is a room where the question "what do I actually do about AI?" is not only allowed — it is the point.
+            One day to learn how AI can run it with you. That is all it takes.
           </p>
           <a
             href="#apply"
