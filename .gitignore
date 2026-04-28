@@ -2,3 +2,6 @@ node_modules/
 dist/
 .env*
 .DS_Store
+*.html.bak
+AI_Confidence_Day_Consultants*.html
+Landing page copy updates.docx
