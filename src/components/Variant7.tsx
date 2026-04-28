@@ -512,9 +512,6 @@ export default function Variant7() {
             ))}
           </div>
 
-          <div className="p-8 bg-brand-bg text-center mt-4 text-sm text-brand-text/50 italic border border-brand-border">
-            Additional testimonials and LinkedIn screenshots to be added here.
-          </div>
         </div>
       </section>
 
