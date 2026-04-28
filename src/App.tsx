@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route, useParams, useNavigate, useLocation } from "react-router-dom";
+import { useState } from "react";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Variant1 from "./components/Variant1";
 import Variant2 from "./components/Variant2";
 import Variant3 from "./components/Variant3";
@@ -7,18 +7,10 @@ import Variant4 from "./components/Variant4";
 import Variant5 from "./components/Variant5";
 import Variant6 from "./components/Variant6";
 import Variant7 from "./components/Variant7";
-
-// Import Consultant Variants
-import ConsultantVariant1 from "./components/consultants/ConsultantVariant1";
-import ConsultantVariant2 from "./components/consultants/ConsultantVariant2";
-import ConsultantVariant3 from "./components/consultants/ConsultantVariant3";
-import ConsultantVariant4 from "./components/consultants/ConsultantVariant4";
-import ConsultantVariant5 from "./components/consultants/ConsultantVariant5";
-import ConsultantVariant6 from "./components/consultants/ConsultantVariant6";
 import ConsultantVariant7 from "./components/consultants/ConsultantVariant7";
 
 import { motion, AnimatePresence } from "motion/react";
-import { LayoutGrid, FileText, Shield, Sparkles, Zap, Target, Monitor, Users } from "lucide-react";
+import { LayoutGrid, FileText, Shield, Sparkles, Zap, Target, Monitor } from "lucide-react";
 
 function VariantSelector({ current, onSelect, variants, prefix = "" }: { current: number, onSelect: (v: number) => void, variants: any[], prefix?: string }) {
   return (
@@ -47,41 +39,16 @@ const variantConfig = [
   { id: 7, label: "CXO Landing", icon: Monitor, component: Variant7 },
 ];
 
-const consultantVariantConfig = [
-  { id: 1, label: "v1", icon: FileText, component: ConsultantVariant1 },
-  { id: 2, label: "v2", icon: LayoutGrid, component: ConsultantVariant2 },
-  { id: 3, label: "v3", icon: Shield, component: ConsultantVariant3 },
-  { id: 4, label: "v4", icon: Sparkles, component: ConsultantVariant4 },
-  { id: 5, label: "v5", icon: Zap, component: ConsultantVariant5 },
-  { id: 6, label: "v6", icon: Target, component: ConsultantVariant6 },
-  { id: 7, label: "Consultant", icon: Users, component: ConsultantVariant7 },
-];
 
 function ConsultantWrapper() {
-  const { id } = useParams();
-  const navigate = useNavigate();
-  const variantId = id ? parseInt(id) : 7;
-  const ActiveComponent = consultantVariantConfig.find(v => v.id === variantId)?.component || ConsultantVariant7;
-
   return (
-    <div className="relative">
-      <AnimatePresence mode="wait">
-        <motion.div
-           key={variantId}
-           initial={{ opacity: 0 }}
-           animate={{ opacity: 1 }}
-           exit={{ opacity: 0 }}
-           transition={{ duration: 0.5 }}
-        >
-          <ActiveComponent />
-        </motion.div>
-      </AnimatePresence>
-      <VariantSelector 
-        current={variantId} 
-        onSelect={(v) => navigate(`/consultants/${v}`)} 
-        variants={consultantVariantConfig}
-      />
-    </div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      <ConsultantVariant7 />
+    </motion.div>
   );
 }
 
