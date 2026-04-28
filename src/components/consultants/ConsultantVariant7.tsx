@@ -454,6 +454,14 @@ export default function ConsultantVariant7() {
             Real rooms. Real people. Real outcomes.
           </p>
 
+          {/* WORKSHOP PHOTOS */}
+          <div className="grid grid-cols-2 gap-3 mb-16">
+            <img src="/workshop-venue-1.png" alt="Previous workshop" className="w-full h-56 object-cover rounded-sm" />
+            <img src="/workshop-venue-2.png" alt="Previous workshop" className="w-full h-56 object-cover rounded-sm" />
+            <img src="/workshop-venue-3.png" alt="Previous workshop" className="w-full h-56 object-cover rounded-sm" />
+            <img src="/workshop-venue-4.png" alt="Previous workshop" className="w-full h-56 object-cover rounded-sm" />
+          </div>
+
           {/* TESTIMONIALS WITH PHOTOS */}
           <div>
             {[
