@@ -360,6 +360,7 @@ export default function ConsultantVariant7() {
                 org: "Collective Intelligence",
                 desc: "Over twenty years building companies and shaping digital and AI products. Chris specialises in individual productivity and AI-human synthesis — helping people build workflows that genuinely change their day, not just look impressive in a demo.",
                 tag: "Morning · Your AI Workflow",
+                videoSrc: "https://www.youtube-nocookie.com/embed/_QJxl9-i3Jc?si=comNnJPyTqM1kt4B&controls=0",
               },
               {
                 image: "/Rujuta Singh.jpg",
@@ -368,6 +369,7 @@ export default function ConsultantVariant7() {
                 org: "Solved Together",
                 desc: "Over two decades of enterprise transformation across industries. Ex-PwC, ex-Accenture, ex-Microsoft. Rujuta helps consultants and business owners make confident AI decisions and compress the journey from \"I should probably do something about AI\" to \"I know exactly what I am doing.\"",
                 tag: "Afternoon · AI for Your Business",
+                videoSrc: "https://www.youtube-nocookie.com/embed/_QJxl9-i3Jc?si=comNnJPyTqM1kt4B&controls=0",
               },
             ].map((fac, idx) => (
               <div key={idx} className="bg-brand-bg p-8 md:p-10">
@@ -380,16 +382,31 @@ export default function ConsultantVariant7() {
                 <div className="text-sm text-brand-primary font-medium mb-3">{fac.org}</div>
                 <p className="text-base text-brand-text/80 leading-relaxed mb-6">{fac.desc}</p>
 
-                {/* VIDEO PLACEHOLDER — replace src with actual video URL */}
-                <div className="relative w-full aspect-video bg-brand-border flex items-center justify-center mb-4 overflow-hidden">
-                  <div className="text-center">
-                    <div className="w-14 h-14 rounded-full bg-brand-primary/10 border-2 border-brand-primary flex items-center justify-center mx-auto mb-3">
-                      <svg className="w-6 h-6 text-brand-primary ml-1" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
+                <div className="relative w-full aspect-video mb-4 overflow-hidden bg-brand-border">
+                  {fac.videoSrc ? (
+                    <iframe
+                      width="100%"
+                      height="100%"
+                      src={fac.videoSrc}
+                      title={`${fac.name} — video`}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                      className="absolute inset-0 w-full h-full"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center">
+                      <div className="text-center">
+                        <div className="w-14 h-14 rounded-full bg-brand-primary/10 border-2 border-brand-primary flex items-center justify-center mx-auto mb-3">
+                          <svg className="w-6 h-6 text-brand-primary ml-1" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z" />
+                          </svg>
+                        </div>
+                        <p className="text-sm text-brand-text/50 italic">Video coming soon</p>
+                      </div>
                     </div>
-                    <p className="text-sm text-brand-text/50 italic">Video coming soon</p>
-                  </div>
+                  )}
                 </div>
 
                 <div className="text-xs uppercase tracking-[1.5px] text-brand-text/50">{fac.tag}</div>
