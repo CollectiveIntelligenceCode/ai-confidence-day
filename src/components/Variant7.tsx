@@ -263,6 +263,20 @@ export default function Variant7() {
                   "Clarity on what transformation actually looks like in practice",
                 ],
               },
+              {
+                num: "03",
+                time: "Late Afternoon",
+                title: "Your AI Worries",
+                fac: "",
+                desc: "AI conversations in boardrooms always come with a second, quieter conversation: what about data governance? What about regulatory risk? What about security? These are the questions that slow decisions, stall strategies, and keep leadership teams stuck between ambition and caution. This session addresses them directly.",
+                outcomes: [
+                  "Why AI risk requires a fundamentally different playbook from other technology — and what that playbook looks like",
+                  "Data governance, privacy, and security at the organisational level — what boards actually need to know",
+                  "How companies are implementing AI governance without creating bureaucracy that kills momentum",
+                  "Using AI to manage risk — automated compliance, monitoring, and guardrails in practice",
+                  "Regulatory landscape — what is coming, what matters, and what you can safely deprioritise",
+                ],
+              },
             ].map((session, idx) => (
               <div key={idx} className="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-8 py-12 border-t border-brand-border">
                 <div className="font-bold text-sm text-brand-text/50 md:text-right pt-1">
@@ -493,6 +507,7 @@ export default function Variant7() {
               { q: "Do I need technical knowledge?", a: "No. This is specifically designed for non-technical leaders — CEOs, CFOs, CHROs, CMOs, COOs, board members. You do not need to code or understand machine learning. Just bring curiosity and willingness to learn by doing." },
               { q: "What if I am not satisfied?", a: "100% satisfaction guarantee. Full refund if you are not satisfied. No questions asked." },
               { q: "Is this for CXOs only, or board members too?", a: "Both. C-suite executives and board members (executive and non-executive) of mid-sized companies, family businesses, enterprise organisations, and non-profits. Anyone in a leadership role with a team who wants to understand AI's impact on their business. We are planning a separate session for solopreneurs and consultants." },
+              { q: "What is the difference between this and the Consultants & Small Business day?", a: "Two things: the room and the content. The people in your room are CXOs and board members of mid-sized and enterprise organisations — people navigating the same scale of decisions you are. That matters because this day is built around co-creation and solving problems together. The content is tailored to your reality: scaling AI across hundreds or thousands of people, building organisational playbooks, navigating implementation approaches, and making confident decisions at board level. The consultants day addresses a different set of problems — individual productivity, running a business on AI, and advising clients. Different problems, different room, different content." },
             ].map((faq, idx) => (
               <div key={idx} className="border-b border-brand-border">
                 <button
