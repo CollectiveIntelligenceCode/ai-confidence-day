@@ -12,7 +12,7 @@ export default function Variant7() {
     <div className="font-quicksand text-brand-text bg-brand-surface leading-relaxed text-lg font-light min-h-screen">
       <PageMeta
         title="AI Confidence Day for CXOs & Board Members | Solved Together"
-        description="A private, hands-on working day in London for CXOs and board members who want genuine AI clarity — not another conference. May 2026. 12 people maximum."
+        description="A private, hands-on working day in London for CXOs and board members who want genuine AI clarity — not another conference. 26th June 2026. 12 people maximum."
         url="https://ai.solvedtogether.co.uk"
       />
 
@@ -57,7 +57,7 @@ export default function Variant7() {
             Apply for a Seat
           </a>
           <div className="mt-8 text-sm text-brand-text/50 tracking-[1px]">
-            May 15, 2026 · London · 12 people maximum
+            26th June 2026 · London · 12 people maximum
           </div>
         </div>
       </section>
@@ -66,7 +66,7 @@ export default function Variant7() {
       <div className="bg-white border-b border-brand-border py-10 px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-[1px] bg-brand-border max-w-[800px] mx-auto">
           {[
-            { label: "Date", value: "May 15, 2026" },
+            { label: "Date", value: "26th June 2026" },
             { label: "Location", value: "London, UK" },
             { label: "Format", value: "Full-Day Workshop" },
             { label: "Audience", value: "CXOs & Board Members" },

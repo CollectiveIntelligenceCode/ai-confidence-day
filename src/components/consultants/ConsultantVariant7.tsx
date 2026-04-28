@@ -12,7 +12,7 @@ export default function ConsultantVariant7() {
     <div className="font-quicksand text-brand-text bg-brand-surface leading-relaxed text-lg font-light min-h-screen">
       <PageMeta
         title="AI Confidence Day for Consultants & Small Business Owners | Solved Together"
-        description="A private, hands-on working day in London for consultants and small business owners who are done bookmarking AI guides they never go back to. June 2026. 12 people maximum."
+        description="A private, hands-on working day in London for consultants and small business owners who are done bookmarking AI guides they never go back to. 19th June 2026. 12 people maximum."
         url="https://ai.solvedtogether.co.uk/consultants"
       />
 
@@ -57,7 +57,7 @@ export default function ConsultantVariant7() {
             Apply for a Seat
           </a>
           <div className="mt-8 text-sm text-brand-text/50 tracking-[1px]">
-            June 2026 · London · 12 people maximum
+            19th June 2026 · London · 12 people maximum
           </div>
         </div>
       </section>
@@ -66,7 +66,7 @@ export default function ConsultantVariant7() {
       <div className="bg-white border-b border-brand-border py-10 px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-[1px] bg-brand-border max-w-[800px] mx-auto">
           {[
-            { label: "Date", value: "June 2026" },
+            { label: "Date", value: "19th June 2026" },
             { label: "Location", value: "London, UK" },
             { label: "Format", value: "Full-Day Workshop" },
             { label: "Audience", value: "Consultants & Small Business Owners" },
