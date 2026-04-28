@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PageMeta from "./PageMeta";
 
 export default function Variant7() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -9,6 +10,12 @@ export default function Variant7() {
 
   return (
     <div className="font-quicksand text-brand-text bg-brand-surface leading-relaxed text-lg font-light min-h-screen">
+      <PageMeta
+        title="AI Confidence Day for CXOs & Board Members | Solved Together"
+        description="A private, hands-on working day in London for CXOs and board members who want genuine AI clarity — not another conference. May 2026. 12 people maximum."
+        url="https://ai.solvedtogether.co.uk"
+      />
+
       {/* RED TOP BAR */}
       <div className="h-[4px] bg-brand-primary fixed top-0 left-0 right-0 z-[100]" />
 
