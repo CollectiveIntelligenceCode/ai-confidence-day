@@ -1,5 +1,28 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PageMeta from "../PageMeta";
+
+function EarlyBirdCountdown({ deadline }: { deadline: string }) {
+  const [days, setDays] = useState<number | null>(null);
+
+  useEffect(() => {
+    const calc = () => {
+      const diff = new Date(`${deadline}T23:59:59+01:00`).getTime() - Date.now();
+      setDays(Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24))));
+    };
+    calc();
+    const id = setInterval(calc, 60_000);
+    return () => clearInterval(id);
+  }, [deadline]);
+
+  if (days === null) return null;
+  if (days === 0) return <p className="text-xs text-brand-primary font-semibold mb-5">Deadline today</p>;
+
+  return (
+    <p className="text-xs text-brand-primary font-semibold mb-5 uppercase tracking-[1px]">
+      {days} day{days !== 1 ? "s" : ""} remaining
+    </p>
+  );
+}
 
 export default function ConsultantVariant7() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -365,7 +388,7 @@ export default function ConsultantVariant7() {
                 image: "/Chris Bradshaw Headshot.jpg",
                 name: "Chris",
                 org: "Collective Intelligence",
-                desc: "Over twenty years building companies and shaping digital and AI products. Chris specialises in individual productivity and AI-human synthesis — helping people build workflows that genuinely change their day, not just look impressive in a demo.",
+                desc: "22 years building companies, four of his own, including Collective Intelligence and Creative Capital Group, with stints as Group CEO and Global Strategy Director along the way. Enterprise AI Partner at Board of Innovation. Chris has been the consultant and founder wearing every hat; he built his own AI workflow to change that. His sessions are hands-on by design: you leave with something you built yourself, not slides you'll never open.",
                 videoSrc: "https://www.youtube-nocookie.com/embed/3lATCQTJ9v4?si=hw41VdsiIaEIsd09",
               },
               {
@@ -518,7 +541,8 @@ export default function ConsultantVariant7() {
               <div className="text-xs uppercase tracking-[2px] text-brand-primary font-semibold mb-2">Early Bird</div>
               <div className="text-6xl text-brand-text leading-none font-normal">£799</div>
               <div className="text-sm text-brand-text/50 mt-1.5 uppercase">+ VAT</div>
-              <p className="text-sm text-brand-text/80 my-6 italic">Until early bird deadline</p>
+              <p className="text-sm text-brand-text/80 my-4 italic">Until 31 May 2026</p>
+              <EarlyBirdCountdown deadline="2026-05-31" />
               <a
                 href="#apply"
                 className="block w-full bg-brand-primary text-white py-4 text-base font-medium tracking-[0.5px] hover:bg-brand-primary/90 transition-colors no-underline"
@@ -557,7 +581,7 @@ export default function ConsultantVariant7() {
               { q: "Will there be recordings?", a: "No. All materials are sent to you afterwards. But Chatham House Rules mean the conversations stay in the room — and that is what makes people honest about where they really are." },
               { q: "I am a solopreneur with no team. Is this for me?", a: "Especially. If you are doing everything yourself, AI is the closest thing to hiring a team without the cost. This day shows you how to operate like a team of five." },
               { q: "What if I am not satisfied?", a: "100% satisfaction guarantee. Full refund. No questions asked." },
-              { q: "Are there early bird discounts?", a: "Yes. Register before the early bird deadline for the reduced rate. After that, the standard price applies." },
+              { q: "Are there early bird discounts?", a: "Yes. Register before 31 May 2026 for the reduced rate of £799 + VAT. After that, the standard price of £999 + VAT applies." },
               { q: "What is the difference between this and the CXO & Board Members day?", a: "Two things: the room and the content. The people in your room are consultants, founders, and small business owners — people who share your problems, your pace, and your objectives. That matters because this day is built around co-creation and solving problems together, not just listening. The content is also tailored differently. For a small business, AI can deliver ROI on day one — because you are the business. The tools, the financials, and the threshold for value are immediate and personal. The CXO day addresses a different reality: scaling AI across hundreds or thousands of people, building organisational playbooks, navigating implementation methodologies, and making the case at board level. Different problems, different room, different content." },
               { q: "Will you be running more of these?", a: "Yes. We also run a separate AI Confidence Day for CXOs and board members of larger organisations. And we plan to run intermediate-level days for those who have attended the first one. This is the beginning, not the end." },
               { q: "Do you have other dates, later in the year?", a: <>We currently have no other dates planned for a public training for the rest of this year. We do run these privately for companies, where we have more flexibility on dates. <a href="mailto:contact@solvedtogether.co.uk" className="text-brand-primary underline underline-offset-2 hover:opacity-75 transition-opacity">Reach out</a> if that is more suitable.</> },

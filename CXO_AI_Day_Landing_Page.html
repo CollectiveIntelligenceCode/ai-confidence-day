@@ -557,7 +557,7 @@ footer { padding:40px 32px; text-align:center; border-top:1px solid var(--border
         <div class="photo-placeholder">C</div>
         <h4>Chris</h4>
         <div class="org">Collective Intelligence</div>
-        <p>Expert in individual productivity and AI-human synthesis for senior leadership. Chris works directly with board members and CXOs to integrate AI into their personal decision-making workflows. He makes the complex feel instinctive.</p>
+        <p>22 years in technology and digital strategy. Starting in tech at 21, running companies by his late twenties. Enterprise AI Partner at Board of Innovation. Founder of Collective Intelligence. Chris has worked with senior leaders at organisations including KPMG, BMW and Selfridges on AI adoption and decision-making strategy. He specialises in building personal AI workflows for CXOs and board members &mdash; and has a rare ability to make the complex feel immediately usable.</p>
         <div class="session-tag">Morning &middot; AI for You</div>
       </div>
       <div class="facilitator-card">
@@ -582,7 +582,8 @@ footer { padding:40px 32px; text-align:center; border-top:1px solid var(--border
         <div class="earlybird">Early Bird</div>
         <div class="price">&pound;799</div>
         <div class="price-note">+ VAT</div>
-        <p style="font-size:14px; color:var(--mid); margin:16px 0 24px;">Until early bird deadline</p>
+        <p style="font-size:14px; color:var(--mid); margin:16px 0 8px;">Until 31 May 2026</p>
+        <p id="eb-countdown" style="font-size:11px; text-transform:uppercase; letter-spacing:1px; font-weight:600; color:var(--red); margin:0 0 20px;"></p>
         <a href="#" class="cta-main" style="width:100%; text-align:center;">Apply for a Seat</a>
       </div>
       <div style="flex:1; padding:40px 32px; background:var(--cream);">
@@ -604,7 +605,7 @@ footer { padding:40px 32px; text-align:center; border-top:1px solid var(--border
 
     <div class="faq-item">
       <div class="faq-q" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">Are there early bird discounts?</div>
-      <div class="faq-a">Yes. Register before the early bird deadline for the reduced rate. After that, the standard price applies.</div>
+      <div class="faq-a">Yes. Register before 31 May 2026 for the reduced rate of £799 + VAT. After that, the standard price of £999 + VAT applies.</div>
     </div>
 
     <div class="faq-item">
@@ -659,6 +660,22 @@ footer { padding:40px 32px; text-align:center; border-top:1px solid var(--border
 <footer>
   &copy; 2026 Solved Together &amp; Collective Intelligence &middot; contact@solvedtogether.co.uk
 </footer>
+
+<script>
+  (function() {
+    var deadline = new Date("2026-05-31T23:59:59+01:00").getTime();
+    function update() {
+      var diff = deadline - Date.now();
+      var el = document.getElementById("eb-countdown");
+      if (!el) return;
+      if (diff <= 0) { el.textContent = "Deadline today"; return; }
+      var days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+      el.textContent = days + " day" + (days !== 1 ? "s" : "") + " remaining";
+    }
+    update();
+    setInterval(update, 60000);
+  })();
+</script>
 
 </body>
 </html>

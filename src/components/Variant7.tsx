@@ -1,5 +1,28 @@
-import { useState, type ReactNode } from "react";
+import { useState, useEffect, type ReactNode } from "react";
 import PageMeta from "./PageMeta";
+
+function EarlyBirdCountdown({ deadline }: { deadline: string }) {
+  const [days, setDays] = useState<number | null>(null);
+
+  useEffect(() => {
+    const calc = () => {
+      const diff = new Date(`${deadline}T23:59:59+01:00`).getTime() - Date.now();
+      setDays(Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24))));
+    };
+    calc();
+    const id = setInterval(calc, 60_000);
+    return () => clearInterval(id);
+  }, [deadline]);
+
+  if (days === null) return null;
+  if (days === 0) return <p className="text-xs text-brand-primary font-semibold mb-5">Deadline today</p>;
+
+  return (
+    <p className="text-xs text-brand-primary font-semibold mb-5 uppercase tracking-[1px]">
+      {days} day{days !== 1 ? "s" : ""} remaining
+    </p>
+  );
+}
 
 export default function Variant7() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -380,7 +403,7 @@ export default function Variant7() {
                 image: "/Chris Bradshaw Headshot.jpg",
                 name: "Chris",
                 org: "Collective Intelligence",
-                desc: "Expert in individual productivity and AI-human synthesis for senior leadership. Chris works directly with board members and CXOs to integrate AI into their personal decision-making workflows. He makes the complex feel instinctive.",
+                desc: "22 years in technology and digital strategy. Starting in tech at 21, running companies by his late twenties. Enterprise AI Partner at Board of Innovation. Founder of Collective Intelligence. Chris has worked with senior leaders at organisations including KPMG, BMW and Selfridges on AI adoption and decision-making strategy. He specialises in building personal AI workflows for CXOs and board members — and has a rare ability to make the complex feel immediately usable.",
                 videoSrc: "https://www.youtube-nocookie.com/embed/3lATCQTJ9v4?si=hw41VdsiIaEIsd09",
               },
               {
@@ -530,7 +553,8 @@ export default function Variant7() {
               <div className="text-xs uppercase tracking-[2px] text-brand-primary font-semibold mb-2">Early Bird</div>
               <div className="text-6xl text-brand-text leading-none font-normal">£799</div>
               <div className="text-sm text-brand-text/50 mt-1.5 uppercase">+ VAT</div>
-              <p className="text-sm text-brand-text/80 my-6 italic">Until early bird deadline</p>
+              <p className="text-sm text-brand-text/80 my-4 italic">Until 31 May 2026</p>
+              <EarlyBirdCountdown deadline="2026-05-31" />
               <a href="#apply" className="block w-full bg-brand-primary text-white py-4 text-base font-medium tracking-[0.5px] hover:bg-brand-primary/90 transition-colors no-underline">
                 Apply for a Seat
               </a>
@@ -557,7 +581,7 @@ export default function Variant7() {
           <h2 className="text-4xl md:text-5xl mb-12 text-center font-normal">Frequently asked questions.</h2>
           <div className="max-w-[800px] mx-auto">
             {[
-              { q: "Are there early bird discounts?", a: "Yes. Register before the early bird deadline for the reduced rate. After that, the standard price applies." },
+              { q: "Are there early bird discounts?", a: "Yes. Register before 31 May 2026 for the reduced rate of £799 + VAT. After that, the standard price of £999 + VAT applies." },
               { q: "Will there be recordings?", a: "No. This is an in-person session with no recordings. All materials taught during the day are sent to participants afterwards. Chatham House Rules mean the conversations in this room stay in this room." },
               { q: "Why is the group limited to 12?", a: "Deliberately. We want a safe space where senior leaders can say \"I do not know,\" ask real questions, and express concerns without judgement. A small group makes that possible. It also means every participant gets hands-on attention and genuine peer connection." },
               { q: "Why is this in person?", a: "We have seen a significant difference in impact and depth between virtual and in-person sessions, especially at leadership level. Much of the learning happens through the people in the room — not just the facilitators. The connections formed in person are often more valuable than the content itself. Speed of learning, retention, quality of conversation — everything is better face to face." },
