@@ -366,7 +366,7 @@ export default function ConsultantVariant7() {
                 name: "Chris",
                 org: "Collective Intelligence",
                 desc: "Over twenty years building companies and shaping digital and AI products. Chris specialises in individual productivity and AI-human synthesis — helping people build workflows that genuinely change their day, not just look impressive in a demo.",
-                videoSrc: "https://www.youtube-nocookie.com/embed/_QJxl9-i3Jc?si=comNnJPyTqM1kt4B&controls=0",
+                videoSrc: "https://www.youtube-nocookie.com/embed/3lATCQTJ9v4?si=hw41VdsiIaEIsd09",
               },
               {
                 image: "/Rujuta Singh.jpg",
@@ -374,7 +374,7 @@ export default function ConsultantVariant7() {
                 name: "Rujuta Singh",
                 org: "Solved Together",
                 desc: "Over two decades of enterprise transformation across industries. Ex-PwC, ex-Accenture, ex-Microsoft. Rujuta helps consultants and business owners make confident AI decisions and compress the journey from \"I should probably do something about AI\" to \"I know exactly what I am doing.\"",
-                videoSrc: "https://www.youtube-nocookie.com/embed/X-GWD6l5708?si=oU8TIIfY4XhG5yyZ",
+                videoSrc: "https://www.youtube-nocookie.com/embed/X-GWD6l5708?si=2ndtifwJzVyjwA8W",
               },
             ].map((fac, idx) => (
               <div key={idx} className="bg-brand-bg p-8 md:p-10">

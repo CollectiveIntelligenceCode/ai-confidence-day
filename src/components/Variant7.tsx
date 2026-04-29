@@ -381,7 +381,7 @@ export default function Variant7() {
                 name: "Chris",
                 org: "Collective Intelligence",
                 desc: "Expert in individual productivity and AI-human synthesis for senior leadership. Chris works directly with board members and CXOs to integrate AI into their personal decision-making workflows. He makes the complex feel instinctive.",
-                videoSrc: "https://www.youtube-nocookie.com/embed/_QJxl9-i3Jc?si=comNnJPyTqM1kt4B&controls=0",
+                videoSrc: "https://www.youtube-nocookie.com/embed/3lATCQTJ9v4?si=hw41VdsiIaEIsd09",
               },
               {
                 image: "/Rujuta Singh.jpg",
@@ -389,7 +389,7 @@ export default function Variant7() {
                 name: "Rujuta Singh",
                 org: "Solved Together",
                 desc: "22 years in enterprise transformation. Specialist in high-trust executive workshops and organisational change. Rujuta bridges the gap between AI potential and operational reality — and has a rare ability to make leaders feel safe enough to say what they really think.",
-                videoSrc: "https://www.youtube-nocookie.com/embed/X-GWD6l5708?si=oU8TIIfY4XhG5yyZ",
+                videoSrc: "https://www.youtube-nocookie.com/embed/X-GWD6l5708?si=2ndtifwJzVyjwA8W",
               },
             ].map((fac, idx) => (
               <div key={idx} className="bg-brand-bg p-8 md:p-10">
