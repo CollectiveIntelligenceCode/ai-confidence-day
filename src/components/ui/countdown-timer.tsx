@@ -14,32 +14,13 @@ type Unit = "Day" | "Hour" | "Minute" | "Second";
 interface CountdownItemProps {
   unit: Unit;
   label: string;
-  compact?: boolean;
 }
 
-function CountdownItem({ unit, label, compact = false }: CountdownItemProps) {
+function CountdownItem({ unit, label }: CountdownItemProps) {
   const { ref, time } = useTimer(unit);
   const display = unit === "Second" || unit === "Minute" || unit === "Hour"
     ? String(time).padStart(2, "0")
     : String(time);
-
-  if (compact) {
-    return (
-      <div className="flex items-baseline gap-[2px]">
-        <div className="relative overflow-hidden">
-          <span
-            ref={ref}
-            className="block text-[11px] font-bold tabular-nums text-brand-primary font-quicksand"
-          >
-            {display}
-          </span>
-        </div>
-        <span className="text-[9px] font-semibold uppercase text-brand-primary/60 tracking-[0.5px]">
-          {label}
-        </span>
-      </div>
-    );
-  }
 
   return (
     <div className="flex flex-col items-center gap-1">
@@ -97,17 +78,41 @@ function useTimer(unit: Unit) {
   return { ref, time };
 }
 
-/** Compact strip for the sticky navbar */
+/** Full-width strip for the sticky navbar — stretches to fill flex-1 */
 export function NavCountdown() {
   return (
-    <div className="flex items-center gap-2 mt-0.5">
-      <CountdownItem unit="Day" label="d" compact />
-      <span className="text-[9px] text-brand-primary/40 font-bold">·</span>
-      <CountdownItem unit="Hour" label="h" compact />
-      <span className="text-[9px] text-brand-primary/40 font-bold">·</span>
-      <CountdownItem unit="Minute" label="m" compact />
-      <span className="text-[9px] text-brand-primary/40 font-bold">·</span>
-      <CountdownItem unit="Second" label="s" compact />
+    <div className="flex items-center justify-around w-full">
+      <NavUnit unit="Day" label="Days" />
+      <span className="text-brand-primary/20 text-lg font-light">|</span>
+      <NavUnit unit="Hour" label="Hours" />
+      <span className="text-brand-primary/20 text-lg font-light">|</span>
+      <NavUnit unit="Minute" label="Minutes" />
+      <span className="text-brand-primary/20 text-lg font-light">|</span>
+      <NavUnit unit="Second" label="Seconds" />
+    </div>
+  );
+}
+
+function NavUnit({ unit, label }: { unit: Unit; label: string }) {
+  const { ref, time } = useTimer(unit);
+  const display =
+    unit === "Second" || unit === "Minute" || unit === "Hour"
+      ? String(time).padStart(2, "0")
+      : String(time);
+
+  return (
+    <div className="flex items-baseline gap-1.5">
+      <div className="relative overflow-hidden">
+        <span
+          ref={ref}
+          className="block text-xl font-bold tabular-nums text-brand-primary font-quicksand leading-none"
+        >
+          {display}
+        </span>
+      </div>
+      <span className="text-[10px] font-semibold uppercase text-brand-text/40 tracking-[1px]">
+        {label}
+      </span>
     </div>
   );
 }
