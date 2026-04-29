@@ -1,32 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import PageMeta from "../PageMeta";
-
-function EarlyBirdCountdown({ deadline, navMode = false }: { deadline: string; navMode?: boolean }) {
-  const [days, setDays] = useState<number | null>(null);
-
-  useEffect(() => {
-    const calc = () => {
-      const diff = new Date(`${deadline}T23:59:59+01:00`).getTime() - Date.now();
-      setDays(Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24))));
-    };
-    calc();
-    const id = setInterval(calc, 60_000);
-    return () => clearInterval(id);
-  }, [deadline]);
-
-  if (days === null) return null;
-  const label = days === 0 ? "Deadline today" : `${days} day${days !== 1 ? "s" : ""} remaining`;
-
-  if (navMode) {
-    return <span className="text-[10px] text-brand-primary font-semibold uppercase tracking-[1px] mt-0.5">{label}</span>;
-  }
-
-  return (
-    <p className="text-xs text-brand-primary font-semibold mb-5 uppercase tracking-[1px]">
-      {label}
-    </p>
-  );
-}
+import { NavCountdown } from "../ui/countdown-timer";
+import ShiftingCountdown from "../ui/countdown-timer";
 
 export default function ConsultantVariant7() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -51,7 +26,7 @@ export default function ConsultantVariant7() {
         <div className="max-w-[1100px] px-8 flex justify-between items-center mx-auto">
           <div className="flex flex-col leading-tight">
             <span className="font-semibold text-sm tracking-[2px] uppercase">Early bird: £799 · Limited seats</span>
-            <EarlyBirdCountdown deadline="2026-05-31" navMode />
+            <NavCountdown />
           </div>
           <a
             href="#apply"
@@ -547,7 +522,7 @@ export default function ConsultantVariant7() {
               <div className="text-6xl text-brand-text leading-none font-normal">£799</div>
               <div className="text-sm text-brand-text/50 mt-1.5 uppercase">+ VAT</div>
               <p className="text-sm text-brand-text/80 my-4 italic">Until 31 May 2026</p>
-              <EarlyBirdCountdown deadline="2026-05-31" />
+              <ShiftingCountdown />
               <a
                 href="#apply"
                 className="block w-full bg-brand-primary text-white py-4 text-base font-medium tracking-[0.5px] hover:bg-brand-primary/90 transition-colors no-underline"
