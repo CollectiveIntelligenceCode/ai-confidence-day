@@ -78,17 +78,17 @@ function useTimer(unit: Unit) {
   return { ref, time };
 }
 
-/** Full-width strip for the sticky navbar — stretches to fill flex-1 */
+/** Navbar countdown — sits inline, units close together */
 export function NavCountdown() {
   return (
-    <div className="flex items-center justify-around w-full">
+    <div className="flex items-center gap-3">
       <NavUnit unit="Day" label="Days" />
-      <span className="text-brand-primary/20 text-lg font-light">|</span>
-      <NavUnit unit="Hour" label="Hours" />
-      <span className="text-brand-primary/20 text-lg font-light">|</span>
-      <NavUnit unit="Minute" label="Minutes" />
-      <span className="text-brand-primary/20 text-lg font-light">|</span>
-      <NavUnit unit="Second" label="Seconds" />
+      <span className="text-brand-primary/25 font-light">·</span>
+      <NavUnit unit="Hour" label="Hrs" />
+      <span className="text-brand-primary/25 font-light">·</span>
+      <NavUnit unit="Minute" label="Mins" />
+      <span className="text-brand-primary/25 font-light">·</span>
+      <NavUnit unit="Second" label="Secs" />
     </div>
   );
 }

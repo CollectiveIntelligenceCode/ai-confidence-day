@@ -23,16 +23,16 @@ export default function Variant7() {
 
       {/* NAV */}
       <nav className="fixed top-[4px] left-0 right-0 z-[99] bg-brand-surface/95 backdrop-blur-md border-b border-brand-border py-3">
-        <div className="max-w-[1100px] px-8 flex items-center gap-6 mx-auto">
-          <div className="shrink-0">
-            <span className="font-semibold text-xs tracking-[2px] uppercase text-brand-text/60">Early bird · £799</span>
-          </div>
-          <div className="flex-1">
+        <div className="max-w-[1100px] px-8 flex items-center justify-between mx-auto">
+          <div className="flex items-center gap-3">
+            <span className="font-bold text-sm tracking-[1.5px] uppercase text-brand-text">Early bird · £799</span>
+            <span className="text-brand-text/30 text-sm">·</span>
+            <span className="text-xs font-medium tracking-[1px] uppercase text-brand-text/50">ends in</span>
             <NavCountdown />
           </div>
           <a
             href="#apply"
-            className="shrink-0 bg-brand-primary text-white px-6 py-2.5 text-sm font-medium cursor-pointer tracking-[0.5px] no-underline hover:bg-brand-primary/90 transition-colors"
+            className="bg-brand-primary text-white px-6 py-2.5 text-sm font-medium cursor-pointer tracking-[0.5px] no-underline hover:bg-brand-primary/90 transition-colors"
           >
             Apply for a Seat
           </a>
