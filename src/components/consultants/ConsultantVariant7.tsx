@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import PageMeta from "../PageMeta";
 
-function EarlyBirdCountdown({ deadline }: { deadline: string }) {
+function EarlyBirdCountdown({ deadline, navMode = false }: { deadline: string; navMode?: boolean }) {
   const [days, setDays] = useState<number | null>(null);
 
   useEffect(() => {
@@ -15,11 +15,15 @@ function EarlyBirdCountdown({ deadline }: { deadline: string }) {
   }, [deadline]);
 
   if (days === null) return null;
-  if (days === 0) return <p className="text-xs text-brand-primary font-semibold mb-5">Deadline today</p>;
+  const label = days === 0 ? "Deadline today" : `${days} day${days !== 1 ? "s" : ""} remaining`;
+
+  if (navMode) {
+    return <span className="text-[10px] text-brand-primary font-semibold uppercase tracking-[1px] mt-0.5">{label}</span>;
+  }
 
   return (
     <p className="text-xs text-brand-primary font-semibold mb-5 uppercase tracking-[1px]">
-      {days} day{days !== 1 ? "s" : ""} remaining
+      {label}
     </p>
   );
 }
@@ -45,8 +49,9 @@ export default function ConsultantVariant7() {
       {/* NAV */}
       <nav className="fixed top-[4px] left-0 right-0 z-[99] bg-brand-surface/95 backdrop-blur-md border-b border-brand-border py-4">
         <div className="max-w-[1100px] px-8 flex justify-between items-center mx-auto">
-          <div className="font-semibold text-sm tracking-[2px] uppercase">
-            Early bird: £799 · Limited seats
+          <div className="flex flex-col leading-tight">
+            <span className="font-semibold text-sm tracking-[2px] uppercase">Early bird: £799 · Limited seats</span>
+            <EarlyBirdCountdown deadline="2026-05-31" navMode />
           </div>
           <a
             href="#apply"
