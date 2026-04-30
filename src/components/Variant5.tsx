@@ -32,7 +32,7 @@ export default function Variant5() {
             <div className="flex items-center gap-6 mb-10">
               <div className="inline-flex items-center gap-2.5 px-4 py-2 border border-brand-primary text-brand-primary font-roboto font-bold text-sm uppercase tracking-widest">
                 <span className="w-1.5 h-1.5 bg-brand-primary rounded-full animate-pulse-custom" />
-                CXO AI Day · May 15, 2026
+                CXO AI Day · 3rd July 2026
               </div>
               <div className="flex-1 h-px bg-white/5" />
             </div>
@@ -57,7 +57,7 @@ export default function Variant5() {
 
               <div className="flex flex-col gap-8 min-w-[260px] pb-3">
                 {[
-                  { label: "Date", value: "May 15, 2026" },
+                  { label: "Date", value: "3rd July 2026" },
                   { label: "Location", value: "London, UK" },
                   { label: "Format", value: "Full-Day Workshop" },
                   { label: "Audience", value: "CXOs & Board Members" }
@@ -248,11 +248,11 @@ export default function Variant5() {
           <div className="grid lg:grid-cols-2 gap-20 items-start">
             <div className="border border-white/5">
               {[
-                { key: "Date", val: "May 15, 2026" },
+                { key: "Date", val: "3rd July 2026" },
                 { key: "Venue", val: "London, UK (Private Venue)" },
                 { key: "Format", val: "Full-day workshop", sub: "Registration from 08:30 · Closes 17:30" },
                 { key: "Cohort", val: "Limited to 12 executives" },
-                { key: "Investment", val: "£799 + VAT" },
+                { key: "Investment", val: "£899 + VAT" },
                 { key: "Includes", val: "All materials, lunch, and follow-up resources" }
               ].map((item, i) => (
                 <div key={i} className="grid grid-cols-[120px_1fr] border-b border-white/5 last:border-b-0">

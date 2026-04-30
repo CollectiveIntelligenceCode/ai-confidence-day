@@ -1,10 +1,11 @@
-import { useState, type ReactNode } from "react";
+import { useState, useRef, type ReactNode } from "react";
 import PageMeta from "./PageMeta";
 import { NavCountdown } from "./ui/countdown-timer";
 import ShiftingCountdown from "./ui/countdown-timer";
 
 export default function Variant7() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const workshopCarouselRef = useRef<HTMLDivElement>(null);
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -14,7 +15,7 @@ export default function Variant7() {
     <div className="font-quicksand text-brand-text bg-brand-surface leading-relaxed text-lg font-light min-h-screen">
       <PageMeta
         title="AI Confidence Day for CXOs & Board Members | Solved Together"
-        description="A private, hands-on working day in London for CXOs and board members who want genuine AI clarity — not another conference. 26th June 2026. 12 people maximum."
+        description="A private, hands-on working day in London for CXOs and board members who want genuine AI clarity — not another conference. 3rd July 2026. 12 people maximum."
         url="https://ai.solvedtogether.co.uk"
       />
 
@@ -25,7 +26,7 @@ export default function Variant7() {
       <nav className="fixed top-[4px] left-0 right-0 z-[99] bg-brand-surface/95 backdrop-blur-md border-b border-brand-border py-3">
         <div className="max-w-[1100px] px-8 flex items-center justify-between mx-auto">
           <div className="flex items-center gap-3">
-            <span className="font-bold text-sm tracking-[1.5px] uppercase text-brand-text">Early bird · £799</span>
+            <span className="font-bold text-sm tracking-[1.5px] uppercase text-brand-text">Early bird · £899</span>
             <span className="text-brand-text/30 text-sm">·</span>
             <span className="text-xs font-medium tracking-[1px] uppercase text-brand-text/50">ends in</span>
             <NavCountdown />
@@ -62,7 +63,7 @@ export default function Variant7() {
             Apply for a Seat
           </a>
           <div className="mt-8 text-sm text-brand-text/50 tracking-[1px]">
-            26th June 2026 · London · 12 people maximum
+            3rd July 2026 · London · 12 people maximum
           </div>
         </div>
       </section>
@@ -71,7 +72,7 @@ export default function Variant7() {
       <div className="bg-white border-b border-brand-border py-10 px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-[1px] bg-brand-border max-w-[800px] mx-auto">
           {[
-            { label: "Date", value: "26th June 2026" },
+            { label: "Date", value: "3rd July 2026" },
             { label: "Location", value: "London, UK" },
             { label: "Format", value: "Full-Day Workshop" },
             { label: "Audience", value: "CXOs & Board Members" },
@@ -336,7 +337,7 @@ export default function Variant7() {
               <div className="text-brand-text/80 text-base leading-relaxed">
                 <div className="py-3 border-b border-brand-border flex gap-3">
                   <span className="text-brand-text/50 flex-shrink-0">—</span>
-                  <span>You are a solopreneur or consultant — <a href="/consultants" className="text-brand-primary underline underline-offset-2 hover:opacity-75 transition-opacity">we have a separate day built for you</a></span>
+                  <span>You are a consultant or small business owner — <a href="/consultants" className="text-brand-primary underline underline-offset-2 hover:opacity-75 transition-opacity">we have a separate day built for you</a></span>
                 </div>
                 {[
                   "You have a developer, engineering, or technical background and want a deep-dive into machine learning or AI architecture",
@@ -364,7 +365,7 @@ export default function Variant7() {
               { title: "Peer Community", desc: "A private group of leaders at your level — independent, neutral, no company politics. A safe sounding board long after the day ends." },
               { title: "Certificate", desc: "Personalised Certificate of Mastery with your name" },
               { title: "Follow-Up Resources", desc: "Continued access to frameworks and tools as AI evolves" },
-              { title: "Satisfaction Guarantee", desc: "100% money-back guarantee. If you are not satisfied, full refund. No questions." },
+              { title: "Satisfaction Guarantee", desc: "100% money-back guarantee*. If you leave before the lunch break, ask for your money back and we will refund you in full." },
             ].map((item, idx) => (
               <div key={idx} className="bg-white p-7 text-center">
                 <h4 className="text-base font-semibold text-brand-text mb-2">{item.title}</h4>
@@ -470,10 +471,36 @@ export default function Variant7() {
           </p>
 
           {/* WORKSHOP PHOTOS */}
-          <div className="grid grid-cols-3 gap-3 mb-16">
-            <img src="/workshop-photo-1.png" alt="Previous workshop" className="w-full h-56 object-cover rounded-sm" />
-            <img src="/workshop-photo-2.png" alt="Previous workshop" className="w-full h-56 object-cover rounded-sm" />
-            <img src="/workshop-photo-3.png" alt="Previous workshop" className="w-full h-56 object-cover rounded-sm" />
+          <div className="relative mb-16">
+            <div
+              ref={workshopCarouselRef}
+              className="flex gap-3 overflow-x-auto snap-x snap-mandatory [&::-webkit-scrollbar]:hidden"
+              style={{ scrollbarWidth: "none" }}
+            >
+              {[
+                "/workshop-photo-1.png",
+                "/workshop-photo-2.png",
+                "/workshop-photo-3.png",
+                "/workshop-photo-4.jpg",
+                "/workshop-photo-5.jpg",
+              ].map((src, idx) => (
+                <div key={idx} className="flex-none w-[80%] md:w-[45%] snap-start">
+                  <img src={src} alt="Previous workshop" className="w-full h-64 object-cover rounded-sm" />
+                </div>
+              ))}
+            </div>
+            <button
+              onClick={() => workshopCarouselRef.current?.scrollBy({ left: -420, behavior: "smooth" })}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 w-10 h-10 bg-white border border-brand-border flex items-center justify-center text-brand-text hover:bg-brand-primary hover:text-white transition-colors shadow-sm z-10"
+            >
+              ←
+            </button>
+            <button
+              onClick={() => workshopCarouselRef.current?.scrollBy({ left: 420, behavior: "smooth" })}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 w-10 h-10 bg-white border border-brand-border flex items-center justify-center text-brand-text hover:bg-brand-primary hover:text-white transition-colors shadow-sm z-10"
+            >
+              →
+            </button>
           </div>
 
           <div>
@@ -530,10 +557,10 @@ export default function Variant7() {
           <h2 className="text-4xl md:text-5xl mb-3 font-normal">Secure your place.</h2>
           <p className="text-lg text-brand-text/80 mb-12">Seats are allocated by application. We keep the room small deliberately.</p>
 
-          <div className="flex flex-col md:flex-row max-w-[640px] mx-auto">
+          <div className="flex flex-col md:flex-row max-w-[900px] mx-auto">
             <div className="flex-1 p-10 bg-white border-2 border-brand-primary">
               <div className="text-xs uppercase tracking-[2px] text-brand-primary font-semibold mb-2">Early Bird</div>
-              <div className="text-6xl text-brand-text leading-none font-normal">£799</div>
+              <div className="text-6xl text-brand-text leading-none font-normal">£899</div>
               <div className="text-sm text-brand-text/50 mt-1.5 uppercase">+ VAT</div>
               <p className="text-sm text-brand-text/80 my-4 italic">Until 31 May 2026</p>
               <ShiftingCountdown />
@@ -543,16 +570,25 @@ export default function Variant7() {
             </div>
             <div className="flex-1 p-10 bg-white border border-brand-border">
               <div className="text-xs uppercase tracking-[2px] text-brand-text/50 font-semibold mb-2">Standard</div>
-              <div className="text-6xl text-brand-text/50 leading-none font-normal">£999</div>
+              <div className="text-6xl text-brand-text/50 leading-none font-normal">£1,099</div>
               <div className="text-sm text-brand-text/50 mt-1.5 uppercase">+ VAT</div>
               <p className="text-sm text-brand-text/50 my-6 italic">After early bird expires</p>
               <a href="#apply" className="block w-full bg-brand-text/20 text-brand-text/60 py-4 text-base font-medium no-underline">
                 Apply for a Seat
               </a>
             </div>
+            <div className="flex-1 p-10 bg-white border border-brand-border">
+              <div className="text-xs uppercase tracking-[2px] text-brand-text/50 font-semibold mb-2">On the Door</div>
+              <div className="text-6xl text-brand-text/50 leading-none font-normal">£1,299</div>
+              <div className="text-sm text-brand-text/50 mt-1.5 uppercase">+ VAT</div>
+              <p className="text-sm text-brand-text/50 my-6 italic">If spaces are still available</p>
+              <a href="#apply" className="block w-full bg-brand-text/20 text-brand-text/60 py-4 text-base font-medium no-underline">
+                Apply for a Seat
+              </a>
+            </div>
           </div>
           <p className="mt-8 text-sm text-brand-text/50 italic">
-            100% satisfaction guarantee. Full refund if you are not satisfied.
+            100% money-back guarantee*. Full refund if you leave before the lunch break.
           </p>
         </div>
       </section>
@@ -563,15 +599,15 @@ export default function Variant7() {
           <h2 className="text-4xl md:text-5xl mb-12 text-center font-normal">Frequently asked questions.</h2>
           <div className="max-w-[800px] mx-auto">
             {[
-              { q: "Are there early bird discounts?", a: "Yes. Register before 31 May 2026 for the reduced rate of £799 + VAT. After that, the standard price of £999 + VAT applies." },
+              { q: "Are there early bird discounts?", a: "Yes. Register before 31 May 2026 for the early bird rate of £899 + VAT. After that, the standard price of £1,099 + VAT applies. If spaces are still available on the day, the on-the-door price is £1,299 + VAT." },
               { q: "Will there be recordings?", a: "No. This is an in-person session with no recordings. All materials taught during the day are sent to participants afterwards. Chatham House Rules mean the conversations in this room stay in this room." },
               { q: "Why is the group limited to 12?", a: "Deliberately. We want a safe space where senior leaders can say \"I do not know,\" ask real questions, and express concerns without judgement. A small group makes that possible. It also means every participant gets hands-on attention and genuine peer connection." },
               { q: "Why is this in person?", a: "We have seen a significant difference in impact and depth between virtual and in-person sessions, especially at leadership level. Much of the learning happens through the people in the room — not just the facilitators. The connections formed in person are often more valuable than the content itself. Speed of learning, retention, quality of conversation — everything is better face to face." },
               { q: "What if I cannot attend the full day?", a: "The day is designed to flow from one session to the next. We strongly encourage full-day attendance. Arriving late or leaving early means missing context that builds throughout the day." },
               { q: "Are virtual sessions planned?", a: "Not for the public programme. We do run private CXO AI days tailored to individual companies and PE houses for their portfolio companies, and we travel to different locations for those. This public session is specifically designed as an in-person experience in London." },
               { q: "Do I need technical knowledge?", a: "No. This is specifically designed for non-technical leaders — CEOs, CFOs, CHROs, CMOs, COOs, board members. You do not need to code or understand machine learning. Just bring curiosity and willingness to learn by doing." },
-              { q: "What if I am not satisfied?", a: "100% satisfaction guarantee. Full refund if you are not satisfied. No questions asked." },
-              { q: "Is this for CXOs only, or board members too?", a: <>Both. C-suite executives and board members (executive and non-executive) of mid-sized companies, family businesses, enterprise organisations, and non-profits. Anyone in a leadership role with a team who wants to understand AI's impact on their business. If you are a solopreneur or consultant, <a href="/consultants" className="text-brand-primary underline underline-offset-2 hover:opacity-75 transition-opacity">we have a separate day built for you</a>.</> },
+              { q: "What does the 100% money-back guarantee* cover?", a: "If you attend the morning session and, before the lunch break, feel this day is not for you — you can leave. Let us know before lunch and we will refund you in full, no questions asked. We do not offer refunds after the lunch break as the full day's content will have been delivered by that point." },
+              { q: "Is this for CXOs only, or board members too?", a: <>Both. C-suite executives and board members (executive and non-executive) of mid-sized companies, family businesses, enterprise organisations, and non-profits. Anyone in a leadership role with a team who wants to understand AI's impact on their business. If you are a consultant or small business owner, <a href="/consultants" className="text-brand-primary underline underline-offset-2 hover:opacity-75 transition-opacity">we have a separate day built for you</a>.</> },
               { q: "What is the difference between this and the Consultants & Small Business day?", a: "Two things: the room and the content. The people in your room are CXOs and board members of mid-sized and enterprise organisations — people navigating the same scale of decisions you are. That matters because this day is built around co-creation and solving problems together. The content is tailored to your reality: scaling AI across hundreds or thousands of people, building organisational playbooks, navigating implementation approaches, and making confident decisions at board level. The consultants day addresses a different set of problems — individual productivity, running a business on AI, and advising clients. Different problems, different room, different content." },
               { q: "Do you have other dates, later in the year?", a: <>We currently have no other dates planned for a public training for the rest of this year. We do run these privately for companies, where we have more flexibility on dates. <a href="mailto:contact@solvedtogether.co.uk" className="text-brand-primary underline underline-offset-2 hover:opacity-75 transition-opacity">Reach out</a> if that is more suitable.</> },
             ].map((faq: { q: string; a: ReactNode }, idx) => (

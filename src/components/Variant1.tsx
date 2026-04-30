@@ -25,7 +25,7 @@ export default function Variant1() {
             <div className="flex flex-col sm:flex-row gap-4">
               <CTAButton>Apply for a Private Seat</CTAButton>
               <div className="flex items-center gap-2 text-gray-500 text-sm font-medium px-4">
-                May 15, 2026 • London
+                3rd July 2026 • London
               </div>
             </div>
           </motion.div>
@@ -53,7 +53,7 @@ export default function Variant1() {
                   But privately? You’re not sure what’s hype and what’s a real threat to your P&L. There is no safe space for a CEO to ask: <span className="text-brand-primary italic font-semibold">"What does this actually do?"</span>
                 </p>
                 <p className="text-brand-primary font-bold">
-                  On May 15, we provide that space. No jargon. No judgment. Just the truth about AI, from people who speak your language.
+                  On 3rd July, we provide that space. No jargon. No judgment. Just the truth about AI, from people who speak your language.
                 </p>
               </div>
             </div>
@@ -68,7 +68,7 @@ export default function Variant1() {
                 <div className="absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-transparent" />
                 <div className="absolute bottom-8 left-8 right-8">
                   <div className="h-px w-full bg-brand-primary mb-4" />
-                  <p className="text-xs uppercase tracking-[0.3em] text-brand-primary font-bold">London Boardroom • May 15</p>
+                  <p className="text-xs uppercase tracking-[0.3em] text-brand-primary font-bold">London Boardroom • 3rd July</p>
                 </div>
               </div>
             </div>

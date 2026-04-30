@@ -30,7 +30,7 @@ export default function ConsultantVariant4() {
               </CTAButton>
               
               <div className="flex flex-wrap justify-center gap-8 text-sm font-bold uppercase tracking-widest text-gray-500">
-                <span className="flex items-center gap-2"><Calendar className="w-4 h-4 text-brand-primary" /> May 15, 2026</span>
+                <span className="flex items-center gap-2"><Calendar className="w-4 h-4 text-brand-primary" /> 19th June 2026</span>
                 <span className="flex items-center gap-2"><MapPin className="w-4 h-4 text-brand-primary" /> London, UK</span>
                 <span className="flex items-center gap-2"><Users className="w-4 h-4 text-brand-primary" /> 12 Seats Max</span>
               </div>
@@ -168,7 +168,7 @@ export default function ConsultantVariant4() {
           </h2>
           <div className="bg-white/5 border border-white/10 p-12 rounded-3xl mb-12">
             <div className="text-brand-primary text-sm font-bold uppercase tracking-[0.4em] mb-6">Investment</div>
-            <div className="text-7xl md:text-8xl font-bold font-roboto mb-4">£799</div>
+            <div className="text-7xl md:text-8xl font-bold font-roboto mb-4">£899</div>
             <p className="text-gray-400 text-lg mb-8">Early bird pricing · limited seats remaining</p>
             <div className="h-px w-full bg-white/10 mb-8" />
             <p className="text-sm uppercase tracking-widest text-gray-500 font-bold">Includes Private London Venue • Full Catering • All Materials</p>
@@ -179,7 +179,7 @@ export default function ConsultantVariant4() {
 
       {/* Footer */}
       <footer className="py-12 px-6 text-center border-t border-brand-border">
-        <p className="text-gray-400 text-xs uppercase tracking-[0.5em]">Solved Together • May 15 • London</p>
+        <p className="text-gray-400 text-xs uppercase tracking-[0.5em]">Solved Together • 19th June • London</p>
       </footer>
     </div>
   );

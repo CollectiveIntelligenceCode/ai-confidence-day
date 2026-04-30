@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import PageMeta from "../PageMeta";
 import { NavCountdown } from "../ui/countdown-timer";
 import ShiftingCountdown from "../ui/countdown-timer";
 
 export default function ConsultantVariant7() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const workshopCarouselRef = useRef<HTMLDivElement>(null);
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -25,7 +26,7 @@ export default function ConsultantVariant7() {
       <nav className="fixed top-[4px] left-0 right-0 z-[99] bg-brand-surface/95 backdrop-blur-md border-b border-brand-border py-3">
         <div className="max-w-[1100px] px-8 flex items-center justify-between mx-auto">
           <div className="flex items-center gap-3">
-            <span className="font-bold text-sm tracking-[1.5px] uppercase text-brand-text">Early bird · £799</span>
+            <span className="font-bold text-sm tracking-[1.5px] uppercase text-brand-text">Early bird · £899</span>
             <span className="text-brand-text/30 text-sm">·</span>
             <span className="text-xs font-medium tracking-[1px] uppercase text-brand-text/50">ends in</span>
             <NavCountdown />
@@ -106,7 +107,7 @@ export default function ConsultantVariant7() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 pt-12 border-t border-brand-border">
             {[
-              { num: "74%", text: "of independent workers now use AI — but fewer than a quarter of solopreneurs have meaningfully adopted it", source: "MBO Partners / Simply Business, 2025" },
+              { num: "75%", text: "of independent workers now use AI — but fewer than a quarter of them have meaningfully adopted it", source: "MBO Partners / Simply Business, 2025" },
               { num: "9hrs", text: "saved per week by independent workers who have properly adopted AI into their workflow", source: "MBO Partners, 2025" },
               { num: "25–60%", text: "higher rates commanded by AI-skilled freelancers and consultants vs. general practitioners", source: "Upwork, 2025–2026" },
             ].map((stat, idx) => (
@@ -349,7 +350,7 @@ export default function ConsultantVariant7() {
               { title: "Peer Community", desc: "A private group of independents at your level — no competition, no agenda. A safe sounding board long after the day ends." },
               { title: "Certificate", desc: "Personalised Certificate of Mastery with your name" },
               { title: "Follow-Up Resources", desc: "Continued access to frameworks and tools as AI evolves" },
-              { title: "Satisfaction Guarantee", desc: "100% money-back guarantee. If you are not satisfied, full refund. No questions." },
+              { title: "Satisfaction Guarantee", desc: "100% money-back guarantee*. If you leave before the lunch break, ask for your money back and we will refund you in full." },
             ].map((item, idx) => (
               <div key={idx} className="bg-white p-7 text-center">
                 <h4 className="text-base font-semibold text-brand-text mb-2">{item.title}</h4>
@@ -457,10 +458,36 @@ export default function ConsultantVariant7() {
           </p>
 
           {/* WORKSHOP PHOTOS */}
-          <div className="grid grid-cols-3 gap-3 mb-16">
-            <img src="/workshop-photo-1.png" alt="Previous workshop" className="w-full h-56 object-cover rounded-sm" />
-            <img src="/workshop-photo-2.png" alt="Previous workshop" className="w-full h-56 object-cover rounded-sm" />
-            <img src="/workshop-photo-3.png" alt="Previous workshop" className="w-full h-56 object-cover rounded-sm" />
+          <div className="relative mb-16">
+            <div
+              ref={workshopCarouselRef}
+              className="flex gap-3 overflow-x-auto snap-x snap-mandatory [&::-webkit-scrollbar]:hidden"
+              style={{ scrollbarWidth: "none" }}
+            >
+              {[
+                "/workshop-photo-1.png",
+                "/workshop-photo-2.png",
+                "/workshop-photo-3.png",
+                "/workshop-photo-4.jpg",
+                "/workshop-photo-5.jpg",
+              ].map((src, idx) => (
+                <div key={idx} className="flex-none w-[80%] md:w-[45%] snap-start">
+                  <img src={src} alt="Previous workshop" className="w-full h-64 object-cover rounded-sm" />
+                </div>
+              ))}
+            </div>
+            <button
+              onClick={() => workshopCarouselRef.current?.scrollBy({ left: -420, behavior: "smooth" })}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 w-10 h-10 bg-white border border-brand-border flex items-center justify-center text-brand-text hover:bg-brand-primary hover:text-white transition-colors shadow-sm z-10"
+            >
+              ←
+            </button>
+            <button
+              onClick={() => workshopCarouselRef.current?.scrollBy({ left: 420, behavior: "smooth" })}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 w-10 h-10 bg-white border border-brand-border flex items-center justify-center text-brand-text hover:bg-brand-primary hover:text-white transition-colors shadow-sm z-10"
+            >
+              →
+            </button>
           </div>
 
           {/* TESTIMONIALS WITH PHOTOS */}
@@ -518,10 +545,10 @@ export default function ConsultantVariant7() {
           <h2 className="text-4xl md:text-5xl mb-3 font-normal">Secure your place.</h2>
           <p className="text-lg text-brand-text/80 mb-12">Seats are allocated by application. We keep the room small deliberately.</p>
 
-          <div className="flex flex-col md:flex-row max-w-[640px] mx-auto">
+          <div className="flex flex-col md:flex-row max-w-[900px] mx-auto">
             <div className="flex-1 p-10 bg-white border-2 border-brand-primary">
               <div className="text-xs uppercase tracking-[2px] text-brand-primary font-semibold mb-2">Early Bird</div>
-              <div className="text-6xl text-brand-text leading-none font-normal">£799</div>
+              <div className="text-6xl text-brand-text leading-none font-normal">£899</div>
               <div className="text-sm text-brand-text/50 mt-1.5 uppercase">+ VAT</div>
               <p className="text-sm text-brand-text/80 my-4 italic">Until 31 May 2026</p>
               <ShiftingCountdown />
@@ -534,7 +561,7 @@ export default function ConsultantVariant7() {
             </div>
             <div className="flex-1 p-10 bg-white border border-brand-border">
               <div className="text-xs uppercase tracking-[2px] text-brand-text/50 font-semibold mb-2">Standard</div>
-              <div className="text-6xl text-brand-text/50 leading-none font-normal">£999</div>
+              <div className="text-6xl text-brand-text/50 leading-none font-normal">£1,099</div>
               <div className="text-sm text-brand-text/50 mt-1.5 uppercase">+ VAT</div>
               <p className="text-sm text-brand-text/50 my-6 italic">After early bird expires</p>
               <a
@@ -544,9 +571,21 @@ export default function ConsultantVariant7() {
                 Apply for a Seat
               </a>
             </div>
+            <div className="flex-1 p-10 bg-white border border-brand-border">
+              <div className="text-xs uppercase tracking-[2px] text-brand-text/50 font-semibold mb-2">On the Door</div>
+              <div className="text-6xl text-brand-text/50 leading-none font-normal">£1,299</div>
+              <div className="text-sm text-brand-text/50 mt-1.5 uppercase">+ VAT</div>
+              <p className="text-sm text-brand-text/50 my-6 italic">If spaces are still available</p>
+              <a
+                href="#apply"
+                className="block w-full bg-brand-text/20 text-brand-text/60 py-4 text-base font-medium tracking-[0.5px] no-underline"
+              >
+                Apply for a Seat
+              </a>
+            </div>
           </div>
           <p className="mt-8 text-sm text-brand-text/50 italic">
-            100% satisfaction guarantee. Full refund if you are not satisfied.
+            100% money-back guarantee*. Full refund if you leave before the lunch break.
           </p>
         </div>
       </section>
@@ -561,9 +600,9 @@ export default function ConsultantVariant7() {
               { q: "I already use ChatGPT. Is this still relevant?", a: "Especially so. Using ChatGPT for emails and summaries is about 5% of what is possible. This day shows you the other 95% — how to build workflows that genuinely change your capacity, your speed, and how you compete." },
               { q: "Why is this in person?", a: "Because you have already tried the online version. You have bookmarked the guides, saved the posts, signed up for the courses. How many have you gone back to? This is deliberately in-person so you actually do the work, in a room with peers at your level, and leave having done it — not just read about it." },
               { q: "Will there be recordings?", a: "No. All materials are sent to you afterwards. But Chatham House Rules mean the conversations stay in the room — and that is what makes people honest about where they really are." },
-              { q: "I am a solopreneur with no team. Is this for me?", a: "Especially. If you are doing everything yourself, AI is the closest thing to hiring a team without the cost. This day shows you how to operate like a team of five." },
-              { q: "What if I am not satisfied?", a: "100% satisfaction guarantee. Full refund. No questions asked." },
-              { q: "Are there early bird discounts?", a: "Yes. Register before 31 May 2026 for the reduced rate of £799 + VAT. After that, the standard price of £999 + VAT applies." },
+              { q: "I run my business on my own with no team. Is this for me?", a: "Especially. If you are doing everything yourself, AI is the closest thing to hiring a team without the cost. This day shows you how to operate like a team of five." },
+              { q: "What does the 100% money-back guarantee* cover?", a: "If you attend the morning session and, before the lunch break, feel this day is not for you — you can leave. Let us know before lunch and we will refund you in full, no questions asked. We do not offer refunds after the lunch break as the full day's content will have been delivered by that point." },
+              { q: "Are there early bird discounts?", a: "Yes. Register before 31 May 2026 for the early bird rate of £899 + VAT. After that, the standard price of £1,099 + VAT applies. If spaces are still available on the day, the on-the-door price is £1,299 + VAT." },
               { q: "What is the difference between this and the CXO & Board Members day?", a: "Two things: the room and the content. The people in your room are consultants, founders, and small business owners — people who share your problems, your pace, and your objectives. That matters because this day is built around co-creation and solving problems together, not just listening. The content is also tailored differently. For a small business, AI can deliver ROI on day one — because you are the business. The tools, the financials, and the threshold for value are immediate and personal. The CXO day addresses a different reality: scaling AI across hundreds or thousands of people, building organisational playbooks, navigating implementation methodologies, and making the case at board level. Different problems, different room, different content." },
               { q: "Will you be running more of these?", a: "Yes. We also run a separate AI Confidence Day for CXOs and board members of larger organisations. And we plan to run intermediate-level days for those who have attended the first one. This is the beginning, not the end." },
               { q: "Do you have other dates, later in the year?", a: <>We currently have no other dates planned for a public training for the rest of this year. We do run these privately for companies, where we have more flexibility on dates. <a href="mailto:contact@solvedtogether.co.uk" className="text-brand-primary underline underline-offset-2 hover:opacity-75 transition-opacity">Reach out</a> if that is more suitable.</> },

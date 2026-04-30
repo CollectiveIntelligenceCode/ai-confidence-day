@@ -118,7 +118,7 @@ export default function Variant3() {
               </div>
               <div>
                 <div className="text-brand-primary text-xs font-bold uppercase tracking-widest mb-2">Investment</div>
-                <p className="text-xl text-brand-text">$799 per person</p>
+                <p className="text-xl text-brand-text">£899 per person</p>
                 <p className="text-sm text-gray-500 mt-1">Includes all materials & catering</p>
               </div>
               <div>
@@ -140,9 +140,9 @@ export default function Variant3() {
 
       {/* Final CTA */}
       <footer className="py-24 px-6 text-center border-t border-brand-border">
-        <p className="text-gray-400 text-sm uppercase tracking-[0.5em] mb-8">Solved Together • May 15 • London</p>
+        <p className="text-gray-400 text-sm uppercase tracking-[0.5em] mb-8">Solved Together • 3rd July • London</p>
         <h2 className="text-3xl font-bold mb-4 text-brand-text">Don't figure it out alone.</h2>
-        <p className="text-gray-500 mb-0">Join us on May 15 for a day that changes the signal.</p>
+        <p className="text-gray-500 mb-0">Join us on 3rd July for a day that changes the signal.</p>
       </footer>
     </div>
   );

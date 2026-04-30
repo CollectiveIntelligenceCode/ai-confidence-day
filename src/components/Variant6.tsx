@@ -11,7 +11,7 @@ export default function Variant6() {
           Solved<span className="text-brand-primary">Together</span>
         </a>
         <div className="flex items-center gap-8">
-          <span className="hidden md:block font-roboto text-[10px] font-bold uppercase tracking-widest text-gray-500">May 15, 2026</span>
+          <span className="hidden md:block font-roboto text-[10px] font-bold uppercase tracking-widest text-gray-500">3rd July 2026</span>
           <a href="#logistics" className="bg-brand-primary text-white font-roboto font-bold text-[11px] uppercase tracking-widest px-6 py-2 hover:bg-[#f5336a] transition-colors">
             Apply for a Seat
           </a>
@@ -52,16 +52,16 @@ export default function Variant6() {
                 </p>
                 <div className="flex flex-col items-start gap-4">
                   <CTAButton className="px-12 py-4 text-xs tracking-[0.15em]">Apply for a Seat →</CTAButton>
-                  <span className="font-roboto text-[10px] uppercase tracking-widest text-gray-400">Limited cohort · May 15, 2026 · £799 + VAT</span>
+                  <span className="font-roboto text-[10px] uppercase tracking-widest text-gray-400">Limited cohort · 3rd July 2026 · £899 + VAT</span>
                 </div>
               </div>
 
               <div className="flex flex-wrap border border-black/15">
                 {[
-                  { label: "Date", value: "May 15, 2026" },
+                  { label: "Date", value: "3rd July 2026" },
                   { label: "Venue", value: "London, UK", placeholder: true },
                   { label: "Format", value: "Full-Day Workshop" },
-                  { label: "Investment", value: "£799 + VAT" },
+                  { label: "Investment", value: "£899 + VAT" },
                   { label: "For", value: "CXOs & Board Members" }
                 ].map((item, i) => (
                   <div key={i} className="p-4 border-r border-black/10 last:border-r-0 flex flex-col gap-1">
@@ -309,11 +309,11 @@ export default function Variant6() {
           <div className="grid lg:grid-cols-2 gap-20 items-start">
             <div className="border border-black/15 bg-white">
               {[
-                { key: "Date", val: "May 15, 2026" },
+                { key: "Date", val: "3rd July 2026" },
                 { key: "Venue", val: "London, UK", placeholder: true },
                 { key: "Format", val: "Full-day workshop", sub: "Registration from 08:30 · Closes 17:30" },
                 { key: "Cohort", val: "Limited capacity", placeholder: true },
-                { key: "Investment", val: "£799 + VAT", sub: "Includes lunch, all materials & follow-up resources" }
+                { key: "Investment", val: "£899 + VAT", sub: "Includes lunch, all materials & follow-up resources" }
               ].map((item, i) => (
                 <div key={i} className="grid grid-cols-[120px_1fr] border-b border-black/10 last:border-b-0">
                   <div className="p-6 border-r border-black/10 font-roboto text-[10px] uppercase tracking-widest text-gray-500 flex items-center">
@@ -357,7 +357,7 @@ export default function Variant6() {
       <section className="py-40 px-10 text-center relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-brand-primary/5 rounded-full blur-[120px] pointer-events-none" />
         <div className="max-w-4xl mx-auto relative z-10">
-          <div className="font-roboto font-bold text-sm uppercase tracking-widest text-brand-primary mb-8">May 15, 2026 · CXO AI Day</div>
+          <div className="font-roboto font-bold text-sm uppercase tracking-widest text-brand-primary mb-8">3rd July 2026 · CXO AI Day</div>
           <h2 className="font-roboto font-bold text-6xl md:text-8xl lg:text-9xl text-black leading-[0.95] tracking-tighter mb-12">
             Your leadership<br />team deserves<br /><span className="italic text-brand-primary">alignment.</span>
           </h2>
@@ -371,7 +371,7 @@ export default function Variant6() {
             <span className="w-1 h-1 bg-gray-200 rounded-full" />
             <span className="font-roboto text-[10px] uppercase tracking-widest text-gray-400">CXO AI Day</span>
             <span className="w-1 h-1 bg-gray-200 rounded-full" />
-            <span className="font-roboto text-[10px] uppercase tracking-widest text-gray-400">May 15, 2026</span>
+            <span className="font-roboto text-[10px] uppercase tracking-widest text-gray-400">3rd July 2026</span>
             <span className="w-1 h-1 bg-gray-200 rounded-full" />
             <a href="#" className="font-roboto text-[10px] uppercase tracking-widest text-gray-400 hover:text-brand-primary transition-colors">contact@solvedtogether.co.uk</a>
           </div>

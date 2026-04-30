@@ -25,7 +25,7 @@ export default function ConsultantVariant1() {
             <div className="flex flex-col sm:flex-row gap-4">
               <CTAButton>Apply for a Private Seat</CTAButton>
               <div className="flex items-center gap-2 text-gray-500 text-sm font-medium px-4">
-                May 15, 2026 • London
+                19th June 2026 • London
               </div>
             </div>
           </motion.div>
@@ -53,7 +53,7 @@ export default function ConsultantVariant1() {
                   But privately? You’re not sure how to diagnose AI readiness or spot vendor nonsense for your clients. There is no safe space to admit that you're selling a future you haven't mastered yet.
                 </p>
                 <p className="text-brand-primary font-bold">
-                  On May 15, we provide that space. Shift from performed confidence to actual mastery—and walk away with the frameworks to prove it.
+                  On 19th June, we provide that space. Shift from performed confidence to actual mastery—and walk away with the frameworks to prove it.
                 </p>
               </div>
             </div>
@@ -68,7 +68,7 @@ export default function ConsultantVariant1() {
                 <div className="absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-transparent" />
                 <div className="absolute bottom-8 left-8 right-8">
                   <div className="h-px w-full bg-brand-primary mb-4" />
-                  <p className="text-xs uppercase tracking-[0.3em] text-brand-primary font-bold">London Strategy Room • May 15</p>
+                  <p className="text-xs uppercase tracking-[0.3em] text-brand-primary font-bold">London Strategy Room • 19th June</p>
                 </div>
               </div>
             </div>
