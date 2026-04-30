@@ -222,7 +222,7 @@ export default function ConsultantVariant7() {
             {[
               {
                 num: "01", time: "Morning", title: "Your AI Workflow",
-                fac: "With Chris · Collective Intelligence",
+                fac: "",
                 desc: "You wear every hat. AI can wear most of them with you. This session is hands-on: you will build a personal workflow that changes how you write proposals, prepare for client calls, create content, and handle the operational load that eats your evenings and weekends.",
                 outcomes: [
                   "A personal AI workflow built around your actual day — not someone else's",
@@ -233,7 +233,7 @@ export default function ConsultantVariant7() {
               },
               {
                 num: "02", time: "Afternoon", title: "AI for Your Business",
-                fac: "With Rujuta · Solved Together",
+                fac: "",
                 desc: "This is not \"use ChatGPT more.\" This is about rethinking how your business operates. How you price. How you deliver. How you compete. How you advise your clients. The frameworks that turn AI from a tool you occasionally use into an operating advantage that changes your economics.",
                 outcomes: [
                   "How to advise clients on AI with genuine confidence — scope, cost, what is realistic",
@@ -244,7 +244,7 @@ export default function ConsultantVariant7() {
               },
               {
                 num: "03", time: "Late Afternoon", title: "Your AI Worries",
-                fac: "With Rujuta · Solved Together",
+                fac: "",
                 desc: "Every conversation about AI comes with a shadow conversation: what about data? What about privacy? What about my clients' data? These are not irrational fears. They are the questions that most AI training deliberately avoids. This session tackles them head-on — practically, not theoretically.",
                 outcomes: [
                   "Why AI risk needs a different playbook from other technology — and what that playbook looks like",
@@ -262,7 +262,7 @@ export default function ConsultantVariant7() {
                 </div>
                 <div>
                   <h3 className="text-3xl mb-1 font-normal">{session.title}</h3>
-                  <div className="text-sm text-brand-primary font-medium mb-4">{session.fac}</div>
+                  {session.fac && <div className="text-sm text-brand-primary font-medium mb-4">{session.fac}</div>}
                   <p className="text-brand-text/80 text-base leading-relaxed mb-5">{session.desc}</p>
                   <ul>
                     {session.outcomes.map((outcome, oIdx) => (
@@ -584,9 +584,6 @@ export default function ConsultantVariant7() {
               </a>
             </div>
           </div>
-          <p className="mt-8 text-sm text-brand-text/50 italic">
-            100% money-back guarantee*. Full refund if you leave before the lunch break.
-          </p>
         </div>
       </section>
 
@@ -650,6 +647,7 @@ export default function ConsultantVariant7() {
       </section>
 
       <footer className="py-10 px-8 text-center border-t border-brand-border text-sm text-brand-text/50 uppercase tracking-wider">
+        <p className="mb-4 normal-case tracking-normal not-italic">* 100% money-back guarantee: full refund if you leave before the lunch break, no questions asked.</p>
         © 2026 Solved Together & Collective Intelligence · contact@solvedtogether.co.uk
       </footer>
     </div>
