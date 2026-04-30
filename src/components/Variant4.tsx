@@ -88,7 +88,7 @@ export default function Variant4() {
                 <div className="w-12 h-12 bg-brand-primary/10 rounded-xl flex items-center justify-center">
                   <Zap className="w-6 h-6 text-brand-primary" />
                 </div>
-                <span className="text-xs font-bold uppercase tracking-[0.3em] text-gray-400">Session 01 • Chris</span>
+                <span className="text-xs font-bold uppercase tracking-[0.3em] text-gray-400">Session 01</span>
               </div>
               <h3 className="text-3xl font-bold font-roboto mb-6 uppercase">Individual Productivity</h3>
               <p className="text-gray-600 text-lg mb-8 leading-relaxed">
@@ -115,7 +115,7 @@ export default function Variant4() {
                 <div className="w-12 h-12 bg-brand-primary/10 rounded-xl flex items-center justify-center">
                   <Sparkles className="w-6 h-6 text-brand-primary" />
                 </div>
-                <span className="text-xs font-bold uppercase tracking-[0.3em] text-gray-400">Session 02 • Rujuta</span>
+                <span className="text-xs font-bold uppercase tracking-[0.3em] text-gray-400">Session 02</span>
               </div>
               <h3 className="text-3xl font-bold font-roboto mb-6 uppercase">Organizational Transformation</h3>
               <p className="text-gray-600 text-lg mb-8 leading-relaxed">
