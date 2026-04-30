@@ -97,15 +97,36 @@ export default function Variant7() {
       {/* THE REALITY */}
       <section className="bg-white py-24 px-8">
         <div className="max-w-[900px] mx-auto">
-          <h2 className="text-4xl md:text-5xl mb-5 font-normal">The reality no one says out loud.</h2>
-          <p className="text-lg text-brand-text/80 max-w-[700px] mb-8 leading-[1.75]">
-            AI is in every strategy deck. Your team is running experiments. Vendors are pitching AI-first solutions. Your board is asking questions that need confident answers.
-          </p>
-          <p className="text-lg text-brand-text/80 max-w-[700px] leading-[1.75]">
-            And privately? The signal is noisy and the clarity is nowhere. That is not a personal failing. It is almost universal at senior level — which is why almost no one is saying it out loud.
-          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+            {/* Left: heading + video */}
+            <div>
+              <h2 className="text-4xl md:text-5xl mb-8 font-normal">The reality no one says out loud.</h2>
+              <div className="relative w-full aspect-video overflow-hidden bg-brand-border">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube-nocookie.com/embed/X-GWD6l5708?si=2ndtifwJzVyjwA8W"
+                  title="Rujuta Singh — the reality no one says out loud"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full"
+                />
+              </div>
+            </div>
+            {/* Right: body text */}
+            <div className="flex flex-col justify-center">
+              <p className="text-lg text-brand-text/80 mb-8 leading-[1.75]">
+                AI is in every strategy deck. Your team is running experiments. Vendors are pitching AI-first solutions. Your board is asking questions that need confident answers.
+              </p>
+              <p className="text-lg text-brand-text/80 leading-[1.75]">
+                And privately? The signal is noisy and the clarity is nowhere. That is not a personal failing. It is almost universal at senior level — which is why almost no one is saying it out loud.
+              </p>
+            </div>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 pt-12 border-t border-brand-border">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-12 border-t border-brand-border">
             {[
               { num: "74%", text: "of CEOs say gaps in AI understanding are affecting their boardroom decisions", source: "Cisco, 2025" },
               { num: "66%", text: "of board directors report limited to no knowledge or experience with AI", source: "McKinsey" },
