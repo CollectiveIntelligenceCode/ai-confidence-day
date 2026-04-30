@@ -622,6 +622,7 @@ export default function ConsultantVariant7() {
               </div>
             ))}
           </div>
+          <p className="mt-10 text-sm text-brand-text/50 italic max-w-[800px] mx-auto">* 100% money-back guarantee: full refund if you leave before the lunch break, no questions asked.</p>
         </div>
       </section>
 
@@ -647,7 +648,6 @@ export default function ConsultantVariant7() {
       </section>
 
       <footer className="py-10 px-8 text-center border-t border-brand-border text-sm text-brand-text/50 uppercase tracking-wider">
-        <p className="mb-4 normal-case tracking-normal not-italic">* 100% money-back guarantee: full refund if you leave before the lunch break, no questions asked.</p>
         © 2026 Solved Together & Collective Intelligence · contact@solvedtogether.co.uk
       </footer>
     </div>
