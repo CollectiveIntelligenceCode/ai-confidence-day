@@ -97,15 +97,36 @@ export default function ConsultantVariant7() {
       {/* THE REALITY */}
       <section className="bg-white py-24 px-8">
         <div className="max-w-[900px] mx-auto">
-          <h2 className="text-4xl md:text-5xl mb-5 font-normal">You already know AI gives you an unfair advantage. You just have not had the breathing space to figure out how.</h2>
-          <p className="text-lg text-brand-text/80 max-w-[700px] mb-8 leading-[1.75]">
-            You are delivering client work, marketing yourself, writing proposals, chasing invoices, doing the admin you hate. And every time you carve out an evening to finally learn AI properly, a client emergency lands and the evening disappears.
-          </p>
-          <p className="text-lg text-brand-text/80 max-w-[700px] leading-[1.75]">
-            So you bookmark another guide. Save another LinkedIn post. Tell yourself you will get to it next week. You know the pattern.
-          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+            {/* Left: heading + video */}
+            <div>
+              <h2 className="text-4xl md:text-5xl mb-8 font-normal">You already know AI gives you an unfair advantage. You just have not had the breathing space to figure out how.</h2>
+              <div className="relative w-full aspect-video overflow-hidden bg-brand-border">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube-nocookie.com/embed/3lATCQTJ9v4?si=hw41VdsiIaEIsd09"
+                  title="Chris Bradshaw — the reality no one says out loud"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full"
+                />
+              </div>
+            </div>
+            {/* Right: body text */}
+            <div className="flex flex-col justify-center">
+              <p className="text-lg text-brand-text/80 mb-8 leading-[1.75]">
+                You are delivering client work, marketing yourself, writing proposals, chasing invoices, doing the admin you hate. And every time you carve out an evening to finally learn AI properly, a client emergency lands and the evening disappears.
+              </p>
+              <p className="text-lg text-brand-text/80 leading-[1.75]">
+                So you bookmark another guide. Save another LinkedIn post. Tell yourself you will get to it next week. You know the pattern.
+              </p>
+            </div>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 pt-12 border-t border-brand-border">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-12 border-t border-brand-border">
             {[
               { num: "75%", text: "of independent workers now use AI — but fewer than a quarter of them have meaningfully adopted it", source: "MBO Partners / Simply Business, 2025" },
               { num: "9hrs", text: "saved per week by independent workers who have properly adopted AI into their workflow", source: "MBO Partners, 2025" },
