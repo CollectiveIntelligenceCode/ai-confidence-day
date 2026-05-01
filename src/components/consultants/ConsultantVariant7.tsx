@@ -97,10 +97,10 @@ export default function ConsultantVariant7() {
       {/* THE REALITY */}
       <section className="bg-white py-24 px-8">
         <div className="max-w-[900px] mx-auto">
+          <h2 className="text-4xl md:text-5xl mb-10 font-normal">You already know AI gives you an unfair advantage. You just have not had the breathing space to figure out how.</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
-            {/* Left: heading + video */}
+            {/* Left: video */}
             <div>
-              <h2 className="text-4xl md:text-5xl mb-8 font-normal">You already know AI gives you an unfair advantage. You just have not had the breathing space to figure out how.</h2>
               <div className="relative w-full aspect-video overflow-hidden bg-brand-border">
                 <iframe
                   width="100%"
@@ -168,7 +168,7 @@ export default function ConsultantVariant7() {
       {/* BEFORE & AFTER */}
       <section className="bg-white py-24 px-8">
         <div className="max-w-[900px] mx-auto">
-          <h2 className="text-4xl md:text-5xl mb-12 text-center font-normal">Before this day. After this day.</h2>
+          <h2 className="text-4xl md:text-5xl mb-12 text-center font-normal">Before / After — AI Confidence Day</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
             <div>
               <h3 className="text-sm uppercase tracking-[2px] font-semibold mb-6 pb-3 border-b-2 border-brand-border text-brand-text/50">Where you are now</h3>
@@ -224,7 +224,7 @@ export default function ConsultantVariant7() {
             ))}
           </div>
           <div className="mt-12 pt-8 border-t border-brand-border flex flex-col md:flex-row gap-4 flex-wrap">
-            {["Not a webinar", "Not a prompt engineering class", "Not a tools roundup", "Not a vendor showcase", "Not a lecture"].map((item, idx) => (
+            {["Not a webinar", "Not a prompt engineering class", "Not a tools roundup", "Not a vendor showcase"].map((item, idx) => (
               <div key={idx} className="text-sm text-brand-text/50 px-5 py-2 border border-brand-border bg-white">
                 {item}
               </div>
@@ -236,8 +236,7 @@ export default function ConsultantVariant7() {
       {/* THE DAY */}
       <section className="bg-white py-24 px-8">
         <div className="max-w-[900px] mx-auto">
-          <h2 className="text-4xl md:text-5xl mb-3 text-center font-normal">The Day</h2>
-          <p className="text-center text-lg text-brand-text/80 mb-16">AI for you. AI for your business.</p>
+          <h2 className="text-4xl md:text-5xl mb-16 text-center font-normal">The Day</h2>
 
           <div>
             {[
@@ -349,6 +348,7 @@ export default function ConsultantVariant7() {
                   "You have a technical or engineering background and want a deep-dive into machine learning or AI architecture",
                   "You prefer a passive learning experience — talks, slides, someone presenting at you",
                   "You are already running your business on AI and feel confident in your setup",
+                  <>You are a CXO or board member of a mid-sized or enterprise business — <a href="/" className="text-brand-primary underline underline-offset-2 hover:opacity-75 transition-opacity">we have a separate AI Confidence Day built for you, check it out</a></>,
                 ].map((item, idx) => (
                   <div key={idx} className="py-3 border-b border-brand-border flex gap-3">
                     <span className="text-brand-text/50 flex-shrink-0">—</span>{item}
@@ -371,7 +371,6 @@ export default function ConsultantVariant7() {
               { title: "Peer Community", desc: "A private group of independents at your level — no competition, no agenda. A safe sounding board long after the day ends." },
               { title: "Certificate", desc: "Personalised Certificate of Mastery with your name" },
               { title: "Follow-Up Resources", desc: "Continued access to frameworks and tools as AI evolves" },
-              { title: "Satisfaction Guarantee", desc: "100% money-back guarantee*. If you leave before the lunch break, ask for your money back and we will refund you in full." },
             ].map((item, idx) => (
               <div key={idx} className="bg-white p-7 text-center">
                 <h4 className="text-base font-semibold text-brand-text mb-2">{item.title}</h4>
@@ -390,7 +389,7 @@ export default function ConsultantVariant7() {
             {[
               {
                 image: "/Chris Bradshaw Headshot.jpg",
-                name: "Chris",
+                name: "Chris Bradshaw",
                 org: "Collective Intelligence",
                 desc: "22 years building companies, four of his own, including Collective Intelligence and Creative Capital Group, with stints as Group CEO and Global Strategy Director along the way. Enterprise AI Partner at Board of Innovation. Chris has been the consultant and founder wearing every hat; he built his own AI workflow to change that. His sessions are hands-on by design: you leave with something you built yourself, not slides you'll never open.",
                 videoSrc: "https://www.youtube-nocookie.com/embed/3lATCQTJ9v4?si=hw41VdsiIaEIsd09",
@@ -400,7 +399,7 @@ export default function ConsultantVariant7() {
                 imageClass: "object-top",
                 name: "Rujuta Singh",
                 org: "Solved Together",
-                desc: "Over two decades of enterprise transformation across industries. Ex-PwC, ex-Accenture, ex-Microsoft. Rujuta helps consultants and business owners make confident AI decisions and compress the journey from \"I should probably do something about AI\" to \"I know exactly what I am doing.\"",
+                desc: "Over two decades leading large-scale transformation in Fortune 500 companies across insurance, banking, PE, public sector, education, real estate, and more. Ex-PwC, ex-Accenture, ex-Microsoft. Founded Solved Together, combining neuroscience-based advanced collaboration methods with deep transformation expertise — helping leaders compress time and cost to value with AI in days, not years. Built for speed. Built for doers. If you are ready to stop talking about AI and start using it, this is your room.",
                 videoSrc: "https://www.youtube-nocookie.com/embed/X-GWD6l5708?si=2ndtifwJzVyjwA8W",
               },
             ].map((fac, idx) => (
@@ -412,34 +411,7 @@ export default function ConsultantVariant7() {
                 />
                 <h4 className="text-xl font-semibold mb-1">{fac.name}</h4>
                 <div className="text-sm text-brand-primary font-medium mb-3">{fac.org}</div>
-                <p className="text-base text-brand-text/80 leading-relaxed mb-6">{fac.desc}</p>
-
-                <div className="relative w-full aspect-video mb-4 overflow-hidden bg-brand-border">
-                  {fac.videoSrc ? (
-                    <iframe
-                      width="100%"
-                      height="100%"
-                      src={fac.videoSrc}
-                      title={`${fac.name} — video`}
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      referrerPolicy="strict-origin-when-cross-origin"
-                      allowFullScreen
-                      className="absolute inset-0 w-full h-full"
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="w-14 h-14 rounded-full bg-brand-primary/10 border-2 border-brand-primary flex items-center justify-center mx-auto mb-3">
-                          <svg className="w-6 h-6 text-brand-primary ml-1" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M8 5v14l11-7z" />
-                          </svg>
-                        </div>
-                        <p className="text-sm text-brand-text/50 italic">Video coming soon</p>
-                      </div>
-                    </div>
-                  )}
-                </div>
+                <p className="text-base text-brand-text/80 leading-relaxed">{fac.desc}</p>
 
               </div>
             ))}

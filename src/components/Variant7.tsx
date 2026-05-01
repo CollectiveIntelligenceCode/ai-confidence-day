@@ -97,10 +97,10 @@ export default function Variant7() {
       {/* THE REALITY */}
       <section className="bg-white py-24 px-8">
         <div className="max-w-[900px] mx-auto">
+          <h2 className="text-4xl md:text-5xl mb-10 font-normal">The reality no one says out loud.</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
-            {/* Left: heading + video */}
+            {/* Left: video */}
             <div>
-              <h2 className="text-4xl md:text-5xl mb-8 font-normal">The reality no one says out loud.</h2>
               <div className="relative w-full aspect-video overflow-hidden bg-brand-border">
                 <iframe
                   width="100%"
@@ -171,7 +171,7 @@ export default function Variant7() {
       {/* BEFORE & AFTER */}
       <section className="bg-white py-24 px-8">
         <div className="max-w-[900px] mx-auto">
-          <h2 className="text-4xl md:text-5xl mb-12 text-center font-normal">Before this day. After this day.</h2>
+          <h2 className="text-4xl md:text-5xl mb-12 text-center font-normal">Before / After — AI Confidence Day</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
             <div>
               <h3 className="text-sm uppercase tracking-[2px] font-semibold mb-6 pb-3 border-b-2 border-brand-border text-brand-text/50">Where you are now</h3>
@@ -231,7 +231,7 @@ export default function Variant7() {
             ))}
           </div>
           <div className="mt-12 pt-8 border-t border-brand-border flex flex-col md:flex-row gap-4 flex-wrap">
-            {["Not a conference", "Not a panel discussion", "Not a software demo", "Not a vendor showcase", "Not a lecture"].map((item, idx) => (
+            {["Not a conference", "Not a panel discussion", "Not a software demo", "Not a vendor showcase"].map((item, idx) => (
               <div key={idx} className="text-sm text-brand-text/50 px-5 py-2 border border-brand-border bg-white">
                 {item}
               </div>
@@ -243,8 +243,7 @@ export default function Variant7() {
       {/* THE DAY */}
       <section className="bg-white py-24 px-8">
         <div className="max-w-[900px] mx-auto">
-          <h2 className="text-4xl md:text-5xl mb-3 text-center font-normal">The Day</h2>
-          <p className="text-center text-lg text-brand-text/80 mb-16">AI for you. AI for your company.</p>
+          <h2 className="text-4xl md:text-5xl mb-16 text-center font-normal">The Day</h2>
 
           <div>
             {[
@@ -386,7 +385,6 @@ export default function Variant7() {
               { title: "Peer Community", desc: "A private group of leaders at your level — independent, neutral, no company politics. A safe sounding board long after the day ends." },
               { title: "Certificate", desc: "Personalised Certificate of Mastery with your name" },
               { title: "Follow-Up Resources", desc: "Continued access to frameworks and tools as AI evolves" },
-              { title: "Satisfaction Guarantee", desc: "100% money-back guarantee*. If you leave before the lunch break, ask for your money back and we will refund you in full." },
             ].map((item, idx) => (
               <div key={idx} className="bg-white p-7 text-center">
                 <h4 className="text-base font-semibold text-brand-text mb-2">{item.title}</h4>
@@ -405,7 +403,7 @@ export default function Variant7() {
             {[
               {
                 image: "/Chris Bradshaw Headshot.jpg",
-                name: "Chris",
+                name: "Chris Bradshaw",
                 org: "Collective Intelligence",
                 desc: "22 years in technology and digital strategy. Starting in tech at 21, running companies by his late twenties. Enterprise AI Partner at Board of Innovation. Founder of Collective Intelligence. Chris has worked with senior leaders at organisations including KPMG, BMW and Selfridges on AI adoption and decision-making strategy. He specialises in building personal AI workflows for CXOs and board members — and has a rare ability to make the complex feel immediately usable.",
                 videoSrc: "https://www.youtube-nocookie.com/embed/3lATCQTJ9v4?si=hw41VdsiIaEIsd09",
@@ -415,7 +413,7 @@ export default function Variant7() {
                 imageClass: "object-top",
                 name: "Rujuta Singh",
                 org: "Solved Together",
-                desc: "22 years in enterprise transformation. Specialist in high-trust executive workshops and organisational change. Rujuta bridges the gap between AI potential and operational reality — and has a rare ability to make leaders feel safe enough to say what they really think.",
+                desc: "Over two decades leading large-scale enterprise transformation in Fortune 500 companies across insurance, banking, PE, public sector, education, real estate, and more. Ex-PwC, ex-Accenture, ex-Microsoft. Founded Solved Together because most AI journeys start with a pilot and hope the ROI shows up. Hers start with value — combining neuroscience-based collaboration with deep transformation expertise to help leaders use AI as the lever to grow and transform, not just experiment.",
                 videoSrc: "https://www.youtube-nocookie.com/embed/X-GWD6l5708?si=2ndtifwJzVyjwA8W",
               },
             ].map((fac, idx) => (
@@ -427,34 +425,7 @@ export default function Variant7() {
                 />
                 <h4 className="text-xl font-semibold mb-1">{fac.name}</h4>
                 <div className="text-sm text-brand-primary font-medium mb-3">{fac.org}</div>
-                <p className="text-base text-brand-text/80 leading-relaxed mb-6">{fac.desc}</p>
-
-                <div className="relative w-full aspect-video mb-4 overflow-hidden bg-brand-border">
-                  {fac.videoSrc ? (
-                    <iframe
-                      width="100%"
-                      height="100%"
-                      src={fac.videoSrc}
-                      title={`${fac.name} — video`}
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      referrerPolicy="strict-origin-when-cross-origin"
-                      allowFullScreen
-                      className="absolute inset-0 w-full h-full"
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="w-14 h-14 rounded-full bg-brand-primary/10 border-2 border-brand-primary flex items-center justify-center mx-auto mb-3">
-                          <svg className="w-6 h-6 text-brand-primary ml-1" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M8 5v14l11-7z" />
-                          </svg>
-                        </div>
-                        <p className="text-sm text-brand-text/50 italic">Video coming soon</p>
-                      </div>
-                    </div>
-                  )}
-                </div>
+                <p className="text-base text-brand-text/80 leading-relaxed">{fac.desc}</p>
 
               </div>
             ))}
