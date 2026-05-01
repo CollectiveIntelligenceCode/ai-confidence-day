@@ -97,7 +97,7 @@ export default function Variant7() {
       {/* THE REALITY */}
       <section className="bg-white py-24 px-8">
         <div className="max-w-[900px] mx-auto">
-          <h2 className="text-4xl md:text-5xl mb-10 font-normal">The reality no one says out loud.</h2>
+          <h2 className="text-4xl md:text-5xl mb-10 font-normal text-center">The reality no one says out loud.</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
             {/* Left: video */}
             <div>
@@ -421,7 +421,7 @@ export default function Variant7() {
                 <img
                   src={fac.image}
                   alt={fac.name}
-                  className={`w-20 h-20 rounded-full mb-5 object-cover border border-brand-border ${fac.imageClass || ""}`}
+                  className={`w-[200px] h-[200px] rounded-full mb-5 object-cover border border-brand-border mx-auto block ${fac.imageClass || ""}`}
                 />
                 <h4 className="text-xl font-semibold mb-1">{fac.name}</h4>
                 <div className="text-sm text-brand-primary font-medium mb-3">{fac.org}</div>
