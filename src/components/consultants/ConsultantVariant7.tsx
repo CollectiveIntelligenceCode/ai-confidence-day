@@ -97,7 +97,7 @@ export default function ConsultantVariant7() {
       {/* THE REALITY */}
       <section className="bg-white py-24 px-8">
         <div className="max-w-[900px] mx-auto">
-          <h2 className="text-4xl md:text-5xl mb-10 font-normal">You already know AI gives you an unfair advantage. You just have not had the breathing space to figure out how.</h2>
+          <h2 className="text-4xl md:text-5xl mb-10 font-normal text-center">You already know AI gives you an unfair advantage. You just have not had the breathing space to figure out how.</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
             {/* Left: video */}
             <div>
