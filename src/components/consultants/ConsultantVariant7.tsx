@@ -427,14 +427,14 @@ export default function ConsultantVariant7() {
             A carefully chosen space in London — designed for the kind of focused, honest conversation that doesn't happen in a hotel conference room.
           </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-4">
+          <div className="flex overflow-x-auto gap-3 mb-4 pb-2 -mx-4 px-4">
             {[
               { src: "/03-SmithsofSmithfield (1) (1).jpg", alt: "Smiths of Smithfield venue" },
               { src: "/3.png", alt: "Smiths of Smithfield venue" },
               { src: "/4.png", alt: "Smiths of Smithfield venue" },
               { src: "/5.png", alt: "Smiths of Smithfield venue" },
             ].map((photo, idx) => (
-              <div key={idx} className="aspect-video overflow-hidden bg-brand-border">
+              <div key={idx} className="flex-none w-64 aspect-video overflow-hidden bg-brand-border rounded">
                 <img src={photo.src} alt={photo.alt} className="w-full h-full object-cover" />
               </div>
             ))}
