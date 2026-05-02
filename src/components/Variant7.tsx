@@ -6,6 +6,7 @@ import ShiftingCountdown from "./ui/countdown-timer";
 export default function Variant7() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const workshopCarouselRef = useRef<HTMLDivElement>(null);
+  const venueCarouselRef = useRef<HTMLDivElement>(null);
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -440,17 +441,35 @@ export default function Variant7() {
           <p className="text-center text-lg text-brand-text/80 mb-12 max-w-[600px] mx-auto">
             A carefully chosen space in London — designed for the kind of focused, honest conversation that doesn't happen in a hotel conference room.
           </p>
-          <div className="flex overflow-x-auto gap-3 mb-4 pb-2 -mx-4 px-4">
-            {[
-              { src: "/03-SmithsofSmithfield (1) (1).jpg", alt: "Smiths of Smithfield venue" },
-              { src: "/3.png", alt: "Smiths of Smithfield venue" },
-              { src: "/4.png", alt: "Smiths of Smithfield venue" },
-              { src: "/5.png", alt: "Smiths of Smithfield venue" },
-            ].map((photo, idx) => (
-              <div key={idx} className="flex-none w-64 aspect-video overflow-hidden bg-brand-border rounded">
-                <img src={photo.src} alt={photo.alt} className="w-full h-full object-cover" />
-              </div>
-            ))}
+          <div className="relative mb-8">
+            <div
+              ref={venueCarouselRef}
+              className="flex gap-3 overflow-x-auto snap-x snap-mandatory [&::-webkit-scrollbar]:hidden"
+              style={{ scrollbarWidth: "none" }}
+            >
+              {[
+                { src: "/03-SmithsofSmithfield (1) (1).jpg", alt: "Smiths of Smithfield venue" },
+                { src: "/3.png", alt: "Smiths of Smithfield venue" },
+                { src: "/4.png", alt: "Smiths of Smithfield venue" },
+                { src: "/5.png", alt: "Smiths of Smithfield venue" },
+              ].map((photo, idx) => (
+                <div key={idx} className="flex-none w-[80%] md:w-[45%] snap-start">
+                  <img src={photo.src} alt={photo.alt} className="w-full h-64 object-cover rounded-sm" />
+                </div>
+              ))}
+            </div>
+            <button
+              onClick={() => venueCarouselRef.current?.scrollBy({ left: -420, behavior: "smooth" })}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 w-10 h-10 bg-white border border-brand-border flex items-center justify-center text-brand-text hover:bg-brand-primary hover:text-white transition-colors shadow-sm z-10"
+            >
+              ←
+            </button>
+            <button
+              onClick={() => venueCarouselRef.current?.scrollBy({ left: 420, behavior: "smooth" })}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 w-10 h-10 bg-white border border-brand-border flex items-center justify-center text-brand-text hover:bg-brand-primary hover:text-white transition-colors shadow-sm z-10"
+            >
+              →
+            </button>
           </div>
           <p className="text-center text-sm text-brand-text/40 tracking-[1px] mt-4">London · Exact address shared on registration</p>
         </div>
