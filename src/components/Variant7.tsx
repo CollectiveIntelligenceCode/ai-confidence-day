@@ -443,7 +443,6 @@ export default function Variant7() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-4">
             {[
               { src: "/03-SmithsofSmithfield (1) (1).jpg", alt: "Smiths of Smithfield venue" },
-              { src: "/20240531115125_IMG_4439.jpg", alt: "Smiths of Smithfield venue" },
               { src: "/3.png", alt: "Smiths of Smithfield venue" },
               { src: "/4.png", alt: "Smiths of Smithfield venue" },
               { src: "/5.png", alt: "Smiths of Smithfield venue" },
