@@ -579,14 +579,11 @@ export default function Variant7() {
               <div className="text-sm text-brand-text/50 mt-1.5 uppercase">+ VAT</div>
               <p className="text-sm text-brand-text/80 my-4 italic">Until 31 May 2026</p>
               <ShiftingCountdown />
-              <div className="flex justify-center mt-4">
-                {/* @ts-expect-error stripe custom element */}
-                <stripe-buy-button
-                  buy-button-id="buy_btn_1TThdL022WjqHD4NIf3kQs0k"
-                  publishable-key="pk_live_51PtAIl022WjqHD4N5Ox5YyVygS6iBvblhKf9Blnk5ESmp36Q2RyCWjV2XBrJbLBLmKKZm8GRTk7ZTb4uAejnuKQo00o2IKgUO9"
-                />
-                {/* @ts-expect-error stripe custom element */}
-              </div>
+              {/* @ts-expect-error stripe custom element */}
+              <stripe-buy-button
+                buy-button-id="buy_btn_1TThdL022WjqHD4NIf3kQs0k"
+                publishable-key="pk_live_51PtAIl022WjqHD4N5Ox5YyVygS6iBvblhKf9Blnk5ESmp36Q2RyCWjV2XBrJbLBLmKKZm8GRTk7ZTb4uAejnuKQo00o2IKgUO9"
+              ></stripe-buy-button>
             </div>
             <div className="flex-1 p-10 bg-white border border-brand-border">
               <div className="text-xs uppercase tracking-[2px] text-brand-text/50 font-semibold mb-2">Standard</div>
@@ -659,14 +656,11 @@ export default function Variant7() {
           <p className="text-lg text-brand-text/80 max-w-[600px] mx-auto mb-2">
             There is a room where the question "what do I actually do about AI?" is not only allowed — it is the point.
           </p>
-          <div className="flex justify-center mt-8">
-            {/* @ts-expect-error stripe custom element */}
-            <stripe-buy-button
-              buy-button-id="buy_btn_1TThdL022WjqHD4NIf3kQs0k"
-              publishable-key="pk_live_51PtAIl022WjqHD4N5Ox5YyVygS6iBvblhKf9Blnk5ESmp36Q2RyCWjV2XBrJbLBLmKKZm8GRTk7ZTb4uAejnuKQo00o2IKgUO9"
-            />
-            {/* @ts-expect-error stripe custom element */}
-          </div>
+          {/* @ts-expect-error stripe custom element */}
+          <stripe-buy-button
+            buy-button-id="buy_btn_1TThdL022WjqHD4NIf3kQs0k"
+            publishable-key="pk_live_51PtAIl022WjqHD4N5Ox5YyVygS6iBvblhKf9Blnk5ESmp36Q2RyCWjV2XBrJbLBLmKKZm8GRTk7ZTb4uAejnuKQo00o2IKgUO9"
+          ></stripe-buy-button>
           <div className="mt-8 text-sm text-brand-text/50 tracking-[1px] uppercase">
             Chatham House Rules Apply
           </div>
