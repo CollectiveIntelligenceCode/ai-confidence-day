@@ -569,8 +569,10 @@ export default function ConsultantVariant7() {
               <p className="text-sm text-brand-text/80 my-4 italic">Until 31 May 2026</p>
               <ShiftingCountdown />
               <a
-                href="#apply"
-                className="block w-full bg-brand-primary text-white py-4 text-base font-medium tracking-[0.5px] hover:bg-brand-primary/90 transition-colors no-underline"
+                href="https://buy.stripe.com/9B65kvahMg2HbU7ftD2ZO09"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full bg-brand-primary text-white py-4 text-base font-medium tracking-[0.5px] hover:bg-brand-primary/90 transition-colors no-underline text-center"
               >
                 Apply for a Seat
               </a>
@@ -652,7 +654,9 @@ export default function ConsultantVariant7() {
             One day to learn how AI can run it with you. That is all it takes.
           </p>
           <a
-            href="#apply"
+            href="https://buy.stripe.com/9B65kvahMg2HbU7ftD2ZO09"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block bg-brand-primary text-white px-12 py-4 text-base font-medium no-underline mt-8 hover:bg-brand-primary/90 transition-colors"
           >
             Apply for a Seat

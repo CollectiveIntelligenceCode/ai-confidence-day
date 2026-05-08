@@ -583,6 +583,7 @@ export default function Variant7() {
               <stripe-buy-button
                 buy-button-id="buy_btn_1TThdL022WjqHD4NIf3kQs0k"
                 publishable-key="pk_live_51PtAIl022WjqHD4N5Ox5YyVygS6iBvblhKf9Blnk5ESmp36Q2RyCWjV2XBrJbLBLmKKZm8GRTk7ZTb4uAejnuKQo00o2IKgUO9"
+                return-url="https://ai-confidence-day.vercel.app/thank-you/cxo"
               ></stripe-buy-button>
             </div>
             <div className="flex-1 p-10 bg-white border border-brand-border">
