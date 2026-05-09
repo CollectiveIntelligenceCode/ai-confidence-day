@@ -17,6 +17,7 @@ export default async function handler(req, res) {
     phone,
     teamSize,
     jobRole,
+    aiUseCurrently,
     agreedToTerms,
   } = req.body;
 
@@ -49,6 +50,8 @@ export default async function handler(req, res) {
         phone: phone || '',
         teamSize: teamSize || '',
         jobRole: jobRole || '',
+        // Stripe metadata values max 500 chars
+        aiUseCurrently: (aiUseCurrently || '').slice(0, 500),
         source: 'consultants-apply-form',
       },
       success_url: `${BASE_URL}/thank-you/consultants?session_id={CHECKOUT_SESSION_ID}`,

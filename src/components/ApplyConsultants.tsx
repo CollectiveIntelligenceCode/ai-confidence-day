@@ -19,6 +19,7 @@ interface FormData {
   phone: string;
   teamSize: string;
   jobRole: string;
+  aiUseCurrently: string;
   agreedToTerms: boolean;
 }
 
@@ -30,6 +31,7 @@ const EMPTY_FORM: FormData = {
   phone: "",
   teamSize: "",
   jobRole: "",
+  aiUseCurrently: "",
   agreedToTerms: false,
 };
 
@@ -40,7 +42,7 @@ const labelClass = "block text-sm font-medium text-brand-text/70 mb-1.5 uppercas
 
 export default function ApplyConsultants() {
   const navigate = useNavigate();
-  const [step, setStep] = useState<1 | 2>(1);
+  const [step, setStep] = useState<1 | 2 | 3>(1);
   const [form, setForm] = useState<FormData>(EMPTY_FORM);
   const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>({});
   const [submitting, setSubmitting] = useState(false);
@@ -62,25 +64,35 @@ export default function ApplyConsultants() {
 
   function validateStep2() {
     const errs: Partial<Record<keyof FormData, string>> = {};
+    if (!form.aiUseCurrently.trim()) errs.aiUseCurrently = "Please tell us how you're using AI today";
+    return errs;
+  }
+
+  function validateStep3() {
+    const errs: Partial<Record<keyof FormData, string>> = {};
     if (!form.agreedToTerms) errs.agreedToTerms = "Please confirm to continue";
     return errs;
   }
 
   function handleNextStep(e: FormEvent) {
     e.preventDefault();
-    const errs = validateStep1();
-    if (Object.keys(errs).length) {
-      setErrors(errs);
-      return;
+    if (step === 1) {
+      const errs = validateStep1();
+      if (Object.keys(errs).length) { setErrors(errs); return; }
+      setErrors({});
+      setStep(2);
+    } else if (step === 2) {
+      const errs = validateStep2();
+      if (Object.keys(errs).length) { setErrors(errs); return; }
+      setErrors({});
+      setStep(3);
     }
-    setErrors({});
-    setStep(2);
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    const errs = validateStep2();
+    const errs = validateStep3();
     if (Object.keys(errs).length) {
       setErrors(errs);
       return;
@@ -140,26 +152,25 @@ export default function ApplyConsultants() {
               19th June 2026 · London · 12 seats maximum
             </div>
             <h1 className="text-3xl md:text-4xl font-normal mb-2">
-              {step === 1 ? "Tell us about yourself." : "One last thing."}
+              {step === 1 ? "Tell us about yourself." : step === 2 ? "How are you using AI today?" : "One last thing."}
             </h1>
             <p className="text-base text-brand-text/60">
               {step === 1
                 ? "We keep the room small and curated. This takes 60 seconds."
+                : step === 2
+                ? "There is no wrong answer. We want to know where you are starting from."
                 : "Review your details and confirm to proceed to payment."}
             </p>
           </div>
 
           {/* Step indicator */}
           <div className="flex items-center gap-3 mb-10">
-            <div
-              className={`flex-1 h-[2px] ${step >= 1 ? "bg-brand-primary" : "bg-brand-border"}`}
-            />
-            <span className="text-xs font-semibold text-brand-text/50 uppercase tracking-[1px]">
-              Step {step} of 2
+            <div className={`flex-1 h-[2px] ${step >= 1 ? "bg-brand-primary" : "bg-brand-border"}`} />
+            <div className={`flex-1 h-[2px] ${step >= 2 ? "bg-brand-primary" : "bg-brand-border"}`} />
+            <span className="text-xs font-semibold text-brand-text/50 uppercase tracking-[1px] flex-shrink-0">
+              Step {step} of 3
             </span>
-            <div
-              className={`flex-1 h-[2px] ${step >= 2 ? "bg-brand-primary" : "bg-brand-border"}`}
-            />
+            <div className={`flex-1 h-[2px] ${step >= 3 ? "bg-brand-primary" : "bg-brand-border"}`} />
           </div>
 
           {/* ── STEP 1: Contact Details ── */}
@@ -279,8 +290,41 @@ export default function ApplyConsultants() {
             </form>
           )}
 
-          {/* ── STEP 2: Confirmation ── */}
+          {/* ── STEP 2: AI Usage ── */}
           {step === 2 && (
+            <form onSubmit={handleNextStep} noValidate className="space-y-5">
+              <div>
+                <label className={labelClass}>What do you use AI for right now, in your day-to-day? *</label>
+                <textarea
+                  value={form.aiUseCurrently}
+                  onChange={(e) => set("aiUseCurrently", e.target.value)}
+                  placeholder="e.g. I use ChatGPT for emails and summarising documents, but I haven't gone much further than that..."
+                  rows={6}
+                  className={`${inputClass} resize-none`}
+                />
+                {errors.aiUseCurrently && (
+                  <p className="text-sm text-red-500 mt-1">{errors.aiUseCurrently}</p>
+                )}
+              </div>
+
+              <button
+                type="submit"
+                className="w-full bg-brand-primary text-white py-4 text-base font-medium tracking-[0.5px] hover:bg-brand-primary/90 transition-colors mt-4"
+              >
+                Continue →
+              </button>
+              <button
+                type="button"
+                onClick={() => { setStep(1); setErrors({}); window.scrollTo({ top: 0 }); }}
+                className="w-full text-sm text-brand-text/50 hover:text-brand-text transition-colors py-2"
+              >
+                ← Back
+              </button>
+            </form>
+          )}
+
+          {/* ── STEP 3: Confirmation ── */}
+          {step === 3 && (
             <form onSubmit={handleSubmit} noValidate className="space-y-6">
 
               {/* Summary card */}
@@ -306,13 +350,26 @@ export default function ApplyConsultants() {
                       <span className="text-brand-text text-right">{value as string}</span>
                     </div>
                   ))}
-                <button
-                  type="button"
-                  onClick={() => { setStep(1); setErrors({}); window.scrollTo({ top: 0 }); }}
-                  className="text-xs text-brand-primary underline mt-2 hover:opacity-75"
-                >
-                  Edit details
-                </button>
+                <div className="pt-3 border-t border-brand-border mt-1">
+                  <p className="text-xs text-brand-text/50 uppercase tracking-[0.5px] mb-1">AI use today</p>
+                  <p className="text-sm text-brand-text leading-relaxed">{form.aiUseCurrently}</p>
+                </div>
+                <div className="flex gap-4 mt-2">
+                  <button
+                    type="button"
+                    onClick={() => { setStep(1); setErrors({}); window.scrollTo({ top: 0 }); }}
+                    className="text-xs text-brand-primary underline hover:opacity-75"
+                  >
+                    Edit contact details
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => { setStep(2); setErrors({}); window.scrollTo({ top: 0 }); }}
+                    className="text-xs text-brand-primary underline hover:opacity-75"
+                  >
+                    Edit answer
+                  </button>
+                </div>
               </div>
 
               {/* Pricing summary */}
