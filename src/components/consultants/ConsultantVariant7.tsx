@@ -48,8 +48,8 @@ export default function ConsultantVariant7() {
             Not another webinar. Not another prompt engineering class.
           </div>
           <h1 className="text-5xl md:text-6xl lg:text-7xl leading-[1.15] max-w-[800px] mx-auto mb-6 font-normal">
-            Stop spending time on what AI can do.{" "}
-            <em className="italic text-brand-primary">Start spending it on what only you can.</em>
+            Stop spending time on what AI can do.<br />
+            <em className="italic text-brand-primary">Start spending it on what only you can do.</em>
           </h1>
           <p className="text-xl text-brand-text/80 max-w-[620px] mx-auto mb-4 leading-[1.65]">
             A private, hands-on working day in London for consultants and small business owners who are done bookmarking AI guides they never go back to.
