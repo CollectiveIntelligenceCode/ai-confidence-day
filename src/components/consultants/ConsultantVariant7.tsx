@@ -400,7 +400,7 @@ export default function ConsultantVariant7() {
                 imageClass: "object-top",
                 name: "Rujuta Singh",
                 org: "Solved Together",
-                desc: "Over two decades leading large-scale transformation in Fortune 500 companies across insurance, banking, PE, public sector, education, real estate, and more. Ex-PwC, ex-Accenture, ex-Microsoft. Founded Solved Together, combining neuroscience-based advanced collaboration methods with deep transformation expertise — helping leaders compress time and cost to value with AI in days, not years. Built for speed. Built for doers. If you are ready to stop talking about AI and start using it, this is your room.",
+                desc: "Over two decades leading large-scale transformation in Fortune 500 companies across insurance, banking, PE, public sector, education, real estate, and more. Ex-PwC, ex-Accenture, ex-Microsoft. Founded Solved Together, combining neuroscience-based advanced collaboration methods with deep transformation expertise — helping leaders compress time and cost to value with AI in days, not years.",
                 videoSrc: "https://www.youtube-nocookie.com/embed/X-GWD6l5708?si=2ndtifwJzVyjwA8W",
               },
             ].map((fac, idx) => (
@@ -620,7 +620,7 @@ export default function ConsultantVariant7() {
               { q: "Are there early bird discounts?", a: "Yes. Register before 31 May 2026 for the early bird rate of £899 + VAT. After that, the standard price of £1,099 + VAT applies. If spaces are still available on the day, the on-the-door price is £1,299 + VAT." },
               { q: "What is the difference between this and the CXO & Board Members day?", a: "Two things: the room and the content. The people in your room are consultants, founders, and small business owners — people who share your problems, your pace, and your objectives. That matters because this day is built around co-creation and solving problems together, not just listening. The content is also tailored differently. For a small business, AI can deliver ROI on day one — because you are the business. The tools, the financials, and the threshold for value are immediate and personal. The CXO day addresses a different reality: scaling AI across hundreds or thousands of people, building organisational playbooks, navigating implementation methodologies, and making the case at board level. Different problems, different room, different content." },
               { q: "Will you be running more of these?", a: "Yes. We also run a separate AI Confidence Day for CXOs and board members of larger organisations. And we plan to run intermediate-level days for those who have attended the first one. This is the beginning, not the end." },
-              { q: "Do you have other dates, later in the year?", a: <>We currently have no other dates planned for a public training for the rest of this year. We do run these privately for companies, where we have more flexibility on dates. <a href="mailto:contact@solvedtogether.co.uk" className="text-brand-primary underline underline-offset-2 hover:opacity-75 transition-opacity">Reach out</a> if that is more suitable.</> },
+              { q: "Do you have other dates, later in the year?", a: <>We currently have no other dates planned for a public training for the rest of this year. We do run these privately for companies, where we have more flexibility on dates. <a href="mailto:aiconfidence@collectiveintelligence.co" className="text-brand-primary underline underline-offset-2 hover:opacity-75 transition-opacity">Reach out</a> if that is more suitable.</> },
             ].map((faq, idx) => (
               <div key={idx} className="border-b border-brand-border">
                 <button
@@ -668,7 +668,7 @@ export default function ConsultantVariant7() {
       </section>
 
       <footer className="py-10 px-8 text-center border-t border-brand-border text-sm text-brand-text/50 uppercase tracking-wider">
-        © 2026 Solved Together & Collective Intelligence · contact@solvedtogether.co.uk
+        © 2026 Solved Together & Collective Intelligence · aiconfidence@collectiveintelligence.co
       </footer>
     </div>
   );

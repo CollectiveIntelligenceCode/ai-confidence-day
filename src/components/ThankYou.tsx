@@ -41,20 +41,39 @@ export default function ThankYou({ variant }: { variant: "cxo" | "consultants" }
           <p className="text-lg text-brand-text/80 leading-[1.75] mb-4">
             We'll be in touch by email with everything you need ahead of the day.
           </p>
-          <p className="text-base text-brand-text/60 leading-[1.75]">
+          <p className="text-base text-brand-text/60 leading-[1.75] mb-8">
             If you have any questions in the meantime, reach us at{" "}
             <a
-              href="mailto:contact@solvedtogether.co.uk"
+              href="mailto:aiconfidence@collectiveintelligence.co"
               className="text-brand-primary underline underline-offset-2 hover:opacity-75 transition-opacity"
             >
-              contact@solvedtogether.co.uk
+              aiconfidence@collectiveintelligence.co
             </a>
           </p>
+          <div className="flex items-center justify-center gap-6 text-sm text-brand-text/50">
+            <a
+              href="https://www.linkedin.com/in/chrisbradshawai/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-brand-primary transition-colors"
+            >
+              Chris Bradshaw on LinkedIn
+            </a>
+            <span>·</span>
+            <a
+              href="https://www.linkedin.com/in/rujutasingh/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-brand-primary transition-colors"
+            >
+              Rujuta Singh on LinkedIn
+            </a>
+          </div>
         </div>
       </section>
 
       <footer className="py-10 px-8 text-center border-t border-brand-border text-sm text-brand-text/50 uppercase tracking-wider">
-        © 2026 Solved Together & Collective Intelligence · contact@solvedtogether.co.uk
+        © 2026 Solved Together & Collective Intelligence · aiconfidence@collectiveintelligence.co
       </footer>
     </div>
   );

@@ -373,7 +373,7 @@ export default function Variant6() {
             <span className="w-1 h-1 bg-gray-200 rounded-full" />
             <span className="font-roboto text-[10px] uppercase tracking-widest text-gray-400">3rd July 2026</span>
             <span className="w-1 h-1 bg-gray-200 rounded-full" />
-            <a href="#" className="font-roboto text-[10px] uppercase tracking-widest text-gray-400 hover:text-brand-primary transition-colors">contact@solvedtogether.co.uk</a>
+            <a href="#" className="font-roboto text-[10px] uppercase tracking-widest text-gray-400 hover:text-brand-primary transition-colors">aiconfidence@collectiveintelligence.co</a>
           </div>
         </div>
       </section>
