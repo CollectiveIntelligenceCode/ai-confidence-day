@@ -33,7 +33,7 @@ export default function ConsultantVariant7() {
             <NavCountdown />
           </div>
           <a
-            href="#apply"
+            href="/apply/consultants"
             className="bg-brand-primary text-white px-6 py-2.5 text-sm font-medium cursor-pointer tracking-[0.5px] no-underline hover:bg-brand-primary/90 transition-colors"
           >
             Apply for a Seat
@@ -58,7 +58,7 @@ export default function ConsultantVariant7() {
             One Day. Built, Not Bookmarked.
           </div>
           <a
-            href="#apply"
+            href="/apply/consultants"
             className="inline-block bg-brand-primary text-white px-10 py-4 text-base font-medium no-underline tracking-[0.5px] mt-2 hover:bg-brand-primary/90 transition-colors"
           >
             Apply for a Seat
@@ -569,9 +569,7 @@ export default function ConsultantVariant7() {
               <p className="text-sm text-brand-text/80 my-4 italic">Until 31 May 2026</p>
               <ShiftingCountdown />
               <a
-                href="https://buy.stripe.com/9B65kvahMg2HbU7ftD2ZO09"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/apply/consultants"
                 className="block w-full bg-brand-primary text-white py-4 text-base font-medium tracking-[0.5px] hover:bg-brand-primary/90 transition-colors no-underline text-center"
               >
                 Apply for a Seat
@@ -654,9 +652,7 @@ export default function ConsultantVariant7() {
             One day to learn how AI can run it with you. That is all it takes.
           </p>
           <a
-            href="https://buy.stripe.com/9B65kvahMg2HbU7ftD2ZO09"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/apply/consultants"
             className="inline-block bg-brand-primary text-white px-12 py-4 text-base font-medium no-underline mt-8 hover:bg-brand-primary/90 transition-colors"
           >
             Apply for a Seat
