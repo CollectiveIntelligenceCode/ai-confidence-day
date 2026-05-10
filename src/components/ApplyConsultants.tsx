@@ -102,14 +102,9 @@ export default function ApplyConsultants() {
     setServerError("");
 
     try {
-      const res = await fetch("/api/create-checkout", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Something went wrong");
-      window.location.href = data.url;
+      // Test mode: use Stripe Payment Link directly
+      const testLink = "https://buy.stripe.com/4gMcMXahM8AfaQ36X72ZO0a";
+      window.location.href = `${testLink}?prefilled_email=${encodeURIComponent(form.email)}`;
     } catch (err: unknown) {
       setServerError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
       setSubmitting(false);
