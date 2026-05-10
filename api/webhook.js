@@ -122,8 +122,6 @@ function buildWelcomeEmail(firstName) {
 
     <p>Your place at <strong>AI Confidence Day for Consultants &amp; Small Business Owners</strong> is confirmed. We are looking forward to spending the day with you.</p>
 
-    <p>We keep the room small deliberately — twelve people maximum — so every seat matters. Thank you for committing.</p>
-
     <div class="event-card">
       <div class="label">Your event details</div>
       <div class="event-row"><span class="key">Date</span><strong>19th June 2026</strong></div>
@@ -143,21 +141,9 @@ function buildWelcomeEmail(firstName) {
 
     <hr class="divider" />
 
-    <div class="what-to-bring">
-      <h2>What to bring</h2>
-      <ul>
-        <li>Your laptop — you will be building and doing, not watching</li>
-        <li>Access to your usual tools (Claude, ChatGPT, or whatever you use)</li>
-        <li>One real business problem you want to solve — we will work on it in the room</li>
-        <li>An open mind — some of what you see will surprise you</li>
-      </ul>
-    </div>
+    <p>Watch out for emails from us with more detailed instructions closer to the day.</p>
 
-    <hr class="divider" />
-
-    <p>Chatham House Rules apply. What is said in the room stays in the room — this is what keeps the conversation honest.</p>
-
-    <p>If you have any questions before the day, reply to this email or reach us at <a href="mailto:aiconfidence@collectiveintelligence.co">aiconfidence@collectiveintelligence.co</a>.</p>
+    <p>If you have any questions in the meantime, reply to this email or reach us at <a href="mailto:aiconfidence@collectiveintelligence.co">aiconfidence@collectiveintelligence.co</a>.</p>
 
     <p>See you on the 19th.</p>
 
