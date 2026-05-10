@@ -102,9 +102,8 @@ export default function ApplyConsultants() {
     setServerError("");
 
     try {
-      // Test mode: use Stripe Payment Link directly
-      const testLink = "https://buy.stripe.com/4gMcMXahM8AfaQ36X72ZO0a";
-      window.location.href = `${testLink}?prefilled_email=${encodeURIComponent(form.email)}`;
+      // Test mode: use Stripe Payment Link directly (£0 test product)
+      window.location.href = "https://buy.stripe.com/4gMcMXahM8AfaQ36X72ZO0a";
     } catch (err: unknown) {
       setServerError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
       setSubmitting(false);
