@@ -37,7 +37,7 @@ export default async function handler(req, res) {
               name: 'AI Confidence Day for Consultants',
               description: '19th June 2026 · London · Full-Day Workshop (Early Bird)',
             },
-            unit_amount: 89900, // £899.00
+            unit_amount: 0, // £0.00 test — change to 89900 for production
           },
           quantity: 1,
         },

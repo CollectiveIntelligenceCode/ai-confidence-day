@@ -106,8 +106,14 @@ export default function ApplyConsultants() {
     setServerError("");
 
     try {
-      // Test mode: use Stripe Payment Link directly (£0 test product)
-      window.location.href = "https://buy.stripe.com/4gMcMXahM8AfaQ36X72ZO0a";
+      const res = await fetch("/api/create-checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Something went wrong");
+      window.location.href = data.url;
     } catch (err: unknown) {
       setServerError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
       setSubmitting(false);
