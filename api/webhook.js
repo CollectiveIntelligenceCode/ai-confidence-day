@@ -257,6 +257,39 @@ async function createHubSpotContact(data) {
   return await res.json();
 }
 
+async function createHubSpotNote(contactId, aiUseCurrently) {
+  if (!contactId || !aiUseCurrently) return;
+
+  const notePayload = {
+    properties: {
+      hs_note_body: `AI Confidence Day — Application Answer\n\nQ: What do you use AI for right now, in your day-to-day?\nA: ${aiUseCurrently}`,
+      hs_timestamp: new Date().toISOString(),
+    },
+    associations: [
+      {
+        to: { id: contactId },
+        types: [{ associationCategory: 'HUBSPOT_DEFINED', associationTypeId: 202 }],
+      },
+    ],
+  };
+
+  const res = await fetch('https://api.hubapi.com/crm/v3/objects/notes', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${HUBSPOT_ACCESS_TOKEN}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(notePayload),
+  });
+
+  if (!res.ok) {
+    const text = await res.text();
+    console.error(`HubSpot note error: ${res.status} ${text}`);
+  } else {
+    console.log('HubSpot note created for contact:', contactId);
+  }
+}
+
 async function createHubSpotDeal(contactId, data) {
   const { fullName, businessName, teamSize } = data;
 
@@ -344,8 +377,9 @@ export default async function handler(req, res) {
           ...meta,
         });
         const contactId = contact?.id || null;
+        await createHubSpotNote(contactId, meta.aiUseCurrently);
         await createHubSpotDeal(contactId, meta);
-        console.log('HubSpot contact + deal created.');
+        console.log('HubSpot contact + note + deal created.');
       } catch (err) {
         console.error('HubSpot sync error:', err.message);
       }
