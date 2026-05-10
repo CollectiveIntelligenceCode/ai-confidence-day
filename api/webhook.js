@@ -334,12 +334,18 @@ export default async function handler(req, res) {
   if (event.type === 'checkout.session.completed') {
     const session = event.data.object;
     const meta = session.metadata || {};
+    const email = session.customer_email || session.customer_details?.email;
 
-    console.log('Payment completed for:', session.customer_email, meta);
+    console.log('Payment completed for:', email, meta);
+
+    if (!email) {
+      console.error('No email found on session — skipping email and HubSpot.');
+      return res.status(200).json({ received: true });
+    }
 
     // 1. Send branded welcome email
     try {
-      await sendWelcomeEmail(session.customer_email, meta.fullName);
+      await sendWelcomeEmail(email, meta.fullName);
     } catch (err) {
       console.error('Welcome email error:', err.message);
     }
@@ -348,7 +354,7 @@ export default async function handler(req, res) {
     if (HUBSPOT_ACCESS_TOKEN) {
       try {
         const contact = await createHubSpotContact({
-          email: session.customer_email,
+          email,
           ...meta,
         });
         const contactId = contact?.id || null;
