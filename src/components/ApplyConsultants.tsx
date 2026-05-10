@@ -370,15 +370,6 @@ export default function ApplyConsultants() {
                 </div>
               </div>
 
-              {/* Pricing summary */}
-              <div className="border border-brand-primary bg-white p-6">
-                <div className="flex justify-between items-center mb-1">
-                  <span className="text-sm font-medium uppercase tracking-[1px]">Early Bird</span>
-                  <span className="text-2xl font-normal">£899</span>
-                </div>
-                <p className="text-xs text-brand-text/50">+ VAT · AI Confidence Day for Consultants · 19th June 2026</p>
-              </div>
-
               {/* Agreement */}
               <div>
                 <label className="flex items-start gap-3 cursor-pointer group">
