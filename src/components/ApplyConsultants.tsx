@@ -79,6 +79,10 @@ export default function ApplyConsultants() {
     if (step === 1) {
       const errs = validateStep1();
       if (Object.keys(errs).length) { setErrors(errs); return; }
+      if (form.teamSize === "200+") {
+        navigate("/apply/better-fit");
+        return;
+      }
       setErrors({});
       setStep(2);
     } else if (step === 2) {
