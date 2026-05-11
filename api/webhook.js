@@ -173,7 +173,7 @@ async function sendWelcomeEmail(email, fullName) {
   const icsBase64 = Buffer.from(icsContent).toString('base64');
 
   const payload = {
-    from: 'AI Confidence Day <aiconfidence@collectiveintelligence.co>',
+    from: 'AI Confidence Day <contact@solvedtogether.co.uk>',
     to: [email],
     subject: "You're in — AI Confidence Day, 19th June 2026",
     html: buildWelcomeEmail(firstName),
