@@ -245,9 +245,13 @@ async function createHubSpotContact(data) {
     jobtitle: jobRole || '',
     hs_lead_status: 'NEW',
     lifecyclestage: 'customer',
+    // Visible standard fields for easy filtering
+    website: data.source === 'cxo-apply-form'
+      ? 'AI Confidence Day — CXO & Board Members'
+      : 'AI Confidence Day — Consultants & Small Business Owners',
+    message: teamSize ? `Team size: ${teamSize}` : '',
+    description: data.aiUseCurrently || '',
   };
-
-  if (teamSize) properties.message = `Team size: ${teamSize}`;
 
   const res = await fetch(hubspotUrl('/crm/v3/objects/contacts'), {
     method: 'POST',
