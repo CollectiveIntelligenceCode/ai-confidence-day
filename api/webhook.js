@@ -173,8 +173,8 @@ function buildConsultantsEmail(firstName) {
   </div>
 
   <div class="footer">
-    <p>You are receiving this because you registered for AI Confidence Day for Consultants &amp; Small Business Owners on 19th June 2026.<br />
-    Questions? <a href="mailto:aiconfidence@collectiveintelligence.co">aiconfidence@collectiveintelligence.co</a></p>
+    <p style="text-align:center;">You are receiving this because you registered for AI Confidence Day for Consultants &amp; Small Business Owners on 19th June 2026.<br />
+    Questions? <a href="mailto:contact@solvedtogether.co.uk">contact@solvedtogether.co.uk</a></p>
   </div>
 </div>
 </body>
@@ -238,8 +238,8 @@ function buildCXOEmail(firstName) {
   </div>
 
   <div class="footer">
-    <p>You are receiving this because you registered for AI Confidence Day for CXOs &amp; Board Members on 3rd July 2026.<br />
-    Questions? <a href="mailto:aiconfidence@collectiveintelligence.co">aiconfidence@collectiveintelligence.co</a></p>
+    <p style="text-align:center;">You are receiving this because you registered for AI Confidence Day for CXOs &amp; Board Members on 3rd July 2026.<br />
+    Questions? <a href="mailto:contact@solvedtogether.co.uk">contact@solvedtogether.co.uk</a></p>
   </div>
 </div>
 </body>
