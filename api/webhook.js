@@ -220,20 +220,22 @@ async function createHubSpotContact(data) {
   const [firstName, ...rest] = (fullName || '').split(' ');
   const lastName = rest.join(' ');
 
-  const payload = {
-    properties: {
-      email,
-      firstname: firstName || '',
-      lastname: lastName || '',
-      company: businessName || '',
-      phone: phone || '',
-      country: country || '',
-      num_employees: teamSize || '',
-      jobtitle: jobRole || '',
-      hs_lead_status: 'NEW',
-      lifecyclestage: 'customer',
-    },
+  const properties = {
+    email,
+    firstname: firstName || '',
+    lastname: lastName || '',
+    company: businessName || '',
+    phone: phone || '',
+    country: country || '',
+    jobtitle: jobRole || '',
+    hs_lead_status: 'NEW',
+    lifecyclestage: 'customer',
   };
+
+  // Store team size as a note-friendly string in the description field
+  if (teamSize) properties.message = `Team size: ${teamSize}`;
+
+  const payload = { properties };
 
   const res = await fetch('https://api.hubapi.com/crm/v3/objects/contacts', {
     method: 'POST',
@@ -372,14 +374,13 @@ export default async function handler(req, res) {
     // 2. Sync to HubSpot
     if (HUBSPOT_ACCESS_TOKEN) {
       try {
-        const contact = await createHubSpotContact({
-          email,
-          ...meta,
-        });
+        console.log('Creating HubSpot contact for:', email);
+        const contact = await createHubSpotContact({ email, ...meta });
         const contactId = contact?.id || null;
+        console.log('HubSpot contact id:', contactId);
         await createHubSpotNote(contactId, meta.aiUseCurrently);
         await createHubSpotDeal(contactId, meta);
-        console.log('HubSpot contact + note + deal created.');
+        console.log('HubSpot contact + note + deal created successfully.');
       } catch (err) {
         console.error('HubSpot sync error:', err.message);
       }
