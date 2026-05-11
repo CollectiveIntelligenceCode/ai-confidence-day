@@ -249,7 +249,9 @@ async function createHubSpotContact(data) {
     website: data.source === 'cxo-apply-form'
       ? 'AI Confidence Day — CXO & Board Members'
       : 'AI Confidence Day — Consultants & Small Business Owners',
-    message: [teamSize ? `Team size: ${teamSize}` : '', data.aiUseCurrently ? `AI usage: ${data.aiUseCurrently}` : ''].filter(Boolean).join('\n'),
+    message: teamSize || '',
+    ai_confidence_team_size: teamSize || '',
+    ai_confidence_ai_usage: data.aiUseCurrently || '',
   };
 
   const res = await fetch(hubspotUrl('/crm/v3/objects/contacts'), {
