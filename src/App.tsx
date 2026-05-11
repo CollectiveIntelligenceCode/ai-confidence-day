@@ -89,10 +89,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainWrapper />} />
-        <Route path="/consultants" element={<ConsultantWrapper />}>
-          <Route path=":id" element={<ConsultantWrapper />} />
-        </Route>
-        {/* Fallback for /consultants without ID */}
+        <Route path="/cxo" element={<MainWrapper />} />
         <Route path="/consultants" element={<ConsultantWrapper />} />
         <Route path="/apply/consultants" element={<ApplyConsultants />} />
         <Route path="/apply/better-fit" element={<BetterFitCXO />} />
