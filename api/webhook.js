@@ -215,6 +215,21 @@ function getRawBody(req) {
   });
 }
 
+// Support both legacy API keys (UUID) and Private App tokens (pat-...)
+function hubspotUrl(path) {
+  const isLegacyKey = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(HUBSPOT_ACCESS_TOKEN);
+  const base = `https://api.hubapi.com${path}`;
+  return isLegacyKey ? `${base}?hapikey=${HUBSPOT_ACCESS_TOKEN}` : base;
+}
+
+function hubspotHeaders() {
+  const isLegacyKey = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(HUBSPOT_ACCESS_TOKEN);
+  return {
+    ...(isLegacyKey ? {} : { Authorization: `Bearer ${HUBSPOT_ACCESS_TOKEN}` }),
+    'Content-Type': 'application/json',
+  };
+}
+
 async function createHubSpotContact(data) {
   const { email, fullName, businessName, phone, country, teamSize, jobRole } = data;
   const [firstName, ...rest] = (fullName || '').split(' ');
@@ -232,23 +247,16 @@ async function createHubSpotContact(data) {
     lifecyclestage: 'customer',
   };
 
-  // Store team size as a note-friendly string in the description field
   if (teamSize) properties.message = `Team size: ${teamSize}`;
 
-  const payload = { properties };
-
-  const res = await fetch('https://api.hubapi.com/crm/v3/objects/contacts', {
+  const res = await fetch(hubspotUrl('/crm/v3/objects/contacts'), {
     method: 'POST',
-    headers: {
-      Authorization: `Bearer ${HUBSPOT_ACCESS_TOKEN}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(payload),
+    headers: hubspotHeaders(),
+    body: JSON.stringify({ properties }),
   });
 
   if (!res.ok) {
     const text = await res.text();
-    // If contact already exists (409), try to get the existing one
     if (res.status === 409) {
       console.log('Contact already exists, skipping creation.');
       return null;
@@ -275,12 +283,9 @@ async function createHubSpotNote(contactId, aiUseCurrently) {
     ],
   };
 
-  const res = await fetch('https://api.hubapi.com/crm/v3/objects/notes', {
+  const res = await fetch(hubspotUrl('/crm/v3/objects/notes'), {
     method: 'POST',
-    headers: {
-      Authorization: `Bearer ${HUBSPOT_ACCESS_TOKEN}`,
-      'Content-Type': 'application/json',
-    },
+    headers: hubspotHeaders(),
     body: JSON.stringify(notePayload),
   });
 
@@ -306,12 +311,9 @@ async function createHubSpotDeal(contactId, data) {
     },
   };
 
-  const dealRes = await fetch('https://api.hubapi.com/crm/v3/objects/deals', {
+  const dealRes = await fetch(hubspotUrl('/crm/v3/objects/deals'), {
     method: 'POST',
-    headers: {
-      Authorization: `Bearer ${HUBSPOT_ACCESS_TOKEN}`,
-      'Content-Type': 'application/json',
-    },
+    headers: hubspotHeaders(),
     body: JSON.stringify(dealPayload),
   });
 
@@ -325,11 +327,8 @@ async function createHubSpotDeal(contactId, data) {
   // Associate deal with contact
   if (contactId) {
     await fetch(
-      `https://api.hubapi.com/crm/v3/objects/deals/${deal.id}/associations/contacts/${contactId}/deal_to_contact`,
-      {
-        method: 'PUT',
-        headers: { Authorization: `Bearer ${HUBSPOT_ACCESS_TOKEN}` },
-      }
+      hubspotUrl(`/crm/v3/objects/deals/${deal.id}/associations/contacts/${contactId}/deal_to_contact`),
+      { method: 'PUT', headers: hubspotHeaders() }
     );
   }
 
