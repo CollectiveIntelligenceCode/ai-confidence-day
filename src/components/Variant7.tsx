@@ -544,13 +544,43 @@ export default function Variant7() {
                 role: "Global Sales Director, Wooshii",
                 q: "\"An introduction to how AI enables business in every aspect. I realised I am not as far on the AI journey as I thought — especially for sales and lead generation.\"",
               },
+              {
+                photo: "/attendee-evelyn.jpg",
+                name: "Evelyn Truter",
+                role: "Marketing Director, Ricoh Europe",
+                q: "\"We gathered the combined brainpower of sales and marketing leaders, from across industries, to reflect on our AI journeys, co-create solutions, and gain actionable tools to bring back to our teams. Thank you to Rujuta Singh for delivering transformative insights and inspiring us to translate these ideas into tangible, high-impact projects.\"",
+              },
+              {
+                photo: null,
+                name: "Matthew Townson",
+                role: "Vodafone",
+                q: "\"I jumped into this dynamic workshop led by the brilliant Rujuta Singh. We explored the real-world challenges businesses face when considering AI adoption. The session helped us understand what it takes to make AI tangible, accessible, and actionable.\"",
+              },
+              {
+                photo: null,
+                name: "Kevin Levin",
+                role: "Senior Legal Counsel, Citi Bank",
+                q: "\"The 2-hour AI Problem Solving Workshop with Rujuta Singh was a personal highlight.\"",
+              },
+              {
+                photo: null,
+                name: "Rebecca Wilson",
+                role: "Armstrong Watson",
+                q: "\"Thought-provoking with surprising breadth and depth.\"",
+              },
             ].map((item, idx) => (
               <div key={idx} className="py-10 border-t border-brand-border flex gap-6 items-start">
-                <img
-                  src={item.photo}
-                  alt={item.name}
-                  className="w-14 h-14 rounded-full object-cover flex-shrink-0 border border-brand-border mt-1"
-                />
+                {item.photo ? (
+                  <img
+                    src={item.photo}
+                    alt={item.name}
+                    className="w-14 h-14 rounded-full object-cover flex-shrink-0 border border-brand-border mt-1"
+                  />
+                ) : (
+                  <div className="w-14 h-14 rounded-full bg-brand-border flex-shrink-0 flex items-center justify-center mt-1 text-brand-text/50 font-medium text-lg">
+                    {item.name.split(" ").map((n: string) => n[0]).join("")}
+                  </div>
+                )}
                 <div>
                   <blockquote className="text-xl leading-relaxed text-brand-text mb-3 italic font-normal">
                     {item.q}
