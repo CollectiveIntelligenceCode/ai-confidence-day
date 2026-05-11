@@ -126,10 +126,16 @@ function buildConsultantsEmail(firstName) {
 <div class="wrap">
   <div class="top-bar"></div>
 
-  <div class="header">
-    <!-- RUJUTA_LOGO_PLACEHOLDER -->
-    <!-- CHRIS_LOGO_PLACEHOLDER -->
-  </div>
+  <table width="600" cellpadding="0" cellspacing="0" border="0" style="border-bottom:1px solid #e5e2de;">
+    <tr>
+      <td width="300" style="background:#1a1a1a; padding:24px 32px; vertical-align:middle;">
+        <img src="https://ai-confidence-day.vercel.app/logo-ci.png" alt="Collective Intelligence" height="48" style="display:block;" />
+      </td>
+      <td width="300" style="background:#ffffff; padding:24px 32px; vertical-align:middle; text-align:right;">
+        <img src="https://ai-confidence-day.vercel.app/logo-solved-together.png" alt="Solved Together" height="48" style="display:block; margin-left:auto;" />
+      </td>
+    </tr>
+  </table>
 
   <div class="body">
     <h1>You're in, ${name}.</h1>
