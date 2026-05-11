@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import PageMeta from "../PageMeta";
 import { NavCountdown } from "../ui/countdown-timer";
 import ShiftingCountdown from "../ui/countdown-timer";
+import TestimonialsCarousel from "../ui/TestimonialsCarousel";
 
 export default function ConsultantVariant7() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -506,81 +507,17 @@ export default function ConsultantVariant7() {
             </button>
           </div>
 
-          {/* TESTIMONIALS WITH PHOTOS */}
-          <div>
-            {[
-              {
-                photo: "/attendee-samantha.jpeg",
-                name: "Samantha Graham",
-                role: "Founder and CEO, State of Mind",
-                q: "\"It was great — excellent process and some clear next steps for me to follow up on. That kind of well-held facilitation is totally what busy leaders need.\"",
-              },
-              {
-                photo: "/attendee-samrat.jpeg",
-                name: "Samrat Ghosh",
-                role: "Cross Asset Sales and Execution, Aurel BGC",
-                q: "\"This should be a starting point for any AI implementation. Surprised by how this process breaks down information barriers regarding siloed AI approaches.\"",
-              },
-              {
-                photo: "/attendee-dan.jpeg",
-                name: "Dan Brown",
-                role: "International Sales Director, Dailymotion",
-                q: "\"What surprised me was the extent we can apply AI to everyday tasks and simplify mundane activities. Recommend for anyone wanting structured, strategic implementation.\"",
-              },
-              {
-                photo: "/attendee-mark.jpeg",
-                name: "Mark Gomez",
-                role: "Global Sales Director, Wooshii",
-                q: "\"An introduction to how AI enables business in every aspect. I realised I am not as far on the AI journey as I thought — especially for sales and lead generation.\"",
-              },
-              {
-                photo: "/attendee-evelyn.jpg",
-                name: "Evelyn Truter",
-                role: "Marketing Director, Ricoh Europe",
-                q: "\"We gathered the combined brainpower of sales and marketing leaders, from across industries, to reflect on our AI journeys, co-create solutions, and gain actionable tools to bring back to our teams. Thank you to Rujuta Singh for delivering transformative insights and inspiring us to translate these ideas into tangible, high-impact projects.\"",
-              },
-              {
-                photo: null,
-                name: "Matthew Townson",
-                role: "Vodafone",
-                q: "\"I jumped into this dynamic workshop led by the brilliant Rujuta Singh. We explored the real-world challenges businesses face when considering AI adoption. The session helped us understand what it takes to make AI tangible, accessible, and actionable.\"",
-              },
-              {
-                photo: null,
-                name: "Kevin Levin",
-                role: "Senior Legal Counsel, Citi Bank",
-                q: "\"The 2-hour AI Problem Solving Workshop with Rujuta Singh was a personal highlight.\"",
-              },
-              {
-                photo: null,
-                name: "Rebecca Wilson",
-                role: "Armstrong Watson",
-                q: "\"Thought-provoking with surprising breadth and depth.\"",
-              },
-            ].map((item, idx) => (
-              <div key={idx} className="py-10 border-t border-brand-border flex gap-6 items-start">
-                {item.photo ? (
-                  <img
-                    src={item.photo}
-                    alt={item.name}
-                    className="w-14 h-14 rounded-full object-cover flex-shrink-0 border border-brand-border mt-1"
-                  />
-                ) : (
-                  <div className="w-14 h-14 rounded-full bg-brand-border flex-shrink-0 flex items-center justify-center mt-1 text-brand-text/50 font-medium text-lg">
-                    {item.name.split(" ").map((n: string) => n[0]).join("")}
-                  </div>
-                )}
-                <div>
-                  <blockquote className="text-xl leading-relaxed text-brand-text mb-3 italic font-normal">
-                    {item.q}
-                  </blockquote>
-                  <div className="text-sm text-brand-text/50 font-medium">
-                    {item.name} <span className="text-brand-text/30 mx-1">·</span> {item.role}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          {/* TESTIMONIALS CAROUSEL */}
+          <TestimonialsCarousel testimonials={[
+            { photo: "/attendee-samantha.jpeg", name: "Samantha Graham", role: "Founder and CEO, State of Mind", q: "It was great — excellent process and some clear next steps for me to follow up on. That kind of well-held facilitation is totally what busy leaders need." },
+            { photo: "/attendee-evelyn.jpg", name: "Evelyn Truter", role: "Marketing Director, Ricoh Europe", q: "We gathered the combined brainpower of sales and marketing leaders, from across industries, to reflect on our AI journeys, co-create solutions, and gain actionable tools to bring back to our teams. Thank you to Rujuta Singh for delivering transformative insights and inspiring us to translate these ideas into tangible, high-impact projects." },
+            { photo: "/attendee-dan.jpeg", name: "Dan Brown", role: "International Sales Director, Dailymotion", q: "What surprised me was the extent we can apply AI to everyday tasks and simplify mundane activities. Recommend for anyone wanting structured, strategic implementation." },
+            { photo: null, name: "Matthew Townson", role: "Vodafone", q: "I jumped into this dynamic workshop led by the brilliant Rujuta Singh. We explored the real-world challenges businesses face when considering AI adoption. The session helped us understand what it takes to make AI tangible, accessible, and actionable." },
+            { photo: "/attendee-samrat.jpeg", name: "Samrat Ghosh", role: "Cross Asset Sales and Execution, Aurel BGC", q: "This should be a starting point for any AI implementation. Surprised by how this process breaks down information barriers regarding siloed AI approaches." },
+            { photo: null, name: "Kevin Levin", role: "Senior Legal Counsel, Citi Bank", q: "The 2-hour AI Problem Solving Workshop with Rujuta Singh was a personal highlight." },
+            { photo: "/attendee-mark.jpeg", name: "Mark Gomez", role: "Global Sales Director, Wooshii", q: "An introduction to how AI enables business in every aspect. I realised I am not as far on the AI journey as I thought — especially for sales and lead generation." },
+            { photo: null, name: "Rebecca Wilson", role: "Armstrong Watson", q: "Thought-provoking with surprising breadth and depth." },
+          ]} />
 
         </div>
       </section>
