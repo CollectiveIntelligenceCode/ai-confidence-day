@@ -271,6 +271,39 @@ async function createHubSpotContact(data) {
   return await res.json();
 }
 
+async function logEmailEngagement(contactId, email) {
+  if (!contactId) return;
+
+  const payload = {
+    properties: {
+      hs_timestamp: new Date().toISOString(),
+      hs_email_direction: 'EMAIL',
+      hs_email_status: 'SENT',
+      hs_email_subject: "You're in — AI Confidence Day, 19th June 2026",
+      hs_email_text: `Automated welcome email sent to ${email} confirming their place at AI Confidence Day for Consultants & Small Business Owners on 19th June 2026. Includes event details, calendar invite (.ics), and Google/Outlook calendar links.`,
+    },
+    associations: [
+      {
+        to: { id: contactId },
+        types: [{ associationCategory: 'HUBSPOT_DEFINED', associationTypeId: 198 }],
+      },
+    ],
+  };
+
+  const res = await fetch(hubspotUrl('/crm/v3/objects/emails'), {
+    method: 'POST',
+    headers: hubspotHeaders(),
+    body: JSON.stringify(payload),
+  });
+
+  if (!res.ok) {
+    const text = await res.text();
+    console.error(`HubSpot email log error: ${res.status} ${text}`);
+  } else {
+    console.log('HubSpot email engagement logged for contact:', contactId);
+  }
+}
+
 async function createHubSpotNote(contactId, aiUseCurrently) {
   if (!contactId || !aiUseCurrently) return;
 
@@ -381,9 +414,10 @@ export default async function handler(req, res) {
         const contact = await createHubSpotContact({ email, ...meta });
         const contactId = contact?.id || null;
         console.log('HubSpot contact id:', contactId);
+        await logEmailEngagement(contactId, email);
         await createHubSpotNote(contactId, meta.aiUseCurrently);
         await createHubSpotDeal(contactId, meta);
-        console.log('HubSpot contact + note + deal created successfully.');
+        console.log('HubSpot contact + email log + deal created successfully.');
       } catch (err) {
         console.error('HubSpot sync error:', err.message);
       }
