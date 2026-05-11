@@ -7,17 +7,33 @@ const RESEND_API_KEY = process.env.RESEND_API_KEY;
 
 // ── Calendar helpers ───────────────────────────────────────────────────────────
 
-const EVENT = {
-  title: 'AI Confidence Day for Consultants',
-  date: '19th June 2026',
-  start: '20260619T080000Z', // 9am BST = 8am UTC
-  end:   '20260619T160000Z', // 5pm BST = 4pm UTC
-  location: 'Smiths Of Smithfield, 67-77 Charterhouse St, London, EC1M 6HJ',
-  description: 'A private, hands-on working day for consultants and small business owners. Chatham House Rules apply.',
+const EVENTS = {
+  consultants: {
+    title: 'AI Confidence Day for Consultants & Small Business Owners',
+    start: '20260619T080000Z',
+    end:   '20260619T160000Z',
+    startdt: '2026-06-19T09:00:00',
+    enddt:   '2026-06-19T17:00:00',
+    location: 'Smiths of Smithfield, 67-77 Charterhouse St, London, EC1M 6HJ',
+    description: 'A private, hands-on working day for consultants and small business owners.',
+    date: '19th June 2026',
+    seeYou: '19th',
+  },
+  cxo: {
+    title: 'AI Confidence Day for CXOs & Board Members',
+    start: '20260703T080000Z',
+    end:   '20260703T160000Z',
+    startdt: '2026-07-03T09:00:00',
+    enddt:   '2026-07-03T17:00:00',
+    location: 'Smiths of Smithfield, 67-77 Charterhouse St, London, EC1M 6HJ',
+    description: 'A private, hands-on working day for CXOs and board members.',
+    date: '3rd July 2026',
+    seeYou: '3rd',
+  },
 };
 
-function buildICS() {
-  const uid = `ai-confidence-day-2026-${Date.now()}@collectiveintelligence.co`;
+function buildICS(event) {
+  const uid = `ai-confidence-day-2026-${Date.now()}@solvedtogether.co.uk`;
   return [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
@@ -26,11 +42,11 @@ function buildICS() {
     'METHOD:REQUEST',
     'BEGIN:VEVENT',
     `UID:${uid}`,
-    `DTSTART:${EVENT.start}`,
-    `DTEND:${EVENT.end}`,
-    `SUMMARY:${EVENT.title}`,
-    `LOCATION:${EVENT.location}`,
-    `DESCRIPTION:${EVENT.description}`,
+    `DTSTART:${event.start}`,
+    `DTEND:${event.end}`,
+    `SUMMARY:${event.title}`,
+    `LOCATION:${event.location}`,
+    `DESCRIPTION:${event.description}`,
     'STATUS:CONFIRMED',
     'SEQUENCE:0',
     'BEGIN:VALARM',
@@ -43,50 +59,38 @@ function buildICS() {
   ].join('\r\n');
 }
 
-function googleCalendarUrl() {
+function googleCalendarUrl(event) {
   const params = new URLSearchParams({
     action: 'TEMPLATE',
-    text: EVENT.title,
-    dates: `${EVENT.start}/${EVENT.end}`,
-    details: EVENT.description,
-    location: EVENT.location,
+    text: event.title,
+    dates: `${event.start}/${event.end}`,
+    details: event.description,
+    location: event.location,
   });
   return `https://calendar.google.com/calendar/render?${params}`;
 }
 
-function outlookCalendarUrl() {
+function outlookCalendarUrl(event) {
   const params = new URLSearchParams({
     path: '/calendar/action/compose',
     rru: 'addevent',
-    subject: EVENT.title,
-    startdt: '2026-06-19T09:00:00',
-    enddt: '2026-06-19T17:00:00',
-    location: EVENT.location,
-    body: EVENT.description,
+    subject: event.title,
+    startdt: event.startdt,
+    enddt: event.enddt,
+    location: event.location,
+    body: event.description,
   });
   return `https://outlook.live.com/calendar/0/deeplink/compose?${params}`;
 }
 
-// ── Email template ─────────────────────────────────────────────────────────────
+// ── Email templates ────────────────────────────────────────────────────────────
 
-function buildWelcomeEmail(firstName) {
-  const name = firstName || 'there';
-  const google = googleCalendarUrl();
-  const outlook = outlookCalendarUrl();
-
-  return `<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>You're in — AI Confidence Day</title>
-<style>
+const EMAIL_STYLES = `
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { background: #f5f2ee; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #1a1a1a; }
   .wrap { max-width: 600px; margin: 0 auto; background: #ffffff; }
   .top-bar { height: 4px; background: #c0392b; }
-  .header { padding: 40px 48px 32px; border-bottom: 1px solid #e5e2de; }
-  .logo { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #888; font-weight: 600; }
+  .header { padding: 32px 48px; border-bottom: 1px solid #e5e2de; display: flex; align-items: center; gap: 24px; }
   .body { padding: 48px; }
   h1 { font-size: 32px; font-weight: 400; line-height: 1.2; margin-bottom: 20px; color: #1a1a1a; }
   p { font-size: 16px; line-height: 1.7; color: #444; margin-bottom: 16px; }
@@ -95,26 +99,36 @@ function buildWelcomeEmail(firstName) {
   .event-row { display: flex; gap: 12px; margin-bottom: 8px; font-size: 15px; color: #1a1a1a; }
   .event-row .key { color: #888; min-width: 80px; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; padding-top: 2px; }
   .calendar-section { margin: 32px 0; padding: 28px; border: 1px solid #e5e2de; }
-  .calendar-section p { font-size: 14px; color: #666; margin-bottom: 20px; }
-  .cal-links { display: flex; gap: 12px; flex-wrap: wrap; }
+  .cal-links { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
   .cal-btn { display: inline-block; padding: 10px 20px; border: 1px solid #1a1a1a; font-size: 13px; color: #1a1a1a; text-decoration: none; letter-spacing: 0.5px; font-weight: 500; }
   .cal-btn.primary { background: #c0392b; color: #ffffff; border-color: #c0392b; }
   .divider { border: none; border-top: 1px solid #e5e2de; margin: 32px 0; }
-  .what-to-bring { margin: 32px 0; }
-  .what-to-bring h2 { font-size: 18px; font-weight: 500; margin-bottom: 16px; }
-  .what-to-bring ul { padding-left: 20px; }
-  .what-to-bring li { font-size: 15px; line-height: 1.7; color: #444; margin-bottom: 6px; }
   .footer { padding: 32px 48px; border-top: 1px solid #e5e2de; background: #f5f2ee; }
   .footer p { font-size: 12px; color: #888; line-height: 1.6; margin-bottom: 0; }
   .footer a { color: #c0392b; text-decoration: none; }
-</style>
+`;
+
+function buildConsultantsEmail(firstName) {
+  const name = firstName || 'there';
+  const event = EVENTS.consultants;
+  const google = googleCalendarUrl(event);
+  const outlook = outlookCalendarUrl(event);
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>You're in — AI Confidence Day, 19th June 2026</title>
+<style>${EMAIL_STYLES}</style>
 </head>
 <body>
 <div class="wrap">
   <div class="top-bar"></div>
 
   <div class="header">
-    <div class="logo">Collective Intelligence &amp; Solved Together</div>
+    <!-- RUJUTA_LOGO_PLACEHOLDER -->
+    <!-- CHRIS_LOGO_PLACEHOLDER -->
   </div>
 
   <div class="body">
@@ -122,33 +136,34 @@ function buildWelcomeEmail(firstName) {
 
     <p>Your place at <strong>AI Confidence Day for Consultants &amp; Small Business Owners</strong> is confirmed. We are looking forward to spending the day with you.</p>
 
+    <p>This is the day you go from saving AI guides you never go back to — to actually building things you use the next morning.</p>
+
     <div class="event-card">
       <div class="label">Your event details</div>
       <div class="event-row"><span class="key">Date</span><strong>19th June 2026</strong></div>
       <div class="event-row"><span class="key">Time</span><strong>9:00am – 5:00pm BST</strong></div>
-      <div class="event-row"><span class="key">Venue</span><strong>Smiths Of Smithfield</strong></div>
-      <div class="event-row"><span class="key"></span>67-77 Charterhouse St, London, EC1M 6HJ</div>
+      <div class="event-row"><span class="key">Venue</span><strong>Smiths of Smithfield</strong></div>
+      <div class="event-row"><span class="key"></span>67–77 Charterhouse St, London, EC1M 6HJ</div>
     </div>
 
     <div class="calendar-section">
-      <p>Add the day to your calendar so it is locked in.</p>
+      <p style="margin-bottom:16px;">Add the day to your calendar so it is locked in.</p>
       <div class="cal-links">
         <a href="${google}" class="cal-btn primary" target="_blank">+ Google Calendar</a>
         <a href="${outlook}" class="cal-btn" target="_blank">+ Outlook</a>
       </div>
-      <p style="margin-top:16px; font-size:13px; color:#888;">Apple Calendar users: open the .ics file attached to this email.</p>
+      <p style="font-size:13px; color:#888;">Apple Calendar users: open the .ics file attached to this email.</p>
     </div>
 
     <hr class="divider" />
 
-    <p>Watch out for emails from us with more detailed instructions closer to the day.</p>
+    <p>One small favour — please add <a href="mailto:aiconfidence@collectiveintelligence.co">aiconfidence@collectiveintelligence.co</a> to your contacts. We will be in touch with more details closer to the day, and we would rather not end up in your spam folder.</p>
 
-    <p>If you have any questions in the meantime, reply to this email or reach us at <a href="mailto:aiconfidence@collectiveintelligence.co">aiconfidence@collectiveintelligence.co</a>.</p>
+    <p>If you have any questions in the meantime, reply to this email anytime.</p>
 
     <p>See you on the 19th.</p>
 
-    <p style="margin-top:32px;"><strong>Chris Bradshaw</strong><br />
-    <span style="color:#888; font-size:14px;">Collective Intelligence &amp; Solved Together</span></p>
+    <p style="margin-top:32px;"><strong>Warmly, Rujuta &amp; Chris</strong></p>
   </div>
 
   <div class="footer">
@@ -160,23 +175,94 @@ function buildWelcomeEmail(firstName) {
 </html>`;
 }
 
+function buildCXOEmail(firstName) {
+  const name = firstName || 'there';
+  const event = EVENTS.cxo;
+  const google = googleCalendarUrl(event);
+  const outlook = outlookCalendarUrl(event);
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>You're in — AI Confidence Day, 3rd July 2026</title>
+<style>${EMAIL_STYLES}</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top-bar"></div>
+
+  <div class="header">
+    <!-- RUJUTA_LOGO_PLACEHOLDER -->
+    <!-- CHRIS_LOGO_PLACEHOLDER -->
+  </div>
+
+  <div class="body">
+    <h1>You're in, ${name}.</h1>
+
+    <p>Your place at <strong>AI Confidence Day for CXOs &amp; Board Members</strong> is confirmed. We are looking forward to spending the day with you.</p>
+
+    <div class="event-card">
+      <div class="label">Your event details</div>
+      <div class="event-row"><span class="key">Date</span><strong>3rd July 2026</strong></div>
+      <div class="event-row"><span class="key">Time</span><strong>9:00am – 5:00pm BST</strong></div>
+      <div class="event-row"><span class="key">Venue</span><strong>Smiths of Smithfield</strong></div>
+      <div class="event-row"><span class="key"></span>67–77 Charterhouse St, London, EC1M 6HJ</div>
+    </div>
+
+    <div class="calendar-section">
+      <p style="margin-bottom:16px;">Add the day to your calendar so it is locked in.</p>
+      <div class="cal-links">
+        <a href="${google}" class="cal-btn primary" target="_blank">+ Google Calendar</a>
+        <a href="${outlook}" class="cal-btn" target="_blank">+ Outlook</a>
+      </div>
+      <p style="font-size:13px; color:#888;">Apple Calendar users: open the .ics file attached to this email.</p>
+    </div>
+
+    <hr class="divider" />
+
+    <p>One small favour — please add <a href="mailto:aiconfidence@collectiveintelligence.co">aiconfidence@collectiveintelligence.co</a> to your contacts. We will be in touch with more details closer to the day, and we would rather not end up in your spam folder.</p>
+
+    <p>If you have any questions in the meantime, reply to this email anytime.</p>
+
+    <p>See you on the 3rd.</p>
+
+    <p style="margin-top:32px;"><strong>Warmly, Rujuta &amp; Chris</strong></p>
+  </div>
+
+  <div class="footer">
+    <p>You are receiving this because you registered for AI Confidence Day for CXOs &amp; Board Members on 3rd July 2026.<br />
+    Questions? <a href="mailto:aiconfidence@collectiveintelligence.co">aiconfidence@collectiveintelligence.co</a></p>
+  </div>
+</div>
+</body>
+</html>`;
+}
+
 // ── Send welcome email via Resend ──────────────────────────────────────────────
 
-async function sendWelcomeEmail(email, fullName) {
+async function sendWelcomeEmail(email, fullName, source) {
   if (!RESEND_API_KEY) {
     console.warn('RESEND_API_KEY not set — skipping welcome email.');
     return;
   }
 
   const [firstName] = (fullName || '').split(' ');
-  const icsContent = buildICS();
+  const isCXO = source === 'cxo-apply-form';
+  const event = isCXO ? EVENTS.cxo : EVENTS.consultants;
+  const icsContent = buildICS(event);
   const icsBase64 = Buffer.from(icsContent).toString('base64');
+  const subject = isCXO
+    ? "You're in — AI Confidence Day, 3rd July 2026"
+    : "You're in — AI Confidence Day, 19th June 2026";
+  const html = isCXO ? buildCXOEmail(firstName) : buildConsultantsEmail(firstName);
 
   const payload = {
     from: 'AI Confidence Day <contact@solvedtogether.co.uk>',
     to: [email],
-    subject: "You're in — AI Confidence Day, 19th June 2026",
-    html: buildWelcomeEmail(firstName),
+    subject,
+    html,
     attachments: [
       {
         filename: 'ai-confidence-day.ics',
@@ -403,7 +489,7 @@ export default async function handler(req, res) {
 
     // 1. Send branded welcome email
     try {
-      await sendWelcomeEmail(email, meta.fullName);
+      await sendWelcomeEmail(email, meta.fullName, meta.source);
     } catch (err) {
       console.error('Welcome email error:', err.message);
     }
