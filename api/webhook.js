@@ -307,7 +307,7 @@ async function createHubSpotDeal(contactId, data) {
       closedate: new Date('2026-06-19').toISOString(),
       dealstage: 'closedwon',
       pipeline: 'default',
-      description: `Team size: ${teamSize || 'unknown'}`,
+      description: `Team size: ${teamSize || 'unknown'}${data.aiUseCurrently ? `\n\nAI use today:\n${data.aiUseCurrently}` : ''}`,
     },
   };
 
