@@ -2,7 +2,7 @@ import { useState, useRef, type ReactNode } from "react";
 import PageMeta from "./PageMeta";
 import { NavCountdown } from "./ui/countdown-timer";
 import ShiftingCountdown from "./ui/countdown-timer";
-import TestimonialsCarousel from "./ui/TestimonialsCarousel";
+import TestimonialsGrid from "./ui/TestimonialsGrid";
 
 export default function Variant7() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -519,20 +519,20 @@ export default function Variant7() {
             </button>
           </div>
 
-          {/* TESTIMONIALS CAROUSEL */}
-          <TestimonialsCarousel testimonials={[
+          {/* TESTIMONIALS GRID */}
+          <TestimonialsGrid testimonials={[
             { photo: "/attendee-samantha.jpeg", name: "Samantha Graham", role: "Founder and CEO, State of Mind", q: "I have been in leadership for twenty years and I have never sat in a room where I felt that safe to say I genuinely did not know something. That alone was worth the day." },
-            { photo: "/attendee-evelyn.jpg", name: "Evelyn Truter", role: "Marketing Director, Ricoh Europe", q: "We gathered the combined brainpower of sales and marketing leaders, from across industries, to reflect on our AI journeys, co-create solutions, and gain actionable tools to bring back to our teams. Thank you to Rujuta Singh for delivering transformative insights and inspiring us to translate these ideas into tangible, high-impact projects." },
+            { photo: null, name: "Linda Ayoola", role: "TEDx UK", q: "I highly recommend Chris for his outstanding work building and executing our AI strategy at TEDx London. Chris brought genuine strategic and technical knowledge to what felt like an overwhelming topic. His guidance was instrumental in helping us understand where AI could actually move the needle — and quickly." },
             { photo: "/attendee-dan.jpeg", name: "Dan Brown", role: "International Sales Director, Dailymotion", q: "Rujuta has a rare ability to translate complexity into something actionable. I left with a framework I actually used in a board meeting the following week." },
-            { photo: null, name: "Matthew Townson", role: "Vodafone", q: "I jumped into this dynamic workshop led by the brilliant Rujuta Singh. We explored the real-world challenges businesses face when considering AI adoption. The session helped us understand what it takes to make AI tangible, accessible, and actionable." },
+            { photo: null, name: "Dearg O'Bartuín", role: "Co-founder & CTPO, Mara", q: "Chris is a natural leader when it comes to AI adoption. He has a talent for identifying where each person in the room is on their AI journey and meeting them there. By the end of our session the whole team had a shared language around AI and a clear path forward." },
+            { photo: "/attendee-evelyn.jpg", name: "Evelyn Truter", role: "Marketing Director, Ricoh Europe", q: "We gathered the combined brainpower of sales and marketing leaders, from across industries, to reflect on our AI journeys, co-create solutions, and gain actionable tools to bring back to our teams. Thank you to Rujuta Singh for delivering transformative insights and inspiring us to translate these ideas into tangible, high-impact projects." },
+            { photo: null, name: "Mike Brothers", role: "Commercial Leader / Investor / Mentor", q: "Chris helped me build an AI strategy and commercial validation model for my business. His process helped us understand exactly where AI could accelerate growth, and the frameworks he produced gave us something concrete to act on immediately — not just theory." },
             { photo: "/attendee-samrat.jpeg", name: "Samrat Ghosh", role: "Cross Asset Sales and Execution, Aurel BGC", q: "I expected theory. I got a working session that changed how I approach every conversation about AI in my business." },
+            { photo: null, name: "Maren Brombeiss", role: "Founder, Working with Creative Personalities", q: "Chris has been a trusted guide through my AI journey over the last couple of years. He brings fresh ideas and always implements them in a straightforward, no-jargon way. What I appreciate most is that he's always available — whether it's a quick question or a deeper strategic conversation about where AI is taking my business." },
+            { photo: null, name: "Matthew Townson", role: "Vodafone", q: "I jumped into this dynamic workshop led by the brilliant Rujuta Singh. We explored the real-world challenges businesses face when considering AI adoption. The session helped us understand what it takes to make AI tangible, accessible, and actionable." },
             { photo: null, name: "Kevin Levin", role: "Senior Legal Counsel, Citi Bank", q: "The 2-hour AI Problem Solving Workshop with Rujuta Singh was a personal highlight." },
             { photo: "/attendee-mark.jpeg", name: "Mark Gomez", role: "Global Sales Director, Wooshii", q: "An introduction to how AI enables business in every aspect. I realised I am not as far on the AI journey as I thought — especially for sales and lead generation." },
             { photo: null, name: "Rebecca Wilson", role: "Armstrong Watson", q: "Thought-provoking with surprising breadth and depth." },
-            { photo: null, name: "Linda Ayoola", role: "TEDx UK", q: "I highly recommend Chris for his outstanding work building and executing our AI strategy at TEDx London. Chris brought genuine strategic and technical knowledge to what felt like an overwhelming topic. His guidance was instrumental in helping us understand where AI could actually move the needle — and quickly." },
-            { photo: null, name: "Dearg O'Bartuín", role: "Co-founder & CTPO, Mara", q: "Chris is a natural leader when it comes to AI adoption. He has a talent for identifying where each person in the room is on their AI journey and meeting them there. By the end of our session the whole team had a shared language around AI and a clear path forward." },
-            { photo: null, name: "Mike Brothers", role: "Commercial Leader / Investor / Mentor", q: "Chris helped me build an AI strategy and commercial validation model for my business. His process helped us understand exactly where AI could accelerate growth, and the frameworks he produced gave us something concrete to act on immediately — not just theory." },
-            { photo: null, name: "Maren Brombeiss", role: "Founder, Working with Creative Personalities", q: "Chris has been a trusted guide through my AI journey over the last couple of years. He brings fresh ideas and always implements them in a straightforward, no-jargon way. What I appreciate most is that he's always available — whether it's a quick question or a deeper strategic conversation about where AI is taking my business." },
           ]} />
 
         </div>
