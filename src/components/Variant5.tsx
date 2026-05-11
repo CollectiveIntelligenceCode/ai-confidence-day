@@ -316,7 +316,7 @@ export default function Variant5() {
             <span className="w-1 h-1 bg-gray-800 rounded-full" />
             <span className="font-roboto text-[10px] uppercase tracking-widest text-gray-600">AI Day for CXOs & Board Members</span>
             <span className="w-1 h-1 bg-gray-800 rounded-full" />
-            <a href="#" className="font-roboto text-[10px] uppercase tracking-widest text-gray-600 hover:text-brand-primary transition-colors">aiconfidence@collectiveintelligence.co</a>
+            <a href="#" className="font-roboto text-[10px] uppercase tracking-widest text-gray-600 hover:text-brand-primary transition-colors">contact@solvedtogether.co.uk</a>
           </div>
         </div>
       </section>

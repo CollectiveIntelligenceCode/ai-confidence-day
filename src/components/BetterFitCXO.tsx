@@ -87,7 +87,7 @@ export default function BetterFitCXO() {
       </div>
 
       <footer className="py-8 px-8 text-center border-t border-brand-border text-sm text-brand-text/50 uppercase tracking-wider">
-        © 2026 Solved Together &amp; Collective Intelligence · aiconfidence@collectiveintelligence.co
+        © 2026 Solved Together &amp; Collective Intelligence · contact@solvedtogether.co.uk
       </footer>
     </div>
   );

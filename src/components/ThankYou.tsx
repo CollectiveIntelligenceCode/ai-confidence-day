@@ -65,10 +65,10 @@ export default function ThankYou({ variant }: { variant: "cxo" | "consultants" }
           <p className="text-base text-brand-text/60 leading-[1.75] mb-8">
             If you have any questions in the meantime, reach us at{" "}
             <a
-              href="mailto:aiconfidence@collectiveintelligence.co"
+              href="mailto:contact@solvedtogether.co.uk"
               className="text-brand-primary underline underline-offset-2 hover:opacity-75 transition-opacity"
             >
-              aiconfidence@collectiveintelligence.co
+              contact@solvedtogether.co.uk
             </a>
           </p>
           {/* LINKEDIN CTAs */}
@@ -126,7 +126,7 @@ export default function ThankYou({ variant }: { variant: "cxo" | "consultants" }
       </section>
 
       <footer className="py-10 px-8 text-center border-t border-brand-border text-sm text-brand-text/50 uppercase tracking-wider">
-        © 2026 Solved Together & Collective Intelligence · aiconfidence@collectiveintelligence.co
+        © 2026 Solved Together & Collective Intelligence · contact@solvedtogether.co.uk
       </footer>
     </div>
   );

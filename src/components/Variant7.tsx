@@ -596,7 +596,7 @@ export default function Variant7() {
               { q: "What does the 100% money-back guarantee* cover?", a: "If you attend the morning session and, before the lunch break, feel this day is not for you — you can leave. Let us know before lunch and we will refund you in full, no questions asked. We do not offer refunds after the lunch break as the full day's content will have been delivered by that point." },
               { q: "Is this for CXOs only, or board members too?", a: <>Both. C-suite executives and board members (executive and non-executive) of mid-sized companies, family businesses, enterprise organisations, and non-profits. Anyone in a leadership role with a team who wants to understand AI's impact on their business. If you are a consultant or small business owner, <a href="/consultants" className="text-brand-primary underline underline-offset-2 hover:opacity-75 transition-opacity">we have a separate day built for you</a>.</> },
               { q: "What is the difference between this and the Consultants & Small Business day?", a: "Two things: the room and the content. The people in your room are CXOs and board members of mid-sized and enterprise organisations — people navigating the same scale of decisions you are. That matters because this day is built around co-creation and solving problems together. The content is tailored to your reality: scaling AI across hundreds or thousands of people, building organisational playbooks, navigating implementation approaches, and making confident decisions at board level. The consultants day addresses a different set of problems — individual productivity, running a business on AI, and advising clients. Different problems, different room, different content." },
-              { q: "Do you have other dates, later in the year?", a: <>We currently have no other dates planned for a public training for the rest of this year. We do run these privately for companies, where we have more flexibility on dates. <a href="mailto:aiconfidence@collectiveintelligence.co" className="text-brand-primary underline underline-offset-2 hover:opacity-75 transition-opacity">Reach out</a> if that is more suitable.</> },
+              { q: "Do you have other dates, later in the year?", a: <>We currently have no other dates planned for a public training for the rest of this year. We do run these privately for companies, where we have more flexibility on dates. <a href="mailto:contact@solvedtogether.co.uk" className="text-brand-primary underline underline-offset-2 hover:opacity-75 transition-opacity">Reach out</a> if that is more suitable.</> },
             ].map((faq: { q: string; a: ReactNode }, idx) => (
               <div key={idx} className="border-b border-brand-border">
                 <button
@@ -641,7 +641,7 @@ export default function Variant7() {
       </section>
 
       <footer className="py-10 px-8 text-center border-t border-brand-border text-sm text-brand-text/50 uppercase tracking-wider">
-        © 2026 Solved Together & Collective Intelligence · aiconfidence@collectiveintelligence.co
+        © 2026 Solved Together & Collective Intelligence · contact@solvedtogether.co.uk
       </footer>
     </div>
   );
