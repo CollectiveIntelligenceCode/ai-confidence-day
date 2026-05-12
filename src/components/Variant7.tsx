@@ -145,26 +145,39 @@ export default function Variant7() {
       </section>
 
       {/* SOUND LIKE YOU */}
-      <section className="bg-brand-bg py-24 px-8">
-        <div className="max-w-[900px] mx-auto">
-          <h2 className="text-4xl md:text-5xl mb-12 text-center font-normal">Does this sound like you?</h2>
-          <div className="space-y-4">
+      <section className="bg-brand-text py-24 px-8">
+        <div className="max-w-[1000px] mx-auto">
+          <div className="text-center mb-16">
+            <div className="text-xs font-medium tracking-[3px] uppercase text-brand-primary mb-4">Sound familiar?</div>
+            <h2 className="text-4xl md:text-5xl font-normal text-white">Does this sound like you?</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10">
             {[
-              "\"I nod in board meetings when AI comes up and hope nobody asks me a direct question.\"",
-              "\"Every vendor tells me their solution is the one. I cannot tell the difference.\"",
-              "\"My team is running AI experiments I did not authorise and do not fully understand.\"",
-              "\"When my CTO talks about AI, I am not sure which questions I should even be asking.\"",
-              "\"I know AI matters. I just do not know what I should actually be doing about it.\"",
-              "\"I have sat through three AI presentations this quarter. I left all of them more confused than when I arrived.\"",
-              "\"I use AI for emails, summaries, the odd report. I know there is more to it. I just have not had the time to figure out what.\"",
-              "\"I have a feeling I am leaving 95% on the table. I just do not know what that 95% looks like.\"",
+              "I nod in board meetings when AI comes up and hope nobody asks me a direct question.",
+              "Every vendor tells me their solution is the one. I cannot tell the difference.",
+              "My team is running AI experiments I did not authorise and do not fully understand.",
+              "When my CTO talks about AI, I am not sure which questions I should even be asking.",
+              "I know AI matters. I just do not know what I should actually be doing about it.",
+              "I have sat through three AI presentations this quarter. I left all of them more confused than when I arrived.",
+              "I use AI for emails, summaries, the odd report. I know there is more to it. I just have not had the time to figure out what.",
             ].map((thought, idx) => (
-              <div key={idx} className="bg-white border-l-[3px] border-brand-primary p-6 md:px-8 italic text-brand-text/80 text-lg leading-relaxed">
-                {thought}
+              <div key={idx} className="bg-brand-text p-8 md:p-10 flex flex-col gap-4">
+                <div className="text-4xl text-brand-primary font-serif leading-none select-none">"</div>
+                <p className="text-white/80 text-lg leading-relaxed italic flex-1">{thought}</p>
               </div>
             ))}
           </div>
-          <p className="text-center mt-12 text-xl text-brand-text font-semibold">
+
+          {/* Final quote — full width highlighted */}
+          <div className="bg-brand-primary/10 border border-brand-primary/30 p-8 md:p-10 mt-px flex flex-col gap-4">
+            <div className="text-4xl text-brand-primary font-serif leading-none select-none">"</div>
+            <p className="text-white/80 text-xl leading-relaxed italic">
+              I have a feeling I am leaving 95% on the table. I just do not know what that 95% looks like.
+            </p>
+          </div>
+
+          <p className="text-center mt-14 text-xl text-white font-semibold">
             If any of this sounds familiar, this day was designed for you.
           </p>
         </div>
