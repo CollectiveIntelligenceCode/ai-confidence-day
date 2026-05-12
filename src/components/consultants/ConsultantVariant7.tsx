@@ -145,23 +145,36 @@ export default function ConsultantVariant7() {
       </section>
 
       {/* SOUND LIKE YOU */}
-      <section className="bg-brand-bg py-24 px-8">
-        <div className="max-w-[900px] mx-auto">
-          <h2 className="text-4xl md:text-5xl mb-12 text-center font-normal">Does this sound like you?</h2>
-          <div className="space-y-4">
+      <section className="bg-brand-text py-24 px-8">
+        <div className="max-w-[1000px] mx-auto">
+          <div className="text-center mb-16">
+            <div className="text-xs font-medium tracking-[3px] uppercase text-brand-primary mb-4">Sound familiar?</div>
+            <h2 className="text-4xl md:text-5xl font-normal text-white">Does this sound like you?</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10">
             {[
-              "\"I am delivering, marketing, selling, and doing admin. I physically cannot take on one more thing — but I know AI could change everything if I just had the time.\"",
-              "\"A competitor sent a client a proposal five minutes after the call ended. Mine took three days.\"",
-              "\"I have saved about forty AI guides, bookmarked twelve tools, and actually implemented none of them.\"",
-              "\"I know there is a version of my business where I operate like a team of five. I just cannot see how to get there from here.\"",
-              "\"I have a feeling I am leaving 95% on the table. I just do not know what that 95% looks like.\"",
+              "I am delivering, marketing, selling, and doing admin. I physically cannot take on one more thing — but I know AI could change everything if I just had the time.",
+              "A competitor sent a client a proposal five minutes after the call ended. Mine took three days.",
+              "I have saved about forty AI guides, bookmarked twelve tools, and actually implemented none of them.",
+              "I know there is a version of my business where I operate like a team of five. I just cannot see how to get there from here.",
             ].map((thought, idx) => (
-              <div key={idx} className="bg-white border-l-[3px] border-brand-primary p-6 md:px-8 italic text-brand-text/80 text-lg leading-relaxed">
-                {thought}
+              <div key={idx} className="bg-brand-text p-8 md:p-10 flex flex-col gap-4">
+                <div className="text-4xl text-brand-primary font-serif leading-none select-none">"</div>
+                <p className="text-white/80 text-lg leading-relaxed italic flex-1">{thought}</p>
               </div>
             ))}
           </div>
-          <p className="text-center mt-12 text-xl text-brand-text font-semibold">
+
+          {/* Fifth quote — full width */}
+          <div className="bg-brand-primary/10 border border-brand-primary/30 p-8 md:p-10 mt-px flex flex-col gap-4">
+            <div className="text-4xl text-brand-primary font-serif leading-none select-none">"</div>
+            <p className="text-white/80 text-xl leading-relaxed italic">
+              I have a feeling I am leaving 95% on the table. I just do not know what that 95% looks like.
+            </p>
+          </div>
+
+          <p className="text-center mt-14 text-xl text-white font-semibold">
             If any of this sounds familiar, this day was designed for you.
           </p>
         </div>
