@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { useAnimate } from "motion/react";
 
-// 31 May 2026 23:59:59 BST (UTC+1)
-const DEADLINE = "2026-05-31T23:59:59+01:00";
+// 26 May 2026 23:59:59 BST (UTC+1)
+const DEADLINE = "2026-05-26T23:59:59+01:00";
 
 const SECOND = 1000;
 const MINUTE = SECOND * 60;

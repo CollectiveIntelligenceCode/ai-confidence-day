@@ -562,7 +562,7 @@ export default function Variant7() {
               <div className="text-xs uppercase tracking-[2px] text-brand-primary font-semibold mb-2">Early Bird</div>
               <div className="text-6xl text-brand-text leading-none font-normal">£899</div>
               <div className="text-sm text-brand-text/50 mt-1.5 uppercase">+ VAT</div>
-              <p className="text-sm text-brand-text/80 my-4 italic">Until 31 May 2026</p>
+              <p className="text-sm text-brand-text/80 my-4 italic">Until 26th May 2026</p>
               <ShiftingCountdown />
               {/* @ts-expect-error stripe custom element */}
               <stripe-buy-button
@@ -599,7 +599,7 @@ export default function Variant7() {
           <h2 className="text-4xl md:text-5xl mb-12 text-center font-normal">Frequently asked questions.</h2>
           <div className="max-w-[800px] mx-auto">
             {[
-              { q: "Are there early bird discounts?", a: "Yes. Register before 31 May 2026 for the early bird rate of £899 + VAT. After that, the standard price of £1,099 + VAT applies. If spaces are still available on the day, the on-the-door price is £1,299 + VAT." },
+              { q: "Are there early bird discounts?", a: "Yes. Register before 26th May 2026 for the early bird rate of £899 + VAT. After that, the standard price of £1,099 + VAT applies. If spaces are still available on the day, the on-the-door price is £1,299 + VAT." },
               { q: "Will there be recordings?", a: "No. This is an in-person session with no recordings. All materials taught during the day are sent to participants afterwards. Chatham House Rules mean the conversations in this room stay in this room." },
               { q: "Why is the group limited to 12?", a: "Deliberately. We want a safe space where senior leaders can say \"I do not know,\" ask real questions, and express concerns without judgement. A small group makes that possible. It also means every participant gets hands-on attention and genuine peer connection." },
               { q: "Why is this in person?", a: "We have seen a significant difference in impact and depth between virtual and in-person sessions, especially at leadership level. Much of the learning happens through the people in the room — not just the facilitators. The connections formed in person are often more valuable than the content itself. Speed of learning, retention, quality of conversation — everything is better face to face." },
