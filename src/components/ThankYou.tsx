@@ -5,21 +5,22 @@ const config = {
   cxo: {
     title: "AI Confidence Day for CXOs & Board Members | Confirmed",
     description: "Your seat is confirmed for AI Confidence Day — 3rd July 2026, London.",
-    url: "https://ai-confidence-day.vercel.app/thank-you/cxo",
+    url: "https://aiday.solvedtogether.co.uk/thank-you/cxo",
     event: "AI Confidence Day for CXOs & Board Members",
     date: "3rd July 2026 · London",
+    shareUrl: "https://aiday.solvedtogether.co.uk/cxo",
   },
   consultants: {
     title: "AI Confidence Day for Consultants & Small Business Owners | Confirmed",
     description: "Your seat is confirmed for AI Confidence Day — 19th June 2026, London.",
-    url: "https://ai-confidence-day.vercel.app/thank-you/consultants",
+    url: "https://aiday.solvedtogether.co.uk/thank-you/consultants",
     event: "AI Confidence Day for Consultants & Small Business Owners",
     date: "19th June 2026 · London",
+    shareUrl: "https://aiday.solvedtogether.co.uk/consultants",
   },
 };
 
-const SHARE_TEXT = "I'm going to the AI Confidence Day to adopt new AI skills and level-up my business 🚀";
-const SHARE_URL = "https://ai-confidence-day.vercel.app";
+const SHARE_TEXT = "I'm going to the AI Confidence Day to adopt new AI skills and level up my business — aiday.solvedtogether.co.uk";
 
 export default function ThankYou({ variant }: { variant: "cxo" | "consultants" }) {
   const c = config[variant];
@@ -28,7 +29,7 @@ export default function ThankYou({ variant }: { variant: "cxo" | "consultants" }
   async function handleShare() {
     if (navigator.share) {
       try {
-        await navigator.share({ text: SHARE_TEXT, url: SHARE_URL });
+        await navigator.share({ text: SHARE_TEXT, url: c.shareUrl });
         return;
       } catch {
         // user cancelled — do nothing
@@ -36,7 +37,7 @@ export default function ThankYou({ variant }: { variant: "cxo" | "consultants" }
       }
     }
     // Fallback: copy to clipboard
-    await navigator.clipboard.writeText(`${SHARE_TEXT} ${SHARE_URL}`);
+    await navigator.clipboard.writeText(`${SHARE_TEXT} ${c.shareUrl}`);
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
   }
