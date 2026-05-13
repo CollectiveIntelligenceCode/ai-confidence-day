@@ -102,26 +102,24 @@ export default function ConsultantVariant7() {
       <section className="bg-white py-24 px-8">
         <div className="max-w-[900px] mx-auto">
           <h2 className="text-4xl md:text-5xl mb-10 font-normal text-center">You already know AI gives you an unfair advantage. You just have not had the breathing space to figure out how.</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
-            {/* Left: video */}
-            <div className="flex flex-col justify-center">
-              <div className="relative w-full aspect-video overflow-hidden bg-brand-border">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src="https://www.youtube-nocookie.com/embed/3lATCQTJ9v4?si=hw41VdsiIaEIsd09"
-                  title="Chris Bradshaw — the reality no one says out loud"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                  className="absolute inset-0 w-full h-full"
-                />
-              </div>
+          <div className="mb-12">
+            {/* Video — full width */}
+            <div className="relative w-full aspect-video overflow-hidden bg-brand-border mb-8">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube-nocookie.com/embed/3lATCQTJ9v4?si=hw41VdsiIaEIsd09"
+                title="Chris Bradshaw — the reality no one says out loud"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+              />
             </div>
-            {/* Right: body text */}
-            <div className="flex flex-col justify-center">
-              <p className="text-lg text-brand-text/80 mb-8 leading-[1.75]">
+            {/* Body text — underneath */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <p className="text-lg text-brand-text/80 leading-[1.75]">
                 You are delivering client work, marketing yourself, writing proposals, chasing invoices, doing the admin you hate. And every time you carve out an evening to finally learn AI properly, a client emergency lands and the evening disappears.
               </p>
               <p className="text-lg text-brand-text/80 leading-[1.75]">
