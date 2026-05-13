@@ -163,7 +163,7 @@ function buildConsultantsEmail(firstName) {
 
     <hr class="divider" />
 
-    <p>One small favour — please add <a href="mailto:aiconfidence@collectiveintelligence.co">aiconfidence@collectiveintelligence.co</a> to your contacts. We will be in touch with more details closer to the day, and we would rather not end up in your spam folder.</p>
+    <p>One small favour — please add <a href="mailto:contact@solvedtogether.co.uk">contact@solvedtogether.co.uk</a> to your contacts. We will be in touch with more details closer to the day, and we would rather not end up in your spam folder.</p>
 
     <p>If you have any questions in the meantime, reply to this email anytime.</p>
 
@@ -234,7 +234,7 @@ function buildCXOEmail(firstName) {
 
     <hr class="divider" />
 
-    <p>One small favour — please add <a href="mailto:aiconfidence@collectiveintelligence.co">aiconfidence@collectiveintelligence.co</a> to your contacts. We will be in touch with more details closer to the day, and we would rather not end up in your spam folder.</p>
+    <p>One small favour — please add <a href="mailto:contact@solvedtogether.co.uk">contact@solvedtogether.co.uk</a> to your contacts. We will be in touch with more details closer to the day, and we would rather not end up in your spam folder.</p>
 
     <p>If you have any questions in the meantime, reply to this email anytime.</p>
 
