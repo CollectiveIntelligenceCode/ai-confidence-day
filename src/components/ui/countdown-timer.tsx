@@ -81,14 +81,14 @@ function useTimer(unit: Unit) {
 /** Navbar countdown — sits inline, units close together */
 export function NavCountdown() {
   return (
-    <div className="flex items-center gap-3">
-      <NavUnit unit="Day" label="Days" />
-      <span className="text-brand-primary/25 font-light">·</span>
-      <NavUnit unit="Hour" label="Hrs" />
-      <span className="text-brand-primary/25 font-light">·</span>
-      <NavUnit unit="Minute" label="Mins" />
-      <span className="text-brand-primary/25 font-light">·</span>
-      <NavUnit unit="Second" label="Secs" />
+    <div className="flex items-center gap-2">
+      <NavUnit unit="Day" label="D" />
+      <span className="text-brand-primary/25 font-light text-xs">:</span>
+      <NavUnit unit="Hour" label="H" />
+      <span className="text-brand-primary/25 font-light text-xs">:</span>
+      <NavUnit unit="Minute" label="M" />
+      <span className="text-brand-primary/25 font-light text-xs">:</span>
+      <NavUnit unit="Second" label="S" />
     </div>
   );
 }
