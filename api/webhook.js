@@ -199,10 +199,16 @@ function buildCXOEmail(firstName) {
 <div class="wrap">
   <div class="top-bar"></div>
 
-  <div class="header">
-    <!-- RUJUTA_LOGO_PLACEHOLDER -->
-    <!-- CHRIS_LOGO_PLACEHOLDER -->
-  </div>
+  <table width="600" cellpadding="0" cellspacing="0" border="0" style="border-bottom:1px solid #e5e2de;">
+    <tr>
+      <td style="background:#ffffff; padding:24px 32px; vertical-align:middle;">
+        <img src="https://ai-confidence-day.vercel.app/logo-ci-dark.png" alt="Collective Intelligence" height="40" style="display:block;" />
+      </td>
+      <td style="background:#ffffff; padding:24px 32px; vertical-align:middle; text-align:right;">
+        <img src="https://ai-confidence-day.vercel.app/logo-solved-together.png" alt="Solved Together" height="40" style="display:block; margin-left:auto;" />
+      </td>
+    </tr>
+  </table>
 
   <div class="body">
     <h1>You're in, ${name}.</h1>
@@ -364,16 +370,17 @@ async function createHubSpotContact(data) {
   return await res.json();
 }
 
-async function logEmailEngagement(contactId, email) {
+async function logEmailEngagement(contactId, email, source) {
   if (!contactId) return;
+  const isCXO = source === 'cxo-apply-form';
 
   const payload = {
     properties: {
       hs_timestamp: new Date().toISOString(),
       hs_email_direction: 'EMAIL',
       hs_email_status: 'SENT',
-      hs_email_subject: "You're in — AI Confidence Day, 19th June 2026",
-      hs_email_text: `Automated welcome email sent to ${email} confirming their place at AI Confidence Day for Consultants & Small Business Owners on 19th June 2026. Includes event details, calendar invite (.ics), and Google/Outlook calendar links.`,
+      hs_email_subject: isCXO ? "You're in — AI Confidence Day, 3rd July 2026" : "You're in — AI Confidence Day, 19th June 2026",
+      hs_email_text: `Automated welcome email sent to ${email} confirming their place at ${isCXO ? 'AI Confidence Day for CXOs & Board Members on 3rd July 2026' : 'AI Confidence Day for Consultants & Small Business Owners on 19th June 2026'}. Includes event details, calendar invite (.ics), and Google/Outlook calendar links.`,
     },
     associations: [
       {
@@ -429,15 +436,16 @@ async function createHubSpotNote(contactId, aiUseCurrently) {
 
 async function createHubSpotDeal(contactId, data) {
   const { fullName, businessName, teamSize } = data;
+  const isCXO = data.source === 'cxo-apply-form';
 
   const dealPayload = {
     properties: {
       dealname: `AI Confidence Day — ${fullName || businessName || 'Applicant'}`,
       amount: '899',
-      closedate: new Date('2026-06-19').toISOString(),
+      closedate: new Date(isCXO ? '2026-07-03' : '2026-06-19').toISOString(),
       dealstage: 'closedwon',
       pipeline: 'default',
-      description: `Team size: ${teamSize || 'unknown'}${data.aiUseCurrently ? `\n\nAI use today:\n${data.aiUseCurrently}` : ''}`,
+      description: `Event: ${isCXO ? 'CXO & Board Members (3rd July 2026)' : 'Consultants & Small Business Owners (19th June 2026)'}\nTeam size: ${teamSize || 'unknown'}${data.aiUseCurrently ? `\n\nAI use today:\n${data.aiUseCurrently}` : ''}`,
     },
   };
 
@@ -507,7 +515,7 @@ export default async function handler(req, res) {
         const contact = await createHubSpotContact({ email, ...meta });
         const contactId = contact?.id || null;
         console.log('HubSpot contact id:', contactId);
-        await logEmailEngagement(contactId, email);
+        await logEmailEngagement(contactId, email, meta.source);
         await createHubSpotNote(contactId, meta.aiUseCurrently);
         await createHubSpotDeal(contactId, meta);
         console.log('HubSpot contact + email log + deal created successfully.');
