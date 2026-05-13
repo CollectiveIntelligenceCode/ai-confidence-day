@@ -2,12 +2,11 @@ import { useState, FormEvent } from "react";
 import PageMeta from "./PageMeta";
 
 const TEAM_SIZE_OPTIONS = [
-  "Just me",
-  "2–5",
-  "6–15",
-  "16–50",
-  "51–200",
-  "200+",
+  "Under 50",
+  "50–200",
+  "200–500",
+  "500–2,000",
+  "2,000+",
 ];
 
 interface FormData {
