@@ -26,7 +26,7 @@ const EVENTS = {
     startdt: '2026-07-03T09:00:00',
     enddt:   '2026-07-03T17:00:00',
     location: 'Smiths of Smithfield, 67-77 Charterhouse St, London, EC1M 6HJ',
-    description: 'A private, hands-on working day for CXOs and board members.',
+    description: 'A private, hands-on working day for CXOs and board members with Solved Together (Rujuta) & Collective Intelligence (Chris).',
     date: '3rd July 2026',
     seeYou: '3rd',
   },
