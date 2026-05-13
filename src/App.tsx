@@ -9,6 +9,7 @@ import Variant6 from "./components/Variant6";
 import Variant7 from "./components/Variant7";
 import ConsultantVariant7 from "./components/consultants/ConsultantVariant7";
 import ApplyConsultants from "./components/ApplyConsultants";
+import ApplyCXO from "./components/ApplyCXO";
 import BetterFitCXO from "./components/BetterFitCXO";
 import ThankYou from "./components/ThankYou";
 
@@ -92,6 +93,7 @@ export default function App() {
         <Route path="/cxo" element={<MainWrapper />} />
         <Route path="/consultants" element={<ConsultantWrapper />} />
         <Route path="/apply/consultants" element={<ApplyConsultants />} />
+        <Route path="/apply/cxo" element={<ApplyCXO />} />
         <Route path="/apply/better-fit" element={<BetterFitCXO />} />
         <Route path="/thank-you/cxo" element={<ThankYou variant="cxo" />} />
         <Route path="/thank-you/consultants" element={<ThankYou variant="consultants" />} />

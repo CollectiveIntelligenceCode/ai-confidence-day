@@ -19,11 +19,14 @@ export default async function handler(req, res) {
     jobRole,
     aiUseCurrently,
     agreedToTerms,
+    source,
   } = req.body;
 
   if (!email || !fullName || !agreedToTerms) {
     return res.status(400).json({ error: 'Missing required fields' });
   }
+
+  const isCXO = source === 'cxo-apply-form';
 
   try {
     const session = await stripe.checkout.sessions.create({
@@ -34,8 +37,10 @@ export default async function handler(req, res) {
           price_data: {
             currency: 'gbp',
             product_data: {
-              name: 'AI Confidence Day for Consultants',
-              description: '19th June 2026 · London · Full-Day Workshop (Early Bird)',
+              name: isCXO ? 'AI Confidence Day for CXOs & Board Members' : 'AI Confidence Day for Consultants',
+              description: isCXO
+                ? '3rd July 2026 · London · Full-Day Workshop (Early Bird)'
+                : '19th June 2026 · London · Full-Day Workshop (Early Bird)',
             },
             unit_amount: 100, // £1.00 test — change to 89900 for production
           },
@@ -52,10 +57,10 @@ export default async function handler(req, res) {
         jobRole: jobRole || '',
         // Stripe metadata values max 500 chars
         aiUseCurrently: (aiUseCurrently || '').slice(0, 500),
-        source: 'consultants-apply-form',
+        source: source || 'consultants-apply-form',
       },
-      success_url: `${BASE_URL}/thank-you/consultants?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${BASE_URL}/apply/consultants`,
+      success_url: `${BASE_URL}/thank-you/${isCXO ? 'cxo' : 'consultants'}?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${BASE_URL}/apply/${isCXO ? 'cxo' : 'consultants'}`,
     });
 
     res.status(200).json({ url: session.url });
