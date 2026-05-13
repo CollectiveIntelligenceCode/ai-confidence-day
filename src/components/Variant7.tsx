@@ -102,26 +102,24 @@ export default function Variant7() {
       <section className="bg-white py-24 px-8">
         <div className="max-w-[900px] mx-auto">
           <h2 className="text-4xl md:text-5xl mb-10 font-normal text-center">The reality no one says out loud.</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
-            {/* Left: video */}
-            <div>
-              <div className="relative w-full aspect-video overflow-hidden bg-brand-border">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src="https://www.youtube-nocookie.com/embed/X-GWD6l5708?si=2ndtifwJzVyjwA8W"
-                  title="Rujuta Singh — the reality no one says out loud"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                  className="absolute inset-0 w-full h-full"
-                />
-              </div>
+          <div className="mb-12">
+            {/* Video — full width */}
+            <div className="relative w-full aspect-video overflow-hidden bg-brand-border mb-8">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube-nocookie.com/embed/X-GWD6l5708?si=2ndtifwJzVyjwA8W"
+                title="Rujuta Singh — the reality no one says out loud"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+              />
             </div>
-            {/* Right: body text */}
-            <div className="flex flex-col justify-center">
-              <p className="text-lg text-brand-text/80 mb-8 leading-[1.75]">
+            {/* Body text — underneath */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <p className="text-lg text-brand-text/80 leading-[1.75]">
                 AI is in every strategy deck. Your team is running experiments. Vendors are pitching AI-first solutions. Your board is asking questions that need confident answers.
               </p>
               <p className="text-lg text-brand-text/80 leading-[1.75]">
