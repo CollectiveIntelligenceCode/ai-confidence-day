@@ -48,6 +48,7 @@ export default async function handler(req, res) {
         },
       ],
       mode: 'payment',
+      allow_promotion_codes: true,
       metadata: {
         fullName,
         businessName: businessName || '',
