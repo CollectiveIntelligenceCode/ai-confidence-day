@@ -2,7 +2,7 @@ import Stripe from 'stripe';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
-const BASE_URL = process.env.BASE_URL || 'https://ai-confidence-day.vercel.app';
+const BASE_URL = process.env.BASE_URL || 'https://aiday.solvedtogether.co.uk';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
