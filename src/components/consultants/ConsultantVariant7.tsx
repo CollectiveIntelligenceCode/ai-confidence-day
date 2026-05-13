@@ -27,11 +27,13 @@ export default function ConsultantVariant7() {
       {/* NAV */}
       <nav className="fixed top-[4px] left-0 right-0 z-[99] bg-brand-surface/95 backdrop-blur-md border-b border-brand-border py-3">
         <div className="max-w-[1100px] px-8 flex items-center justify-between mx-auto">
-          <div className="flex items-center gap-2">
-            <span className="hidden sm:inline font-bold text-sm tracking-[1.5px] uppercase text-brand-text">Early bird · £899</span>
-            <span className="hidden sm:inline text-brand-text/30 text-sm">·</span>
-            <span className="hidden sm:inline text-xs font-medium tracking-[1px] uppercase text-brand-text/50">ends in</span>
-            <NavCountdown />
+          <div className="flex flex-col items-start gap-0.5">
+            <span className="text-[10px] font-semibold tracking-[1.5px] uppercase text-brand-text/50">Early Bird Ends In</span>
+            <div className="flex items-center gap-2">
+              <span className="hidden sm:inline font-bold text-sm tracking-[1.5px] uppercase text-brand-text">£899</span>
+              <span className="hidden sm:inline text-brand-text/30 text-sm">·</span>
+              <NavCountdown />
+            </div>
           </div>
           <a
             href="/apply/consultants"
