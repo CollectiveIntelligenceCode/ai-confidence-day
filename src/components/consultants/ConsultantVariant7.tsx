@@ -183,7 +183,7 @@ export default function ConsultantVariant7() {
       {/* BEFORE & AFTER */}
       <section className="bg-white py-24 px-8">
         <div className="max-w-[900px] mx-auto">
-          <h2 className="text-4xl md:text-5xl mb-12 text-center font-normal">Before / After — AI Confidence Day</h2>
+          <h2 className="text-4xl md:text-5xl mb-12 text-center font-normal">What Changes In A Day</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
             <div>
               <h3 className="text-sm uppercase tracking-[2px] font-semibold mb-6 pb-3 border-b-2 border-brand-border text-brand-text/50">Where you are now</h3>
