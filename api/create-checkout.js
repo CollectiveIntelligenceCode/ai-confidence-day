@@ -42,7 +42,7 @@ export default async function handler(req, res) {
                 ? '3rd July 2026 · London · Full-Day Workshop (Early Bird)'
                 : '19th June 2026 · London · Full-Day Workshop (Early Bird)',
             },
-            unit_amount: 50, // £0.50 live test — change to 89900 for production
+            unit_amount: 89900, // £899.00
           },
           quantity: 1,
         },
