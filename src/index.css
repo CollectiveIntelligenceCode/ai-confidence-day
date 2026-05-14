@@ -6,12 +6,13 @@
   --font-quicksand: "Quicksand", sans-serif;
   --font-instrument: "Instrument Serif", serif;
   --font-dmsans: "DM Sans", sans-serif;
-  
+
   --color-brand-primary: #f20544;
   --color-brand-bg: #ffffff;
   --color-brand-text: #1A1A1A;
   --color-brand-surface: #f8f8f8;
   --color-brand-border: #eeeeee;
+  --color-brand-error: #ef4444;
 
   /* CXO Landing Page Colors */
   --color-cxo-red: #C0392B;
