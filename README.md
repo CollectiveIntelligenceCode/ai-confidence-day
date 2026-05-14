@@ -2,11 +2,15 @@
 <img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
 </div>
 
-# Run and deploy your AI Studio app
+# AI Confidence Day
 
-This contains everything you need to run your app locally.
+**Powered by Collective Intelligence**
 
-View your app in AI Studio: https://ai.studio/apps/b66aba75-374b-4a8d-a62f-cfb759881fa9
+This is the AI Confidence Day platform — an interactive experience designed to help you gain confidence in AI capabilities and strategic applications. It's part of the Collective Intelligence suite of AI tools and consulting services.
+
+**Brand:** This project follows the [Collective Intelligence Brand Guide](/../../workspace/solomon-vault/docs/COLLECTIVE-INTELLIGENCE-BRAND-GUIDE.md). For brand questions, contact the Brand Manager.
+
+**View your app in AI Studio:** https://ai.studio/apps/b66aba75-374b-4a8d-a62f-cfb759881fa9
 
 ## Run Locally
 
