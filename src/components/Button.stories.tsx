@@ -1,22 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { Button } from '@collective-intelligence/components';
 
-const ButtonDemo = ({ variant, label }: { variant: 'primary' | 'secondary' | 'ghost'; label: string }) => (
-  <button
-    className={
-      variant === 'primary'
-        ? 'px-6 py-3 bg-brand-primary text-white rounded hover:bg-brand-primary/90 transition-colors'
-        : variant === 'secondary'
-          ? 'px-6 py-3 border-2 border-brand-primary text-brand-primary rounded hover:bg-brand-primary/10 transition-colors'
-          : 'px-6 py-3 text-brand-text hover:underline transition-colors'
-    }
-  >
-    {label}
-  </button>
-);
-
-const meta: Meta<typeof ButtonDemo> = {
+const meta: Meta<typeof Button> = {
   title: 'Brand Components/Button',
-  component: ButtonDemo,
+  component: Button,
   parameters: {
     layout: 'centered',
   },
@@ -40,27 +27,27 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     variant: 'primary',
-    label: 'Primary Button',
+    children: 'Primary Button',
   },
 };
 
 export const Secondary: Story = {
   args: {
     variant: 'secondary',
-    label: 'Secondary Button',
+    children: 'Secondary Button',
   },
 };
 
 export const Ghost: Story = {
   args: {
     variant: 'ghost',
-    label: 'Ghost Button',
+    children: 'Ghost Button',
   },
 };
 
 export const Playground: Story = {
   args: {
     variant: 'primary',
-    label: 'Interactive Button',
+    children: 'Interactive Button',
   },
 };

@@ -1,21 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { Card } from '@collective-intelligence/components';
 
-const CardDemo = ({ highlighted, children }: { highlighted?: boolean; children: string }) => (
-  <div
-    className={`
-      border bg-white rounded-lg p-6 max-w-sm
-      ${highlighted ? 'border-l-4 border-l-brand-primary border-brand-border' : 'border-brand-border'}
-      hover:shadow-lg transition-shadow
-    `}
-  >
+const CardContent = ({ children }: { children: string }) => (
+  <div>
     <h3 className="text-lg font-bold text-brand-text mb-2">Card Title</h3>
     <p className="text-brand-text/70">{children}</p>
   </div>
 );
 
-const meta: Meta<typeof CardDemo> = {
+const meta: Meta<typeof Card> = {
   title: 'Brand Components/Card',
-  component: CardDemo,
+  component: Card,
   parameters: {
     layout: 'centered',
   },
@@ -38,21 +33,34 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     highlighted: false,
-    children: 'This is a standard card with subtle borders and hover effects.',
   },
+  render: (args) => (
+    <Card {...args} style={{ maxWidth: '400px' }}>
+      <CardContent>This is a standard card with subtle borders and hover effects.</CardContent>
+    </Card>
+  ),
 };
 
 export const Highlighted: Story = {
   args: {
     highlighted: true,
-    children: 'This card is highlighted with a left border accent for emphasis.',
   },
+  render: (args) => (
+    <Card {...args} style={{ maxWidth: '400px' }}>
+      <CardContent>This card is highlighted with a left border accent for emphasis.</CardContent>
+    </Card>
+  ),
 };
 
 export const WithLongContent: Story = {
   args: {
     highlighted: false,
-    children:
-      'Cards can contain any content. This example shows how the card adapts to longer text content while maintaining proper spacing and readability through the brand typography system.',
   },
+  render: (args) => (
+    <Card {...args} style={{ maxWidth: '400px' }}>
+      <CardContent>
+        Cards can contain any content. This example shows how the card adapts to longer text content while maintaining proper spacing and readability through the brand typography system.
+      </CardContent>
+    </Card>
+  ),
 };

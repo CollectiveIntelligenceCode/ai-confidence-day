@@ -1,21 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { Badge } from '@collective-intelligence/components';
 
-const BadgeDemo = ({ variant, label }: { variant: 'default' | 'success' | 'error'; label: string }) => {
-  const baseClass = 'inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold uppercase';
-
-  const variantClass =
-    variant === 'default'
-      ? 'bg-brand-primary/10 text-brand-primary border border-brand-primary/30'
-      : variant === 'success'
-        ? 'bg-green-100 text-green-700 border border-green-300'
-        : 'bg-brand-error/10 text-brand-error border border-brand-error/30';
-
-  return <span className={`${baseClass} ${variantClass}`}>{label}</span>;
-};
-
-const meta: Meta<typeof BadgeDemo> = {
+const meta: Meta<typeof Badge> = {
   title: 'Brand Components/Badge',
-  component: BadgeDemo,
+  component: Badge,
   parameters: {
     layout: 'centered',
   },
@@ -39,30 +27,30 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     variant: 'default',
-    label: 'Featured',
+    children: 'Featured',
   },
 };
 
 export const Success: Story = {
   args: {
     variant: 'success',
-    label: 'Approved',
+    children: 'Approved',
   },
 };
 
 export const Error: Story = {
   args: {
     variant: 'error',
-    label: 'Error',
+    children: 'Error',
   },
 };
 
 export const AllVariants: Story = {
   render: () => (
     <div className="flex gap-4">
-      <BadgeDemo variant="default" label="Featured" />
-      <BadgeDemo variant="success" label="Approved" />
-      <BadgeDemo variant="error" label="Error" />
+      <Badge variant="default">Featured</Badge>
+      <Badge variant="success">Approved</Badge>
+      <Badge variant="error">Error</Badge>
     </div>
   ),
 };
