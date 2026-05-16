@@ -25,6 +25,28 @@
   --color-cxo-cream: #F5F3EF;
 }
 
+/* Dark mode theme */
+@media (prefers-color-scheme: dark) {
+  @theme {
+    --color-brand-primary: #ff6b7a;
+    --color-brand-bg: #0a0a0a;
+    --color-brand-text: #f5f5f5;
+    --color-brand-surface: #1a1a1a;
+    --color-brand-border: #333333;
+    --color-brand-error: #ff6b6b;
+  }
+}
+
+/* Explicit dark mode class for manual theme toggle */
+html.dark {
+  --color-brand-primary: #ff6b7a;
+  --color-brand-bg: #0a0a0a;
+  --color-brand-text: #f5f5f5;
+  --color-brand-surface: #1a1a1a;
+  --color-brand-border: #333333;
+  --color-brand-error: #ff6b6b;
+}
+
 @layer base {
   body {
     @apply bg-brand-bg text-brand-text font-quicksand antialiased;
