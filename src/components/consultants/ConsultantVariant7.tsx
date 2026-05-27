@@ -555,7 +555,7 @@ export default function ConsultantVariant7() {
               <div className="text-xs uppercase tracking-[2px] text-brand-primary font-semibold mb-2">Early Bird</div>
               <div className="text-6xl text-brand-text leading-none font-normal">£899</div>
               <div className="text-sm text-brand-text/50 mt-1.5 uppercase">+ VAT</div>
-              <p className="text-sm text-brand-text/80 my-4 italic">Until 10th June 2026</p>
+              <p className="text-sm text-brand-text/80 my-4 italic">Until 3rd July 2026</p>
               <ShiftingCountdown />
               <a
                 href="/apply/consultants"
