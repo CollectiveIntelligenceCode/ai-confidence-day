@@ -180,7 +180,7 @@ export default function ApplyCXO() {
                   className={inputClass}
                   autoComplete="email"
                 />
-                {errors.email && <p className="text-sm text-brand-error mt-1">{errors.email}</p>}
+                {errors.email && <p className="text-sm text-red-500 mt-1">{errors.email}</p>}
               </div>
 
               <div>
@@ -193,7 +193,7 @@ export default function ApplyCXO() {
                   className={inputClass}
                   autoComplete="name"
                 />
-                {errors.fullName && <p className="text-sm text-brand-error mt-1">{errors.fullName}</p>}
+                {errors.fullName && <p className="text-sm text-red-500 mt-1">{errors.fullName}</p>}
               </div>
 
               <div>
@@ -252,7 +252,7 @@ export default function ApplyCXO() {
                     <option key={s} value={s}>{s}</option>
                   ))}
                 </select>
-                {errors.teamSize && <p className="text-sm text-brand-error mt-1">{errors.teamSize}</p>}
+                {errors.teamSize && <p className="text-sm text-red-500 mt-1">{errors.teamSize}</p>}
               </div>
 
               <div>
@@ -264,7 +264,7 @@ export default function ApplyCXO() {
                   placeholder="CEO, CFO, Board Member, COO..."
                   className={inputClass}
                 />
-                {errors.jobRole && <p className="text-sm text-brand-error mt-1">{errors.jobRole}</p>}
+                {errors.jobRole && <p className="text-sm text-red-500 mt-1">{errors.jobRole}</p>}
               </div>
 
               <button
@@ -288,7 +288,7 @@ export default function ApplyCXO() {
                   rows={6}
                   className={`${inputClass} resize-none`}
                 />
-                {errors.aiUseCurrently && <p className="text-sm text-brand-error mt-1">{errors.aiUseCurrently}</p>}
+                {errors.aiUseCurrently && <p className="text-sm text-red-500 mt-1">{errors.aiUseCurrently}</p>}
               </div>
 
               <button
@@ -364,12 +364,12 @@ export default function ApplyCXO() {
                   </span>
                 </label>
                 {errors.agreedToTerms && (
-                  <p className="text-sm text-brand-error mt-2 ml-7">{errors.agreedToTerms}</p>
+                  <p className="text-sm text-red-500 mt-2 ml-7">{errors.agreedToTerms}</p>
                 )}
               </div>
 
               {serverError && (
-                <div className="bg-brand-error/10 border border-brand-error/30 text-brand-error px-4 py-3 text-sm">
+                <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 text-sm">
                   {serverError}
                 </div>
               )}
