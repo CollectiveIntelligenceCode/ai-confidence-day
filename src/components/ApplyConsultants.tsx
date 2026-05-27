@@ -124,7 +124,7 @@ export default function ApplyConsultants() {
     <div className="font-quicksand text-brand-text bg-brand-surface leading-relaxed min-h-screen">
       <PageMeta
         title="Apply for a Seat — AI Confidence Day for Consultants"
-        description="Secure your place at AI Confidence Day for Consultants & Small Business Owners. 19th June 2026, London."
+        description="Secure your place at AI Confidence Day for Consultants & Small Business Owners. 3rd July 2026, London."
         url="https://ai-confidence-day.vercel.app/apply/consultants"
       />
 
@@ -153,7 +153,7 @@ export default function ApplyConsultants() {
           {/* Header */}
           <div className="py-12 text-center">
             <div className="text-xs uppercase tracking-[2px] text-brand-primary font-semibold mb-3">
-              19th June 2026 · London · 12 seats maximum
+              3rd July 2026 · London · 12 seats maximum
             </div>
             <h1 className="text-3xl md:text-4xl font-normal mb-2">
               {step === 1 ? "Tell us about yourself." : step === 2 ? "How are you using AI today?" : "One last thing."}

@@ -17,7 +17,7 @@ export default function ConsultantVariant7() {
     <div className="font-quicksand text-brand-text bg-brand-surface leading-relaxed text-lg font-light min-h-screen">
       <PageMeta
         title="AI Confidence Day for Consultants & Small Business Owners | Solved Together"
-        description="A private, hands-on working day in London for consultants and small business owners who are done bookmarking AI guides they never go back to. 19th June 2026. 12 people maximum."
+        description="A private, hands-on working day in London for consultants and small business owners who are done bookmarking AI guides they never go back to. 3rd July 2026. 12 people maximum."
         url="https://ai.solvedtogether.co.uk/consultants"
       />
 
@@ -66,8 +66,13 @@ export default function ConsultantVariant7() {
           >
             Apply for a Seat
           </a>
-          <div className="mt-8 text-sm text-brand-text/50 tracking-[1px]">
-            19th June 2026 · London · 12 people maximum
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 text-sm">
+            <span className="inline-flex items-center gap-2 px-3 py-1 border border-brand-border text-brand-text/40 line-through tracking-[1px]">
+              19th June 2026
+              <span className="no-underline text-[10px] font-semibold uppercase tracking-[1.5px] bg-brand-text/10 text-brand-text/50 px-2 py-0.5" style={{ textDecoration: "none" }}>Sold Out</span>
+            </span>
+            <span className="text-brand-text/30 hidden sm:inline">·</span>
+            <span className="text-brand-text/70 tracking-[1px]">3rd July 2026 · London · 12 people maximum</span>
           </div>
         </div>
       </section>
@@ -76,7 +81,7 @@ export default function ConsultantVariant7() {
       <div className="bg-white border-b border-brand-border py-10 px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-[1px] bg-brand-border max-w-[800px] mx-auto">
           {[
-            { label: "Date", value: "19th June 2026" },
+            { label: "Date", value: "3rd July 2026" },
             { label: "Location", value: "London, UK" },
             { label: "Format", value: "Full-Day Workshop" },
             { label: "Audience", value: "Consultants & Small Business Owners" },
@@ -550,7 +555,7 @@ export default function ConsultantVariant7() {
               <div className="text-xs uppercase tracking-[2px] text-brand-primary font-semibold mb-2">Early Bird</div>
               <div className="text-6xl text-brand-text leading-none font-normal">£899</div>
               <div className="text-sm text-brand-text/50 mt-1.5 uppercase">+ VAT</div>
-              <p className="text-sm text-brand-text/80 my-4 italic">Until 26th May 2026</p>
+              <p className="text-sm text-brand-text/80 my-4 italic">Until 10th June 2026</p>
               <ShiftingCountdown />
               <a
                 href="/apply/consultants"
@@ -599,7 +604,7 @@ export default function ConsultantVariant7() {
               { q: "Will there be recordings?", a: "No. All materials are sent to you afterwards. But Chatham House Rules mean the conversations stay in the room — and that is what makes people honest about where they really are." },
               { q: "I run my business on my own with no team. Is this for me?", a: "Especially. If you are doing everything yourself, AI is the closest thing to hiring a team without the cost. This day shows you how to operate like a team of five." },
               { q: "What does the 100% money-back guarantee* cover?", a: "If you attend the morning session and, before the lunch break, feel this day is not for you — you can leave. Let us know before lunch and we will refund you in full, no questions asked. We do not offer refunds after the lunch break as the full day's content will have been delivered by that point." },
-              { q: "Are there early bird discounts?", a: "Yes. Register before 26th May 2026 for the early bird rate of £899 + VAT. After that, the standard price of £1,099 + VAT applies. If spaces are still available on the day, the on-the-door price is £1,299 + VAT." },
+              { q: "Are there early bird discounts?", a: "Yes. Register before 10th June 2026 for the early bird rate of £899 + VAT. After that, the standard price of £1,099 + VAT applies. If spaces are still available on the day, the on-the-door price is £1,299 + VAT." },
               { q: "What is the difference between this and the CXO & Board Members day?", a: "Two things: the room and the content. The people in your room are consultants, founders, and small business owners — people who share your problems, your pace, and your objectives. That matters because this day is built around co-creation and solving problems together, not just listening. The content is also tailored differently. For a small business, AI can deliver ROI on day one — because you are the business. The tools, the financials, and the threshold for value are immediate and personal. The CXO day addresses a different reality: scaling AI across hundreds or thousands of people, building organisational playbooks, navigating implementation methodologies, and making the case at board level. Different problems, different room, different content." },
               { q: "Will you be running more of these?", a: "Yes. We also run a separate AI Confidence Day for CXOs and board members of larger organisations. And we plan to run intermediate-level days for those who have attended the first one. This is the beginning, not the end." },
               { q: "Do you have other dates, later in the year?", a: <>We currently have no other dates planned for a public training for the rest of this year. We do run these privately for companies, where we have more flexibility on dates. <a href="mailto:contact@solvedtogether.co.uk" className="text-brand-primary underline underline-offset-2 hover:opacity-75 transition-opacity">Reach out</a> if that is more suitable.</> },
