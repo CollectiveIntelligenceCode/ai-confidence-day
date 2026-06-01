@@ -1,4 +1,8 @@
 {
+  "redirects": [
+    { "source": "/cxo", "destination": "/", "permanent": false },
+    { "source": "/consultant", "destination": "/", "permanent": false }
+  ],
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/$1" },
     { "source": "/(.*)", "destination": "/index.html" }
